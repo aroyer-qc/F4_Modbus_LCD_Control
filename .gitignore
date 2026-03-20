@@ -1,7 +1,6 @@
 *.elay
 *.eds
 *.depend
-build/
 F4_Modbus_LCD_Control/bin/
 F4_Modbus_LCD_Control/obj/
 module

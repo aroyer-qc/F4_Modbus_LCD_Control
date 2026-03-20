@@ -36,3 +36,10 @@ FMC_A19         PE3
 FMC_A20         PE4
 FMC_A21         PE5
 FMC_A22         PE6
+
+
+
+on touch interface
+
+TR4 -> NTR4101: Small Signal MOSFET 20V 3.2A 85 mOhm Single P-Channel SOT-23
+12C -> PSOT12C: The PSOT series are transient voltage suppressor (TVS) arrays (Protek Devices)

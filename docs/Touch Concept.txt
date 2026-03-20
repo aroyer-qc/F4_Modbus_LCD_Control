@@ -1,0 +1,117 @@
+function scan_touch():
+
+    # -------------------------
+    # 1. READ X POSITION
+    # -------------------------
+
+    # Enable MOSFETs that connect X+ and X- to MCU drive
+    mosfet_X_enable()
+
+    # Drive X+ = 3.3V, X- = GND
+    pinMode(X_plus, OUTPUT)
+    pinMode(X_minus, OUTPUT)
+    digitalWrite(X_plus, HIGH)
+    digitalWrite(X_minus, LOW)
+
+    # Y+ becomes ADC input, Y- high-Z
+    pinMode(Y_plus, ADC_INPUT)
+    pinMode(Y_minus, INPUT_FLOAT)
+
+    wait_us(50)   # settle time
+
+    rawX = adc_read(Y_plus)
+
+    mosfet_X_disable()   # fully disconnect X axis
+
+
+    # -------------------------
+    # 2. READ Y POSITION
+    # -------------------------
+
+    mosfet_Y_enable()
+
+    # Drive Y+ = 3.3V, Y- = GND
+    pinMode(Y_plus, OUTPUT)
+    pinMode(Y_minus, OUTPUT)
+    digitalWrite(Y_plus, HIGH)
+    digitalWrite(Y_minus, LOW)
+
+    # X+ becomes ADC input, X- high-Z
+    pinMode(X_plus, ADC_INPUT)
+    pinMode(X_minus, INPUT_FLOAT)
+
+    wait_us(50)
+
+    rawY = adc_read(X_plus)
+
+    mosfet_Y_disable()
+
+
+    # -------------------------
+    # 3. TOUCH DETECTION
+    # -------------------------
+    # Typical: if both rawX and rawY are within valid range → touch present
+
+    if rawX < TOUCH_MIN or rawY < TOUCH_MIN:
+        return NO_TOUCH
+
+    return (rawX, rawY)
+    
+    
+//------------------------------------------------------------------------------------------
+
+    Use a timer ISR to trigger ADC DMA, and do the axis switching in a tiny state machine.
+
+        - deterministic timing
+        - minimal CPU load
+        - clean separation of concerns
+        - perfect reproducibility
+
+    GPIO switching time                         Negligible (< 1 µs)
+    Panel settling time                         Typically 20–80 µs depending on panel resistance.
+    
+    ADC conversion                              
+        - Single sample: ~2–3 µs
+        - DMA burst (8–16 samples): ~20–40 µs
+    
+    Total per axis                              Roughly 50–150 µs.
+    Full X+Y scan                               100–300 µs -> easily supports 100–200 Hz scan rate
+
+    The Classic Pressure Measurement Setup
+    To measure pressure, you drive the panel like this:
+    - X+ = 3.3 V
+    - X– = GND
+    - Y+ = ADC input -> this is Z1
+    - Y– = ADC input -> this is Z2
+    
+    * The Formula
+    The standard formula used everywhere is:
+    Z=\frac{X_{\mathrm{raw}}\cdot \left( \frac{Z2}{Z1}-1\right) }{R_x}
+    Where:
+    - X_{\mathrm{raw}} is your X‑axis ADC reading
+    - Z1=\mathrm{ADC}(Y+)
+    - Z2=\mathrm{ADC}(Y-)
+    - R_x is the panel’s X-plate resistance (typically 200–500 Ω)
+    You don’t need the exact resistance unless you want calibrated pressure.
+    For touch detection, relative Z is enough.
+
+
+    How the 3-Step Loop Works
+    STEP 1 — Read X
+    - Drive X+ = 3.3 V
+    - Drive X– = GND
+    - Y+ = ADC
+    - Y– = Hi-Z
+    - Read ADC(Y+) -> rawX
+    STEP 2 — Read Y
+    - Drive Y+ = 3.3 V
+    - Drive Y– = GND
+    - X+ = ADC
+    - X– = Hi-Z
+    - Read ADC(X+) -> rawY
+    STEP 3 — Read Z (pressure)
+    Use the same configuration as STEP 1, but read both Y+ and Y–:
+    - Drive X+ = 3.3 V
+    - Drive X– = GND
+    - Y+ = ADC → Z1
+    - Y– = ADC → Z2
