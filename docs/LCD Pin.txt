@@ -1,0 +1,31 @@
+LCD_R7          PE15  or  PG7   or PJ5  ???  not used
+LCD_R6          PH12  or  PJ5           ???  not used
+LCD_R5          PA11  or  PJ4
+LCD_R4          PA11  or  PH10  or PJ3
+LCD_R3          PH9   or  PJ2
+LCD_R2          PC10  or  PH8   or PJ1
+LCD_R1          PH3   or  PJ0
+LCD_R0          PH2   or  PI15
+
+LCD_G7          PD3   or  PI2           ???  not used
+LCD_G6          PC7   or  PI1           ???  not used
+LCD_G5          PB11  or  PI0            
+LCD_G4          PB10  or  PH15  or  PJ11
+LCD_G3          PE11  or  PH14  or  PJ10
+LCD_G2          PA6   or  PH13  or  PJ9
+LCD_G1          PE6   or  PJ8
+LCD_G0          PE5   or  PJ7
+
+LCD_B7          PB9   or  PI6           ???  not used
+LCD_B6          PB8   or  PI6           ???  not used
+LCD_B5          PA3   or  PI5
+LCD_B4          PE12  or  PI4
+LCD_B3          PD10  or  PG11  or  PJ15
+LCD_B2          PD6   or  PG10  or  PJ14 
+LCD_B1          PG12  or  PJ13
+LCD_B0          PE4   or  PJ12
+
+LCD_V_SYNC      PA4   or  PI9   or  PI13
+LCD_H_SYNC      PC6   or  PI10  or  PI12
+LCD_DE          PE13  or  PF10
+LCD_CLK         PE14  or  PG7   or  PI14

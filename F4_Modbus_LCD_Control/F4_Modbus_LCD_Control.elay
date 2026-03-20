@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<EmBitz_layout_file>
+	<ActiveTarget name="Debug LCD Control" />
+	<File name="..\App\inc\bsp.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2310" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="..\App\inc\task_main.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3275" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="..\App\src\bsp.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2494" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="..\App\src\irq.cpp" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2241" topLine="39" />
+		</Cursor>
+	</File>
+	<File name="..\App\src\task_main.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2757" topLine="52" />
+		</Cursor>
+	</File>
+	<File name="..\App\startup_stm32f4xx.S" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4231" topLine="92" />
+		</Cursor>
+	</File>
+	<File name="..\Config\bsp_io_def.h" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5038" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="..\Config\console_cfg.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="105" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\Config\digini_cfg.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2858" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="..\Config\driver_cfg.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3023" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="..\Config\spi_var.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13515" topLine="256" />
+		</Cursor>
+	</File>
+	<File name="..\Module\Digini\Digini\inc\lib_typedef.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8534" topLine="240" />
+		</Cursor>
+	</File>
+	<File name="..\Module\Digini\lib_digini.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3071" topLine="61" />
+		</Cursor>
+	</File>
+	<File name="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_STM32F4_io.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4423" topLine="64" />
+		</Cursor>
+	</File>
+</EmBitz_layout_file>
