@@ -2,6 +2,8 @@
 # FMC 8080 - STM32F437VGT6
 # LQFP100 — Only available pin
 # ============================
+USMH-8252MD-T
+
 
 # --- Data BUS (16 bits) ---
 FMC_D0          PD14

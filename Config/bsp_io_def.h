@@ -70,18 +70,24 @@
 /* Output IO's CFG -------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        1)                     \
+    X_IO_CFG( IO_CFG_OUTPUT_PP_MS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     1)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_HS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       1)                     \
-/* ETH IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_ETH_PP_VHS_AF11,                   IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF11_ETH)           \
-/* LCD IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_LCD_AF9,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PULL_UP,   IO_SPEED_FREQ_VERY_HIGH,  IO_AF9_LTDC)           \
-    X_IO_CFG( IO_CFG_LCD_AF14,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF14_LTDC)          \
+/* ADC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO_CFG( IO_CFG_ADC,                               IO_MODE_ANALOG,     IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_MEDIUM,     IO_AF0)                \
+/* DAC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO_CFG( IO_CFG_DAC,                               IO_MODE_ANALOG,     IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_MEDIUM,     IO_AF0)                \
+/* FMC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO_CFG( IO_CFG_FMC,                               IO_MODE_ALTERNATE,  IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_MEDIUM,     IO_AF12_FMC)           \
+/* CAN IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO_CFG( IO_CFG_CAN_AF9,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF9_CAN1)           \
 /* MCO IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_MCO_OUTPUT,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MCO)            \
 /* SPI IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI)            \
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_UART3_AF7,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF7_USART3)         \
+    X_IO_CFG( IO_CFG_UART4_AF8,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF8_UART4)          \
+/* USB IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO_CFG( IO_CFG_USB_AF10,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF10_OTG_FS)        \
 /* -----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------------------------------------
@@ -100,18 +106,29 @@
 /* ---------------------------------------------------------------------------------------------*/\
 /*        ENUM ID of the IO,    IO Port,    IO Pin,         IO Config                           */\
 /* Output IO's ---------------------------------------------------------------------------------*/\
-    X_IO( IO_LED_GREEN_STATUS,  GPIOx,      IO_PIN_x,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
-    X_IO( IO_LED_RED_STATUS,    GPIOx,      IO_PIN_x,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LED_GREEN_STATUS,  GPIOB,      IO_PIN_11,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LED_RED_STATUS,    GPIOB,      IO_PIN_10,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_BUZZER,            GPIOB,      IO_PIN_0,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
+/* SPI IO's ------------------------------------------------------------------------------------*/\
+    X_IO( IO_CAN_RX,            GPIOB,      IO_PIN_8,       IO_CFG_CAN_AF9)                       \
+    X_IO( IO_CAN_TX,            GPIOB,      IO_PIN_9,       IO_CFG_CAN_AF9)                       \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
     X_IO( IO_SPI2_CS,           GPIOB,      IO_PIN_12,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
-/* UART IO's -----------------------------------------------------------------------------------*/\
-    X_IO( IO_UART3_RX,          GPIOB,      IO_PIN_10,      IO_CFG_UART_RX_AF7)                   \
-    X_IO( IO_UART3_TX,          GPIOB,      IO_PIN_11,      IO_CFG_UART_TX_AF7)                   \
+/* RS485 IO's ----------------------------------------------------------------------------------*/\
+    X_IO( IO_RS485_RX,          GPIOC,      IO_PIN_11,      IO_CFG_UART4_AF8)                     \
+    X_IO( IO_RS485_TX,          GPIOC,      IO_PIN_10,      IO_CFG_UART4_AF8)                     \
+    X_IO( IO_RS485_DE,          GPIOC,      IO_PIN_12,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
 /* LCD IO's ------------------------------------------------------------------------------------*/\
-    X_IO( IO_LCD_TFT_DISPLAY,   GPIOx,      IO_PIN_x,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
-    X_IO( IO_LCD_TFT_BL_CTRL,   GPIOx,      IO_PIN_x,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LCD_RESET,         GPIOD,      IO_PIN_6,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LCD_TFT_BL_ON_OFF, GPIOA,      IO_PIN_5,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LCD_TFT_DIMMING,   GPIOA,      IO_PIN_4,       IO_CFG_DAC)                           \
+/* TOUCH IO's ----------------------------------------------------------------------------------*/\
+    X_IO( IO_TOUCH_Y1_SWITCH,   GPIOE,      IO_PIN_2,       IO_CFG_OUTPUT_PP_MS_DEF1)             \
+    X_IO( IO_TOUCH_X1_SWITCH,   GPIOE,      IO_PIN_5,       IO_CFG_OUTPUT_PP_MS_DEF1)             \
+    X_IO( IO_TOUCH_X2_SWITCH,   GPIOE,      IO_PIN_3,       IO_CFG_OUTPUT_PP_MS_DEF1)             \
+    X_IO( IO_TOUCH_Y2_SWITCH,   GPIOE,      IO_PIN_4,       IO_CFG_OUTPUT_PP_MS_DEF1)             \
 /* MCO -----------------------------------------------------------------------------------------*/\
-    X_IO( IO_MCO_2,             GPIOC,      IO_PIN_9,       IO_CFG_MCO_OUTPUT)                    \
+    X_IO( IO_MCO_1,             GPIOA,      IO_PIN_8,       IO_CFG_MCO_OUTPUT)                    \
 /* ---------------------------------------------------------------------------------------------*/
 
 
@@ -127,53 +144,45 @@
 //-------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------
-// SPI2 grouping configuration
-#define SPI2_PIN_ON_PORT_B              (IO_PIN_x  | IO_PIN_x)
+// ADC grouping configuration
+#define ADC_PIN_ON_PORT_A      	(IO_PIN_6  | IO_PIN_7)
+#define ADC_PIN_ON_PORT_C       (IO_PIN_4  | IO_PIN_5)
 
 //--------------------------------------------
-// UART3 grouping configuration
-#define UART3_PIN_ON_PORT_B             (IO_PIN_10 | IO_PIN_11)
+// FMC for LCD grouping configuration
+#define LCD_PIN_ON_PORT_D       (IO_PIN_0  | IO_PIN_1  | IO_PIN_4  | IO_PIN_5  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_14 | IO_PIN_15)
+#define LCD_PIN_ON_PORT_E       (IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
 
+//---------------------------------------------------------
+// SPI2 grouping configuration
+#define SPI2_PIN_ON_PORT_B      (IO_PIN_13 | IO_PIN_14 | IO_PIN_16)
 
-#define IO_ETH_EXT_LED      IO_LED_GREEN
+//--------------------------------------------
+// UART4 grouping configuration
+#define UART4_PIN_ON_PORT_B     (IO_PIN_10 | IO_PIN_11)
 
-//---------------------------------------------------------------------
-//                        LCD pins assignment                         |
-//--------------------------------------------------------------------|
-//| PI15  <-> LCD_TFT R0 | PJ7  <-> LCD_TFT G0  | PE4  <-> LCD_TFT B0 |
-//| PJ0   <-> LCD_TFT R1 | PJ8  <-> LCD_TFT G1  | PJ13 <-> LCD_TFT B1 |
-//| PJ1   <-> LCD_TFT R2 | PJ9  <-> LCD_TFT G2  | PJ14 <-> LCD_TFT B2 |
-//| PJ2   <-> LCD_TFT R3 | PJ10 <-> LCD_TFT G3  | PJ15 <-> LCD_TFT B3 |
-//| PJ3   <-> LCD_TFT R4 | PJ11 <-> LCD_TFT G4  | PG12 <-> LCD_TFT B4 |
-//| PJ4   <-> LCD_TFT R5 | PK0  <-> LCD_TFT G5  | PK4  <-> LCD_TFT B5 |
-//| PJ5   <-> LCD_TFT R6 | PK1  <-> LCD_TFT G6  | PK5  <-> LCD_TFT B6 |
-//| PJ6   <-> LCD_TFT R7 | PK2  <-> LCD_TFT G7  | PK6  <-> LCD_TFT B7 |
-//|--------------------------------------------------------------------
-//|  LCD_TFT HSYNC <-> PI.10  | LCDTFT VSYNC <->  PI.09 |
-//|  LCD_TFT CLK   <-> PI.14  | LCD_TFT DE   <->  PK.07 |
-//|---------------------------|--------------------------
-//|  LCD_DISP      <-> PI.12  |
-//|  LCD_BL_CTRL   <-> PK.03  |
-//-----------------------------
-#define LCD_PIN_ON_PORT_E         (IO_PIN_4)
-#define LCD_PIN_ON_PORT_G         (IO_PIN_12)
-#define LCD_PIN_ON_PORT_I         (IO_PIN_9  | IO_PIN_10 | IO_PIN_14 | IO_PIN_15)
-#define LCD_PIN_ON_PORT_J         (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5  | IO_PIN_6  | IO_PIN_7  | \
-                                   IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
-#define LCD_PIN_ON_PORT_K         (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_4  | IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
+//--------------------------------------------
+// USB grouping configuration
+#define USB_PIN_ON_PORT_A       (IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12)
+
 
 //---------------------------------------------------------------------------------------
 #define IO_GROUP_DEF(X_IO_GROUP) \
 /* ------------------------------------------------------------------------------------------------------*/\
 /*              ENUM ID of the Group,   IO Port,    IO Group Pin,               IO ConfigMode            */\
+/* ADC TOUCH --------------------------------------------------------------------------------------------*/\
+    X_IO_GROUP( IO_ADC_ON_PORT_A,		GPIOA,      ADC_PIN_ON_PORT_A,          IO_CFG_ADC)                \
+    X_IO_GROUP( IO_ADC_ON_PORT_C,       GPIOC,      ADC_PIN_ON_PORT_C,          IO_CFG_ADC)                \
+/* FMC LCD ----------------------------------------------------------------------------------------------*/\
+    X_IO_GROUP( IO_LCD_ON_PORT_D,       GPIOD,      LCD_PIN_ON_PORT_D,          IO_CFG_FMC)                \
+    X_IO_GROUP( IO_LCD_ON_PORT_E,       GPIOE,      LCD_PIN_ON_PORT_E,          IO_CFG_FMC)                \
 /* SPI --------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SPI2_ON_PORT_B,      GPIOB,      SPI2_PIN_ON_PORT_B,         IO_CFG_SPI_AF5)            \
 /* UART -------------------------------------------------------------------------------------------------*/\
-    X_IO_GROUP( IO_UART3_ON_PORT_B,     GPIOB,      UART3_PIN_ON_PORT_B,        IO_CFG_UART3_AF7)          \
+    X_IO_GROUP( IO_UART4_ON_PORT_B,     GPIOB,      UART4_PIN_ON_PORT_B,        IO_CFG_UART3_AF7)          \
+/* USB --------------------------------------------------------------------------------------------------*/\
+    X_IO_GROUP( IO_USB_ON_PORT_A,       GPIOA,      USB_PIN_ON_PORT_A,          IO_CFG_USB_AF10)           \
 /* ------------------------------------------------------------------------------------------------------*/
-
-
-// Note(s) the pin IO_CALIB_OUT_DEBUG is only use in some debug case and must not be initialized on permanent base
 
 //-------------------------------------------------------------------------------------------------
 //
