@@ -1,0 +1,9 @@
+General information
+
+CPU STM32F437VGT6            LQFP100    2 MB FLASH     256K RAM
+LCD USMH-8252MD-T            using FMC 8080 16 Bits mode
+
+Marking
+TR4   ->   Digital transistor
+N2GVE ->   Digital transistor
+12C   ->   PSOT12C: The PSOT series are transient voltage suppressor (TVS) arrays (Protek Devices)

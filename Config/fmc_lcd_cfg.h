@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File : driver_cfg.h
+//  File :  fmc_lcd_cfg.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2026 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -27,34 +27,15 @@
 #pragma once
 
 //-------------------------------------------------------------------------------------------------
-// Include file(s)
+// Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#include "stm32f4xx.h"
+#define CFG_FMC_LCD_BANK                        FMC_LCD_BANK1               // LCD Bank (NE1)
+#define CFG_FMC_LCD_MEM_BUS_WIDTH               FMC_LCD_MEM_BUS_WIDTH_16    // LCD Memory Bus Width
+
+// LCD Timing
+#define CFG_FMC_LCD_TIMING_ADDRESS_SETUP_TIME   2                           // ~18 nSec
+#define CFG_FMC_LCD_TIMING_ADDRESS_HOLD_TIME    2                           // ~18 nSec
+#define CFG_FMC_LCD_TIMING_DATA_SETUP_TIME      8                           // ~54 nSec
 
 //-------------------------------------------------------------------------------------------------
-// Low level Peripheral
-//-------------------------------------------------------------------------------------------------
-
-#define USE_ADC_DRIVER              DEF_DISABLED
-#define USE_CAN_DRIVER              DEF_DISABLED
-#define USE_CRC_DRIVER              DEF_ENABLED
-#define USE_DAC_DRIVER              DEF_DISABLED
-#define USE_ETH_DRIVER              DEF_DISABLED
-#define USE_FMC_LCD_DRIVER          DEF_ENABLED
-#define USE_FMC_SDRAM_DRIVER        DEF_DISABLED
-#define USE_IO_BUS_DRIVER           DEF_DISABLED
-#define USE_I2C_DRIVER              DEF_DISABLED
-#define USE_I2S_DRIVER              DEF_DISABLED
-#define USE_PWM_DRIVER              DEF_DISABLED
-#define USE_QSPI_DRIVER             DEF_DISABLED
-#define USE_RNG_DRIVER              DEF_ENABLED
-#define USE_RTC_DRIVER              DEF_ENABLED
-#define USE_SAI_DRIVER              DEF_DISABLED                    // Serial audio out
-#define USE_SDIO_DRIVER             DEF_DISABLED
-#define USE_SPI_DRIVER              DEF_ENABLED
-#define USE_TIM_DRIVER              DEF_DISABLED
-#define USE_UART_DRIVER             DEF_ENABLED
-#define USE_USB_DRIVER              DEF_DISABLED
-    #define USE_USB_OTG_FS_CODE     DEF_DISABLED
-    #define USE_USB_OTG_HS_CODE     DEF_DISABLED

@@ -142,6 +142,7 @@
 		<Unit filename="..\Config\digini_cfg.h" />
 		<Unit filename="..\Config\dma_var.h" />
 		<Unit filename="..\Config\driver_cfg.h" />
+		<Unit filename="..\Config\fmc_lcd_cfg.h" />
 		<Unit filename="..\Config\memory_cfg.h" />
 		<Unit filename="..\Config\nOSConfig.h" />
 		<Unit filename="..\Config\project_def.h" />
@@ -213,24 +214,32 @@
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\core\core_cm4.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32F4xx\stm32f4xx.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_crc.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_dma.h" />
-		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_fmc.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_rtc.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_spi.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_uart.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_fmc_lcd.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_io.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_rng.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_system_clock.h" />
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_crc.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_dma.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_fmc.cpp">
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_rtc.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_spi.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_uart.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_STM32F4_fmc_lcd.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_STM32F4_io.cpp">
@@ -243,6 +252,26 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_STM32F4_system_clock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\String\inc\lib_string.h" />
+		<Unit filename="..\Module\Digini\String\src\lib_string.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\inc\lib_class_crc.h" />
+		<Unit filename="..\Module\Digini\Utility\inc\lib_fifo.h" />
+		<Unit filename="..\Module\Digini\Utility\inc\lib_stacktistic.h" />
+		<Unit filename="..\Module\Digini\Utility\inc\lib_utility.h" />
+		<Unit filename="..\Module\Digini\Utility\src\lib_fifo.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_stacktistic.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_time_and_delay.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\port\STM32F4xx\lib_stacktistic_STM32F4.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\nOS\inc\nOS.h" />
