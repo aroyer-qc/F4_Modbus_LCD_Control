@@ -184,6 +184,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Database\inc\lib_class_database.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_hard_dbase.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_rom_dbase.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_database_wrapper.h" />
+		<Unit filename="..\Module\Digini\Database\inc\port\STM32F4xx\lib_class_STM32F4_bkpreg_dbase.h" />
 		<Unit filename="..\Module\Digini\Database\src\lib_class_database.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -194,6 +198,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Database\src\lib_database_wrapper.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Database\src\port\STM32F4xx\lib_class_STM32F4_bkpreg_dbase.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Digini\inc\lib_advanced_macro.h" />
@@ -262,6 +269,18 @@
 		<Unit filename="..\Module\Digini\Utility\inc\lib_fifo.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_stacktistic.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_utility.h" />
+		<Unit filename="..\Module\Digini\Utility\src\lib_2bcddec.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_2decbcd.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_4bcddec.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_4decbcd.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_fifo.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
