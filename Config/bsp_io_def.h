@@ -160,7 +160,7 @@
 
 //--------------------------------------------
 // UART4 grouping configuration
-#define UART4_PIN_ON_PORT_B     (IO_PIN_10 | IO_PIN_11)
+#define UART4_PIN_ON_PORT_C     (IO_PIN_10 | IO_PIN_11)
 
 //--------------------------------------------
 // USB grouping configuration
@@ -182,7 +182,7 @@
 /* SPI --------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SPI2_ON_PORT_B,      GPIOB,      SPI2_PIN_ON_PORT_B,         IO_CFG_SPI_AF5)            \
 /* UART -------------------------------------------------------------------------------------------------*/\
-    X_IO_GROUP( IO_UART4_ON_PORT_B,     GPIOB,      UART4_PIN_ON_PORT_B,        IO_CFG_UART4_AF8)          \
+    X_IO_GROUP( IO_UART4_ON_PORT_C,     GPIOC,      UART4_PIN_ON_PORT_C,        IO_CFG_UART4_AF8)          \
 /* USB --------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_USB_ON_PORT_A,       GPIOA,      USB_PIN_ON_PORT_A,          IO_CFG_USB_AF10)           \
 /* ------------------------------------------------------------------------------------------------------*/
