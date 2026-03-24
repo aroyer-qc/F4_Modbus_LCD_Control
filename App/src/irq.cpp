@@ -45,9 +45,9 @@ extern "C"
 //
 //-------------------------------------------------------------------------------------------------
 
-NOS_ISR(DMA1_Stream3_IRQHandler)
+NOS_ISR(DMA2_Stream7_IRQHandler)
 {
-	//myUART_Terminal.DMA_TX_IRQ_Handler();
+	myUART_Terminal.DMA_TX_IRQ_Handler();
 }
 
 NOS_ISR(DMA2_Stream0_IRQHandler)
@@ -70,7 +70,7 @@ NOS_ISR(DMA2_Stream3_IRQHandler)
 //
 //-------------------------------------------------------------------------------------------------
 #if (USE_SPI_DRIVER == DEF_ENABLED)
-//NOS_ISR(SPI1_IRQHandler)
+//NOS_ISR(SPI2_IRQHandler)
 //{
     //mySPI_ForDAC.IRQ_Handler();
  //   mySPI_ForVFD.IRQ_Handler();
@@ -88,7 +88,7 @@ NOS_ISR(DMA2_Stream3_IRQHandler)
 //
 //-------------------------------------------------------------------------------------------------
 
-NOS_ISR(USART3_IRQHandler)
+NOS_ISR(USART1_IRQHandler)
 {
     myUART_Terminal.IRQ_Handler();
 }

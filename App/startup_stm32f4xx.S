@@ -135,6 +135,10 @@ LoopFillStack:
 */
     .section  .text.Default_Handler,"ax",%progbits
 Default_Handler:
+    ldr r0, =0xE000ED04     @ SCB->ICSR
+    ldr r1, [r0]            @ read ICSR
+    ldr r2, =0x1FF
+    and r1, r1, r2          @ extract VECTACTIVE bits [8:0]
 Infinite_Loop:
   b  Infinite_Loop
   .size  Default_Handler, .-Default_Handler

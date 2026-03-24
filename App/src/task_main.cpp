@@ -28,10 +28,10 @@
 // Include file(s)
 //-------------------------------------------------------------------------------------------------
 
-#define TASK_MAIN_GLOBAL
 #include "./lib_digini.h"
-#undef  TASK_MAIN_GLOBAL
+#define TASK_MAIN_GLOBAL
 #include "task_main.h"
+#undef  TASK_MAIN_GLOBAL
 
 //-------------------------------------------------------------------------------------------------
 //
@@ -66,7 +66,7 @@ SystemState_e TaskMain::Initialize(void)
 {
     nOS_Error Error = NOS_OK;
 
-     DEBUG_PrintSerialLog(SYS_DEBUG_LEVEL_APPLICATION, "Initializing TaskMain\n");
+    DEBUG_PrintSerialLog(SYS_DEBUG_LEVEL_APPLICATION, "Initializing TaskMain\n");
 
     Error = nOS_ThreadCreate(&m_Handle,
                              TaskMain_Wrapper,
@@ -93,7 +93,7 @@ void TaskMain::Run(void)
 {
     for(;;)
     {
-        nOS_Sleep(10);
+        nOS_Sleep(200);
         LED_Toggle(IO_LED_GREEN_STATUS);
     }
 }

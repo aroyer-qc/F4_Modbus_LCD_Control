@@ -84,6 +84,8 @@
     X_IO_CFG( IO_CFG_MCO_OUTPUT,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MCO)            \
 /* SPI IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF5_SPI)            \
+/* USART IO's CFG --------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO_CFG( IO_CFG_USART1_AF7,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF7_USART1)         \
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_UART4_AF8,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF8_UART4)          \
 /* USB IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
@@ -106,8 +108,8 @@
 /* ---------------------------------------------------------------------------------------------*/\
 /*        ENUM ID of the IO,    IO Port,    IO Pin,         IO Config                           */\
 /* Output IO's ---------------------------------------------------------------------------------*/\
-    X_IO( IO_LED_GREEN_STATUS,  GPIOB,      IO_PIN_11,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
-    X_IO( IO_LED_RED_STATUS,    GPIOB,      IO_PIN_10,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LED_GREEN_STATUS,  GPIOB,      IO_PIN_11,      IO_CFG_OUTPUT_PP_LS_DEF1)             \
+    X_IO( IO_LED_RED_STATUS,    GPIOB,      IO_PIN_10,      IO_CFG_OUTPUT_PP_LS_DEF1)             \
     X_IO( IO_BUZZER,            GPIOB,      IO_PIN_0,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
     X_IO( IO_PS0,               GPIOC,      IO_PIN_0,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
     X_IO( IO_PS1,               GPIOC,      IO_PIN_1,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
@@ -159,8 +161,12 @@
 #define SPI2_PIN_ON_PORT_B      (IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
 
 //--------------------------------------------
+// USART1 grouping configuration
+#define USART1_PIN_ON_PORT_B    (IO_PIN_6  | IO_PIN_7)
+
+//--------------------------------------------
 // UART4 grouping configuration
-#define UART4_PIN_ON_PORT_B     (IO_PIN_10 | IO_PIN_11)
+#define UART4_PIN_ON_PORT_C     (IO_PIN_10 | IO_PIN_11)
 
 //--------------------------------------------
 // USB grouping configuration
@@ -181,8 +187,10 @@
     X_IO_GROUP( IO_LCD_ON_PORT_E,       GPIOE,      LCD_PIN_ON_PORT_E,          IO_CFG_FMC)                \
 /* SPI --------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SPI2_ON_PORT_B,      GPIOB,      SPI2_PIN_ON_PORT_B,         IO_CFG_SPI_AF5)            \
+/* USART ------------------------------------------------------------------------------------------------*/\
+    X_IO_GROUP( IO_USART1_ON_PORT_B,    GPIOB,      USART1_PIN_ON_PORT_B,       IO_CFG_USART1_AF7)         \
 /* UART -------------------------------------------------------------------------------------------------*/\
-    X_IO_GROUP( IO_UART4_ON_PORT_B,     GPIOB,      UART4_PIN_ON_PORT_B,        IO_CFG_UART4_AF8)          \
+    X_IO_GROUP( IO_UART4_ON_PORT_C,     GPIOC,      UART4_PIN_ON_PORT_C,        IO_CFG_UART4_AF8)          \
 /* USB --------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_USB_ON_PORT_A,       GPIOA,      USB_PIN_ON_PORT_A,          IO_CFG_USB_AF10)           \
 /* ------------------------------------------------------------------------------------------------------*/

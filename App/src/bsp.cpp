@@ -40,6 +40,7 @@
 #define BSP_GLOBAL
 #include "bsp.h"
 #undef  BSP_GLOBAL
+#include "task_main.h"
 
 //-------------------------------------------------------------------------------------------------
 // Const(s)
@@ -68,6 +69,9 @@ const Language_e Lang = LANG_ENGLISH;
 void BSP_Initialize(void)
 {
     DIGINI_Initialize();
+
+    IO_TogglePin(IO_LCD_TFT_BL_ON_OFF);
+    IO_TogglePin(IO_LCD_TFT_BL_ON_OFF);
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -86,6 +90,7 @@ SystemState_e BSP_PostOS_Initialize(void)
     SystemState_e State = SYS_READY;
 
     State = DIGINI_PostInitialize();
+    pMainTask->Initialize();
 
     return State;
 }
