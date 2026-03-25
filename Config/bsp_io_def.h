@@ -85,7 +85,7 @@
 /* SPI IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF5_SPI)            \
 /* USART IO's CFG --------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_USART1_AF7,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF7_USART1)         \
+    X_IO_CFG( IO_CFG_USART6_AF8,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF8_USART6)         \
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_UART4_AF8,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF8_UART4)          \
 /* USB IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
@@ -162,7 +162,7 @@
 
 //--------------------------------------------
 // USART1 grouping configuration
-#define USART1_PIN_ON_PORT_B    (IO_PIN_6  | IO_PIN_7)
+#define USART6_PIN_ON_PORT_C    (IO_PIN_6  | IO_PIN_7)
 
 //--------------------------------------------
 // UART4 grouping configuration
@@ -188,7 +188,7 @@
 /* SPI --------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SPI2_ON_PORT_B,      GPIOB,      SPI2_PIN_ON_PORT_B,         IO_CFG_SPI_AF5)            \
 /* USART ------------------------------------------------------------------------------------------------*/\
-    X_IO_GROUP( IO_USART1_ON_PORT_B,    GPIOB,      USART1_PIN_ON_PORT_B,       IO_CFG_USART1_AF7)         \
+    X_IO_GROUP( IO_USART6_ON_PORT_C,    GPIOC,      USART6_PIN_ON_PORT_C,       IO_CFG_USART6_AF8)         \
 /* UART -------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_UART4_ON_PORT_C,     GPIOC,      UART4_PIN_ON_PORT_C,        IO_CFG_UART4_AF8)          \
 /* USB --------------------------------------------------------------------------------------------------*/\

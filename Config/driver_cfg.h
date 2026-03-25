@@ -39,7 +39,7 @@
 #define USE_ADC_DRIVER              DEF_DISABLED
 #define USE_CAN_DRIVER              DEF_DISABLED
 #define USE_CRC_DRIVER              DEF_ENABLED
-#define USE_DAC_DRIVER              DEF_DISABLED
+#define USE_DAC_DRIVER              DEF_ENABLED
 #define USE_ETH_DRIVER              DEF_DISABLED
 #define USE_FMC_LCD_DRIVER          DEF_ENABLED
 #define USE_FMC_SDRAM_DRIVER        DEF_DISABLED

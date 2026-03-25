@@ -211,9 +211,9 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
   #if (UART_DRIVER_SUPPORT_UART6_CFG == DEF_ENABLED)
     {
         USART6,                     // USARTx
-        ISR_NONE_IRQn,                // IRQn_Channel
+        USART6_IRQn,                // IRQn_Channel
         7,                          // PreempPrio
-        UART_Config_e(TEST_CONFIG | UART_CFG_ENABLE_TX),
+        UART_Config_e(UART_CFG_N_8_1 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
 
