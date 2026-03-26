@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  device_cfg.h
+//  File :  flash_cfg.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2026 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -30,21 +30,7 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define USE_SPI_SERIAL_FLASH_DRIVER                 DEF_ENABLED
-
-
-// Define for GRAFX Driver
-#define GRAFX_LCD_BASE                              FMC_BANK1_1             // NE1 region
-#define GRAFX_LCD_REGISTER_SELECT_BIT               16                      // A16
-
-//-------------------------------------------------------------------------------------------------
-// Include file(s)
-//-------------------------------------------------------------------------------------------------
-
-#if USE_SPI_SERIAL_FLASH_DRIVER == DEF_ENABLED
-#include "./Digini/Peripheral/inc/device/lib_class_spi_serial_flash.h"
-#endif
-
-#include "./Digini/Grafx/inc/driver/generic/lib_fmc_lcd_320x240 - SSD2119.h"
+#define FLASH_USE_AUTO_DETECT_FLASH             DEF_DISABLED
+#define FLASH_USE_W25Q128JV                     DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------

@@ -79,7 +79,7 @@
 #define VT100_USER_MENU_TREE_DEF(ENTRY, MENU) \
 \
 
-// ------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
 #define NOT_USED\
                                  ENTRY  (MENU,  MenuMain,          ID_TEST_MENU,                       CALLBACK_None,                         MenuTest1,                        VT100_LBL_TEST                                  )  \
@@ -104,4 +104,4 @@
                                  ENTRY  (MENU,  MenuSetting,       ID_MISC_MENU,                       CALLBACK_None,                         MenuSetMisc,                      VT100_LBL_MISCELLEANEOUS                        ) \
                                  ENTRY  (MENU,  MenuSetting,       ID_TIME_MENU,                       CALLBACK_None,                         MenuSettingTime,                  VT100_LBL_TIME_AND_DATE                         ) \
 
-// ------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------

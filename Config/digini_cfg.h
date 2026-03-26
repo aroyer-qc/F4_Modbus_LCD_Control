@@ -4,7 +4,7 @@
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2026 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -87,7 +87,7 @@
 //-------------------------------------------------------------------------------------------------
 // GRAFX Configuration
 //
-#define DIGINI_USE_GRAFX                                DEF_DISABLED
+#define DIGINI_USE_GRAFX                                DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Software CRC Configuration
