@@ -30,38 +30,14 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define   IV11_NUMBER_OF_TUBE       6
-
-// Config for lib_class_STM32F1_WS281x.h
-#define WS281x_USE_PRECALCULATED_PWM_BUFFER         DEF_DISABLED
-#define WS281x_USE_48_BITS_DMA_TRANSFER             DEF_ENABLED
-#define WS281x_USE_WS2812B                          DEF_ENABLED
-
-
-#define USE_SPI_WS281X_DRIVER                       DEF_DISABLED
-#define USE_SPI_DACX3508_DRIVER                     DEF_DISABLED
-#define USE_SPI_VFD_DRIVER                          DEF_DISABLED
-#define USE_SPI_IV_11_DRIVER                        DEF_DISABLED
+#define USE_SPI_SERIAL_FLASH_DRIVER                 DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Include file(s)
 //-------------------------------------------------------------------------------------------------
 
-// Put here included for all high level driver. Driver for device not in the CPU
-#if USE_SPI_WS281X_DRIVER == DEF_ENABLED
-#include "./Digini/Peripheral/inc/device/lib_class_pwm_WS281x.h"
-#endif
-
-#if USE_SPI_DACX3508_DRIVER == DEF_ENABLED
-#include "./Peripheral/inc/device/lib_class_spi_DACX3508.h"
-#endif
-
-#if USE_SPI_VFD_DRIVER == DEF_ENABLED
-#include "./Peripheral/inc/device/lib_class_spi_VFD.h"
-#endif
-
-#if USE_SPI_IV_11_DRIVER == DEF_ENABLED
-#include "./Peripheral/inc/device/lib_class_spi_IV_11.h"
+#if USE_SPI_SERIAL_FLASH_DRIVER == DEF_ENABLED
+#include "./Digini/Peripheral/inc/device/lib_class_spi_serial_flash.h"
 #endif
 
 //-------------------------------------------------------------------------------------------------

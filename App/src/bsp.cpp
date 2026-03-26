@@ -42,6 +42,7 @@
 #undef  BSP_GLOBAL
 #include "task_main.h"
 
+
 //-------------------------------------------------------------------------------------------------
 // Const(s)
 //-------------------------------------------------------------------------------------------------
@@ -71,6 +72,12 @@ void BSP_Initialize(void)
     DIGINI_Initialize();
 
     IO_TogglePin(IO_LCD_TFT_BL_ON_OFF);
+
+    myDAC_Driver.Initialize();
+    myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 10);
+    myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 100);
+    myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 200);
+    myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 255);
     IO_TogglePin(IO_LCD_TFT_BL_ON_OFF);
 }
 
