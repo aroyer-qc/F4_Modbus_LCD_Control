@@ -83,6 +83,7 @@
 			<Add symbol="STM32F427_437xx" />
 			<Add directory="..\Config" />
 			<Add directory="..\Module" />
+			<Add directory="..\Config\Grafx" />
 		</Compiler>
 		<Cpp>
 			<Add option="-mfloat-abi=hard" />
@@ -143,6 +144,17 @@
 		<Unit filename="..\Config\dma_var.h" />
 		<Unit filename="..\Config\driver_cfg.h" />
 		<Unit filename="..\Config\fmc_lcd_cfg.h" />
+		<Unit filename="..\Config\Grafx\color_cfg.h" />
+		<Unit filename="..\Config\Grafx\fmc_lcd_cfg.h" />
+		<Unit filename="..\Config\Grafx\font_cfg.lst" />
+		<Unit filename="..\Config\Grafx\grafx_cfg.h" />
+		<Unit filename="..\Config\Grafx\grafx_display_layer_cfg.h" />
+		<Unit filename="..\Config\Grafx\menu_cfg.h" />
+		<Unit filename="..\Config\Grafx\menu_link_cfg.h" />
+		<Unit filename="..\Config\Grafx\menu_link_list_cfg.h" />
+		<Unit filename="..\Config\Grafx\static_skin_image.h" />
+		<Unit filename="..\Config\Grafx\widget_cfg.h" />
+		<Unit filename="..\Config\Grafx\widget_var.h" />
 		<Unit filename="..\Config\memory_cfg.h" />
 		<Unit filename="..\Config\nOSConfig.h" />
 		<Unit filename="..\Config\project_def.h" />
@@ -214,12 +226,69 @@
 		<Unit filename="..\module\Digini\Digini\src\lib_label.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\module\Digini\Grafx\inc\driver\generic\lib_fmc_lcd_320x240 - SSD2119.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\driver\generic\lib_Grafx_GenDriver.h" />
+		<Unit filename="..\module\Digini\Grafx\src\color\lib_grafx_color.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\driver\generic\lib_Grafx_GenDriver.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\driver\generic\lib_STM32xxx_fmc_lcd_320x240 - SSD2119.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\font\lib_class_font.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\layer\lib_class_layer.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\lib_grafx.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\lib_tools.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\service\lib_service.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\task\lib_gui_task.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\task\lib_pdi_task.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_basic_box.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_basic_button.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_basic_rectangle.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_basic_shape.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_button.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_icon.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_label.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Grafx\src\widget\lib_widget_label_list.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\module\Digini\lib_digini.h" />
 		<Unit filename="..\module\Digini\Memory\inc\lib_memory.h" />
 		<Unit filename="..\module\Digini\Memory\src\lib_memory.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Peripheral\inc\device\core\core_cm4.h" />
+		<Unit filename="..\module\Digini\Peripheral\inc\device\lib_class_custom_resistive_touch.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\device\lib_class_spi_serial_flash.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\device\port\STM32F4xx\stm32f4xx.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_crc.h" />
@@ -233,6 +302,9 @@
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_io.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_rng.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_system_clock.h" />
+		<Unit filename="..\module\Digini\Peripheral\src\device\lib_class_resistive_touch.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\module\Digini\Peripheral\src\device\lib_class_spi_serial_flash.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
