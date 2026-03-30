@@ -61,9 +61,9 @@
 
 
 // LCD Display
-#define GRAFX_DRIVER_INCLUDE                "./Digini/Grafx/inc/driver/generic/lib_fmc_lcd_320x240 - SSD2119.h"
+#define GRAFX_DRIVER_INCLUDE                "./Digini/Grafx/inc/driver/STM32/lib_STM32_fmc_lcd_320x240 - SSD2119.h"
 #define GRAFX_DRIVER_ARGUMENT               nullptr                                     // this driver does not have argument (ex. pointer on structure and/or peripheral)
 
 // Pointing device, here it is the resistive touch screen
 #define GRAFX_PDI_HARD_INTERFACE           // (void*)&myI2C_Control
-#define PDI_DRIVER_INCLUDE                  "./Digini/Peripheral/inc/device/lib_class_custom_resistive_touch.h"
+#define PDI_DRIVER_INCLUDE                  "./Digini/Peripheral/inc/device/lib_class_resistive_touch_discrete.h"
