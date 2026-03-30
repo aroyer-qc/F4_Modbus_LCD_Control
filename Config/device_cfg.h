@@ -32,11 +32,6 @@
 
 #define USE_SPI_SERIAL_FLASH_DRIVER                 DEF_ENABLED
 
-
-// Define for GRAFX Driver
-#define GRAFX_LCD_BASE                              FMC_BANK1_1             // NE1 region
-#define GRAFX_LCD_REGISTER_SELECT_BIT               16                      // A16
-
 //-------------------------------------------------------------------------------------------------
 // Include file(s)
 //-------------------------------------------------------------------------------------------------
@@ -44,7 +39,5 @@
 #if USE_SPI_SERIAL_FLASH_DRIVER == DEF_ENABLED
 #include "./Digini/Peripheral/inc/device/lib_class_spi_serial_flash.h"
 #endif
-
-#include "./Digini/Grafx/inc/driver/generic/lib_fmc_lcd_320x240 - SSD2119.h"
 
 //-------------------------------------------------------------------------------------------------

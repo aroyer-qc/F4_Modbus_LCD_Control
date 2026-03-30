@@ -58,12 +58,13 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define GRAFX_USE_GRAFX_CUSTOM_COLOR                    DEF_DISABLED    // Will not try to load color_cfg.h
 #define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED
-#define GRAFX_USE_PDI_MULTI_EVENT                       DEF_DISABLED    // Enable support for Multi-touch
-#define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device IRQ (touch) 
-
 #define GRAFX_USE_POINTING_DEVICE                       DEF_ENABLED
+#define GRAFX_USE_PDI_MULTI_EVENT                       DEF_DISABLED    // Enable support for Multi-touch
+#define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device IRQ (touch)
+#define GRAFX_USE_RAM_DATABASE                          DEF_ENABLED
+#define GRAFX_USE_GRAFX_CUSTOM_COLOR                    DEF_DISABLED    // Will not try to load color_cfg.h
+
 
 // Special section use in this project
 #define GRAFX_USE_MULTI_LINE                            DEF_DISABLED
@@ -88,8 +89,6 @@
   #define GRAFX_PDI_INVERT_Y                            DEF_DISABLED    // Not existent on this setup
 #endif
 
-
-
 //#define GRAFX_USE_TIMED_WIDGET
 #define GRAFX_USE_FONT_SIZE_8                           DEF_DISABLED    // Not used on this setup
 #define GRAFX_USE_FONT_SIZE_12                          DEF_ENABLED
@@ -106,7 +105,7 @@
 #define GRAFX_COLOR_AL44                                DEF_DISABLED
 #define GRAFX_COLOR_AL88                                DEF_DISABLED
 #define GRAFX_COLOR_L4                                  DEF_DISABLED
-#define GRAFX_COLOR_A8                                  DEF_ENABLED     // Needed for the FONT transfer
+#define GRAFX_COLOR_A8                                  DEF_ENABLED     // Needed for the FONT and also for the touch sensing layer
 #define GRAFX_COLOR_A4                                  DEF_DISABLED
 #define GRAFX_COLOR_RGB332                              DEF_DISABLED
 #define GRAFX_COLOR_RGB444                              DEF_DISABLED
@@ -114,13 +113,18 @@
 #define DIGINI_MAX_PRINT_NUMBER_OF_LINE                 8               // This is the maximum number of line in the same string
 
 // Default service available in Grafx
-#define USE_SERV_DATE                                   DEF_ENABLED     // Service to provide the date
-#define USE_SERV_INPD                                   DEF_ENABLED     // Service to input a decimal value
-#define USE_SERV_INPF                                   DEF_ENABLED     // Service to input a float value
-#define USE_SERV_INPH                                   DEF_ENABLED     // Service to input a Hexa value
+#define USE_SERV_DATE                                   DEF_DISABLED    // Service to provide the date
+#define USE_SERV_INPD                                   DEF_DISABLED    // Service to input a decimal value
+#define USE_SERV_INPF                                   DEF_DISABLED    // Service to input a float value
+#define USE_SERV_INPH                                   DEF_DISABLED    // Service to input a Hexa value
 #define USE_SERV_INPS                                   DEF_DISABLED    // Service to input a string
-#define USE_SERV_TIME                                   DEF_ENABLED     // Service to provide time
-#define USE_SERV_XCHG                                   DEF_ENABLED     // Special service to exchange data.
+#define USE_SERV_TIME                                   DEF_DISABLED    // Service to provide time
+#define USE_SERV_XCHG                                   DEF_DISABLED    // Special service to exchange data.
+
+// Define for GRAFX Driver
+#define GRAFX_LCD_BASE                                  FMC_BANK1_1             // NE1 region
+#define GRAFX_LCD_REGISTER_SELECT_BIT                   16                      // A16
+
 
 //-------------------------------------------------------------------------------------------------
 

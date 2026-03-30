@@ -34,7 +34,7 @@
 
 //               Enum ID,                  ID1,                ID2,                ID3,                ID4,                ID5,                ID6,                 ID7,               ID8
 #define LINK_LIST_DEF(X_LINK_LIST) \
-    X_LINK_LIST( LINK_LIST_MAIN_HUB,       LINK_MAIN_PAGE_XY,  INVALID_LINK,       INVALID_LINK,      INVALID_LINK,       INVALID_LINK,        INVALID_LINK,        INVALID_LINK,      INVALID_LINK ) \
- 
+    X_LINK_LIST( LINK_LIST_MAIN_HUB,       LINK_START_UP,      INVALID_LINK,       INVALID_LINK,      INVALID_LINK,       INVALID_LINK,        INVALID_LINK,        INVALID_LINK,      INVALID_LINK ) \
+
 //-------------------------------------------------------------------------------------------------
 

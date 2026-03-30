@@ -226,12 +226,29 @@
 		<Unit filename="..\module\Digini\Digini\src\lib_label.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\module\Digini\Grafx\inc\color\lib_grafx_color.h" />
 		<Unit filename="..\module\Digini\Grafx\inc\driver\generic\lib_fmc_lcd_320x240 - SSD2119.h" />
 		<Unit filename="..\module\Digini\Grafx\inc\driver\generic\lib_Grafx_GenDriver.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\font\lib_class_font.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\layer\lib_class_layer.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_const.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_dbase.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_define.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_enum.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_enum_x_macro.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_font.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_link.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\lib_grafx_typedef.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\service\lib_service.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\task\lib_gui_task.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\task\lib_pdi_task.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\widget\lib_class_widget.h" />
+		<Unit filename="..\module\Digini\Grafx\inc\widget\lib_widget_variable.h" />
 		<Unit filename="..\module\Digini\Grafx\src\color\lib_grafx_color.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\module\Digini\Grafx\src\driver\generic\lib_Grafx_GenDriver.cpp">
+		<Unit filename="..\module\Digini\Grafx\src\driver\generic\lib_STM32xxx_dma2d_Grafx_GenDriver.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Grafx\src\driver\generic\lib_STM32xxx_fmc_lcd_320x240 - SSD2119.cpp">
@@ -291,6 +308,7 @@
 		<Unit filename="..\module\Digini\Peripheral\inc\device\lib_class_custom_resistive_touch.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\device\lib_class_spi_serial_flash.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\device\port\STM32F4xx\stm32f4xx.h" />
+		<Unit filename="..\module\Digini\Peripheral\inc\interface\lib_class_pointing_device_interface.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_crc.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_dac.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_dma.h" />
