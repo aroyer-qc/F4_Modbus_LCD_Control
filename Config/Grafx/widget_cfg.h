@@ -72,7 +72,7 @@
 //-------------------------------------------------------------------------------------------------
 //      Enum ID,         Service,      Sub, Px, Py,   Sx,   Sy,   Icon 0,  		 Icon 1, 	    Icon 2,        Icon 3,        Option,
 #define ICON_DEF(X_ICON) \
-X_ICON( BACK_RCA,        SERV_ID_RFSH, 0,   0,  0,    0,    0,    BACK_RCA_IMG,  INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
+X_ICON( BACK_SCREEN,     SERV_ID_RFSH, 0,   0,  0,    0,    0,    BACK_RCA_IMG,  INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
 X_ICON( ICON_STATUS,     SERV_ID_RFSH, 0,   5,  98,   0,    0,    INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
 
 //     Enum ID,              Service,      Sub, Px,   Py,   Sx,   Sy,   TC,      TAC,     TAC2,     Font ID,         Text Blend,   Text Label        Text Option         Option

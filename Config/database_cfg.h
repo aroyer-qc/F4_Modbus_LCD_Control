@@ -64,6 +64,8 @@
     X_HARD_DBASE( REC_TIME,               1,               1,                  sizeof(Time_t),          AccessTime)              \
     X_HARD_DBASE( REC_DATE,               1,               1,                  sizeof(Date_t),          AccessDate)              \
     X_HARD_DBASE( REC_TIME_FORMAT,        1,               1,                  sizeof(TimeFormat_e),    AccessTimeFormat)        \
+    X_HARD_DBASE( APPLICATION_LABEL,      NB_LABEL_CONST,  NB_LANGUAGE_CONST,  sizeof(char*),           GetLabel)           \
+
 
 // FOR static location RAM BASE You must define RAM_BASE_ADDRESS and give address of your database of the RAM Region here (Ex. &ByteArray_Ram[x]
 // FOR dynamic location RAM_BASE_ADDRESS is declare nullptr, you must then call set address to setup your dynamic RAM BASE location

@@ -30,9 +30,8 @@
 
 #ifdef GFX_GLOBAL
 
-const PageWidget_t PageLoading          [] =  { //{   BACK_LOADING,            INVALID_LINK        },
-                                                //{   LABEL_SKIN_LOADING,      LINK_MAIN_HUB       },
-                                                //{   PROGRESS_LOADING,        INVALID_LINK        },
+const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INVALID_LINK        },
+                                                {   ICON_STATUS,             INVALID_LINK        },
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 
@@ -40,11 +39,11 @@ const PageWidget_t PageMainHub          [] =  {
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 
-const PageWidget_t PageJogHub           [] =  { //{   VIRTUAL_JOG_HUB,         INVALID_LINK        },
+const PageWidget_t PageMenu             [] =  { //{   VIRTUAL_JOG_HUB,         INVALID_LINK        },
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 
-const PageWidget_t PageMainDisplayXY    [] =  { //{   BACK_DIAMOND,            INVALID_LINK        },      // Background
+const PageWidget_t PageDiagnostic    [] =  { //{   BACK_DIAMOND,            INVALID_LINK        },      // Background
                                                 //{   BOX_1_3,                 LINK_AXIS_X         },      // Yellow box around axis X information
                                                 //{   BOX_2_3,                 LINK_AXIS_Y         },      //   " Y
                                                 //{   BOX_3_3,                 LINK_SPINDLE        },      //   " Spindle

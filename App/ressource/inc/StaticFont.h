@@ -7,17 +7,17 @@
 
 //-------------------------------------------
 
-enum FONT_ListID_t
+enum FONT_ListID_e
 {
     FONT_AMIRI_12_R,
     FONT_ARIAL_12_B,
-    FONT_DS-DIGITAL_16_B,
+    FONT_DS_DIGITAL_16_B,
     NUMBER_OF_FONT
-}
+};
 
 //-------------------------------------------
 
-extern const FontInfo_t* FONT_pInfoTable[NUMBER_OF_FONT];
+extern const FontInfo_t FONT_InfoTable[NUMBER_OF_FONT];
 extern const uint8_t FONT_RawData[67420];
 
 //-------------------------------------------

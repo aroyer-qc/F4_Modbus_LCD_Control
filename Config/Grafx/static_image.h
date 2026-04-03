@@ -37,10 +37,13 @@
     X_STATIC_SKIN(  BOOT_SCREEN,        SII_BootScreen          )\
     X_STATIC_SKIN(  PROGRESS_CURSOR,    SII_ProgressCursor      )\
     X_STATIC_SKIN(  PROGRESS_BAR,       SII_ProgressBar         )\
+    X_STATIC_SKIN(  LED_GRAY_OFF,       SII_LedGrayOFF_16x16    )\
     X_STATIC_SKIN(  LED_GREEN_OFF,      SII_LedGreenOFF_16x16   )\
-    X_STATIC_SKIN(  LED_GREEN_ON,       SII_Ledgreen_ON_16x16   )\
-    X_STATIC_SKIN(  LED_RED_OFF,        SII_LedRred_OFF_16x16   )\
+    X_STATIC_SKIN(  LED_GREEN_ON,       SII_LedGreen_ON_16x16   )\
+    X_STATIC_SKIN(  LED_RED_OFF,        SII_LedRed_OFF_16x16    )\
     X_STATIC_SKIN(  LED_RED_ON,         SII_LedRed_ON_16x16     )\
+    X_STATIC_SKIN(  LED_RED_OFF,        SII_LedYellow_OFF_16x16 )\
+    X_STATIC_SKIN(  LED_RED_ON,         SII_LedYellow_ON_16x16  )\
     X_STATIC_SKIN(  LED_BLUE_OFF,       SII_LedBlue_OFF_16x16   )\
     X_STATIC_SKIN(  LED_BLUE_ON,        SII_LedBlue_ON_16x16    )\
 

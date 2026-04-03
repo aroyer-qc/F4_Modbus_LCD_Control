@@ -36,34 +36,22 @@
 #pragma once
 
 //-------------------------------------------------------------------------------------------------
-//
-// Memory mapping for STM32F746G-DISCO
-//
-//
-//          0xC000 0000              GRAFX base address
-//
-//          0xC000 0000              Layer 1                RGB565   = 261120 Bytes
-//          0xC003 FC00              Layer 2                ARGB8888 = 522240 Bytes
-//          0xC00B F400              Layer 3                RGB565   = 261120 Bytes
-//          0xC00F F000              Layer 4                ARGB8888 = 522240 Bytes
-//          0xC017 E800              Layer 5                ARGB8888 = 522240 Bytes             Use for skin sliding page
-//          0xC01F E000              Touch Sense layer      RGB565   = 261120 Bytes
-//          0xC023 DC00              Free memory pointer for raw skin data 5776384 Bytes free for the skin raw data
-//              ...
-//          0xC07C 0000              256K database for skin info
-//
-//-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
 #define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED
-#define GRAFX_USE_POINTING_DEVICE                       DEF_ENABLED
+#define GRAFX_USE_POINTING_DEVICE                       DEF_DISABLED // DEF_ENABLED
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_DISABLED    // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device IRQ (touch)
-#define GRAFX_USE_RAM_DATABASE                          DEF_ENABLED
+#define GRAFX_USE_RAM_DATABASE                          DEF_DISABLED    // Not used as all graphic/font etc, are static
+#define GRAFX_USE_HARD_DATABASE                         DEF_ENABLED     // Use graphic/font etc from flash memory
 #define GRAFX_USE_GRAFX_CUSTOM_COLOR                    DEF_DISABLED    // Will not try to load color_cfg.h
+
+#define GRAFX_USE_DISPLAY_RAM                           DEF_ENABLED
+#define GRAFX_USE_RAM_DATA                              DEF_DISABLED     // if ram memory was reserved in loading script for layer
+#define GRAFX_USE_ROM_DATA                              DEF_DISABLED
 
 
 // Special section use in this project
@@ -73,11 +61,7 @@
 #define GRAFX_SLIDING_PAGE_GRANULARITY                  16              // Each step is 10 Pixel wide
 #define GRAFX_TICK_WAIT_BETWEEN_SLIDE_IN_LOOP           16
 
-#define GRAFX_USE_BACKGROUND_LAYER                      DEF_DISABLED    // if you're LCD support more than 1 layer
-#define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_DISABLED    // if there is enough memory to construct on a hidden layer. (prevent glitch)
-#define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_DISABLED
-
-#define GRAFX_DEBUG_GUI                                 DEF_DISABLED
+#define GRAFX_DEBUG_GUI                                 DEF_DISABLED	// This option can not be set if no layer exist
 #define GRAFX_PAINT_BOX_DEBUG                           DEF_DISABLED
 #define GRAFX_PAINT_BOX_DEBUG_COLOR                     RED
 
@@ -89,14 +73,13 @@
   #define GRAFX_PDI_INVERT_Y                            DEF_DISABLED    // Not existent on this setup
 #endif
 
-//#define GRAFX_USE_TIMED_WIDGET
-#define GRAFX_USE_FONT_SIZE_8                           DEF_DISABLED    // Not used on this setup
-#define GRAFX_USE_FONT_SIZE_12                          DEF_ENABLED
-#define GRAFX_USE_FONT_SIZE_16                          DEF_ENABLED
+#define GRAFX_USE_FONT_SIZE_8                           DEF_DISABLED    // Must not used when GRAFX_USE_RAM_DATABASE is DEF_DISABLED
+#define GRAFX_USE_FONT_SIZE_12                          DEF_DISABLED
+#define GRAFX_USE_FONT_SIZE_16                          DEF_DISABLED
 
 ///------------------------------------------------------------------------------------------------
 /// Color supported mode in this project
-#define GRAFX_COLOR_ARGB8888                            DEF_DISABLED
+#define GRAFX_COLOR_ARGB8888                            DEF_ENABLED     // Needed to merge graphic using DMA2D
 #define GRAFX_COLOR_RGB888                              DEF_DISABLED
 #define GRAFX_COLOR_RGB565                              DEF_ENABLED
 #define GRAFX_COLOR_ARGB1555                            DEF_DISABLED
@@ -125,6 +108,15 @@
 #define GRAFX_LCD_BASE                                  FMC_BANK1_1             // NE1 region
 #define GRAFX_LCD_REGISTER_SELECT_BIT                   16                      // A16
 
+#define GRAFX_TICK_WAIT_BETWEEN_REFRESH_LOOP            8
 
 //-------------------------------------------------------------------------------------------------
+// Layer support configuration (other than TOUCH_SENSE_LAYER, we won't use full frame RAM for construction)
 
+#define GRAFX_USE_BACKGROUND_LAYER                      DEF_DISABLED	// We don't have access to display memory and don't have multi layer capability here
+#define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_DISABLED	// We don't have access to display memory and don't have multi layer capability here
+#define GRAFX_USE_FOREGROUND_LAYER           			DEF_DISABLED    // We don't access display memory via layer
+#define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_DISABLED
+#define GRAFX_DEBUG_GUI                                 DEF_DISABLED	// This option can not be set if no layer exist
+
+//-------------------------------------------------------------------------------------------------

@@ -30,10 +30,10 @@ _Min_Stack_Size = __STACK_SIZE;   /* required amount of stack */
 /* Specify the memory areas */
 MEMORY
 {
-     FLASH       (rx)  : ORIGIN = 0x08000000,                 LENGTH = 2048K      /*  Main FLASH memory       */
-     RAM         (rwx) : ORIGIN = 0x20000000,                 LENGTH = 128K       /*  Main RAM memory         */
-     GFX_DISPLAY (rwx) : ORIGIN = ORIGIN(RAM) + LENGTH(RAM),  LENGTH = 64K        /*  Display Memory          */
-     CCMRAM      (rwx) : ORIGIN = 0x10000000,                 LENGTH = 64K        /*  Core Coupled RAM Memory */
+     FLASH       (rx)  : ORIGIN = 0x08000000,                 LENGTH = 2048K      /*  Main FLASH memory            */
+     RAM         (rwx) : ORIGIN = 0x20000000,                 LENGTH = 192K - 768 /*  Main RAM memory              */
+     GFX_DISPLAY (rwx) : ORIGIN = ORIGIN(RAM) + LENGTH(RAM),  LENGTH = 768        /*  touch screen reserved memory */
+     CCMRAM      (rwx) : ORIGIN = 0x10000000,                 LENGTH = 64K        /*  Core Coupled RAM Memory      */
 }
 
 _estack = ORIGIN(RAM) + LENGTH(RAM);
@@ -162,5 +162,7 @@ SECTIONS
    __StackLimit = _estack - _Min_Stack_Size;
    /* Check if data + heap + stack exceeds RAM limit */
    ASSERT(__StackLimit >= __HeapLimit, "Region RAM overflowed with stack")
+
+   __gfx_display_base__   = ORIGIN(GFX_DISPLAY);
 
 }
