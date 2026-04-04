@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  Static_skin_image.h
+//  File :  Static_image.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2026 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -23,31 +23,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 //-------------------------------------------------------------------------------------------------
-//
-//  Notes: X-macro Listing all the image resident in flash
-//
-//-------------------------------------------------------------------------------------------------
 
 #pragma once
 
 //-------------------------------------------------------------------------------------------------
 
-//                  IMAGE_ID        Struct Info Image
-#define STATIC_SKIN_DEF(X_STATIC_SKIN)  \
-    X_STATIC_SKIN(  BOOT_SCREEN,        SII_BootScreen          )\
-    X_STATIC_SKIN(  PROGRESS_CURSOR,    SII_ProgressCursor      )\
-    X_STATIC_SKIN(  PROGRESS_BAR,       SII_ProgressBar         )\
-    X_STATIC_SKIN(  LED_GRAY_OFF,       SII_LedGrayOFF_16x16    )\
-    X_STATIC_SKIN(  LED_GREEN_OFF,      SII_LedGreenOFF_16x16   )\
-    X_STATIC_SKIN(  LED_GREEN_ON,       SII_LedGreen_ON_16x16   )\
-    X_STATIC_SKIN(  LED_RED_OFF,        SII_LedRed_OFF_16x16    )\
-    X_STATIC_SKIN(  LED_RED_ON,         SII_LedRed_ON_16x16     )\
-    X_STATIC_SKIN(  LED_RED_OFF,        SII_LedYellow_OFF_16x16 )\
-    X_STATIC_SKIN(  LED_RED_ON,         SII_LedYellow_ON_16x16  )\
-    X_STATIC_SKIN(  LED_BLUE_OFF,       SII_LedBlue_OFF_16x16   )\
-    X_STATIC_SKIN(  LED_BLUE_ON,        SII_LedBlue_ON_16x16    )\
-
-//-------------------------------------------------------------------------------------------------
-
-
-
+extern const StaticImageInfo_t SII_BootScreen;
+extern const StaticImageInfo_t SII_ProgressCursor;
+extern const StaticImageInfo_t SII_ProgressBar;
+extern const StaticImageInfo_t SII_LedBlueOff_16x16;
+extern const StaticImageInfo_t SII_LedBlueOn_16x16;
+extern const StaticImageInfo_t SII_LedGrayOff_16x16;
+extern const StaticImageInfo_t SII_LedGreenOff_16x16;
+extern const StaticImageInfo_t SII_LedGreenOn_16x16;
+extern const StaticImageInfo_t SII_LedRedOff_16x16;
+extern const StaticImageInfo_t SII_LedRedOn_16x16;
+extern const StaticImageInfo_t SII_LedYellowOff_16x16;
+extern const StaticImageInfo_t SII_LedYellowOn_16x16;

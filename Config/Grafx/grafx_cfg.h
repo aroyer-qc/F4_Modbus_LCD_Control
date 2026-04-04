@@ -45,14 +45,16 @@
 #define GRAFX_USE_POINTING_DEVICE                       DEF_DISABLED // DEF_ENABLED
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_DISABLED    // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device IRQ (touch)
-#define GRAFX_USE_RAM_DATABASE                          DEF_DISABLED    // Not used as all graphic/font etc, are static
+#define GRAFX_USE_CUSTOM_COLOR                          DEF_DISABLED    // Will not try to load color_cfg.h
+
 #define GRAFX_USE_HARD_DATABASE                         DEF_ENABLED     // Use graphic/font etc from flash memory
-#define GRAFX_USE_GRAFX_CUSTOM_COLOR                    DEF_DISABLED    // Will not try to load color_cfg.h
+#define GRAFX_USE_QUAD_SPI_FOR_DATABASE                 DEF_DISABLED
+#define GRAFX_USE_RAM_DATABASE                          DEF_DISABLED    // Not used as all graphic/font etc, are static
+#define GRAFX_USE_ROM_DATABASE                          DEF_ENABLED
 
 #define GRAFX_USE_DISPLAY_RAM                           DEF_ENABLED
 #define GRAFX_USE_RAM_DATA                              DEF_DISABLED     // if ram memory was reserved in loading script for layer
 #define GRAFX_USE_ROM_DATA                              DEF_DISABLED
-
 
 // Special section use in this project
 #define GRAFX_USE_MULTI_LINE                            DEF_DISABLED

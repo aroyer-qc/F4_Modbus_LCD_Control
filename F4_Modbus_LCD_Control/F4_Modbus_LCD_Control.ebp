@@ -84,6 +84,7 @@
 			<Add directory="..\Config" />
 			<Add directory="..\Module" />
 			<Add directory="..\Config\Grafx" />
+			<Add directory="..\App\ressource\inc" />
 		</Compiler>
 		<Cpp>
 			<Add option="-mfloat-abi=hard" />
@@ -115,28 +116,35 @@
 		<Unit filename="..\App\inc\task_main.h" />
 		<Unit filename="..\App\inc\taskIdle.h" />
 		<Unit filename="..\App\ressource\inc\StaticFont.h" />
+		<Unit filename="..\App\ressource\inc\StaticImage.h" />
 		<Unit filename="..\App\ressource\src\BootScreen.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App\ressource\src\LedGrayOff16x16.cpp">
+		<Unit filename="..\App\ressource\src\LedBlueOff_16x16.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App\ressource\src\LedGreenOff16x16.cpp">
+		<Unit filename="..\App\ressource\src\LedBlueOn_16x16.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App\ressource\src\LedGreenOn16x16.cpp">
+		<Unit filename="..\App\ressource\src\LedGrayOff_16x16.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App\ressource\src\LedRedOff16x16.cpp">
+		<Unit filename="..\App\ressource\src\LedGreenOff_16x16.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App\ressource\src\LedRedOn16x16.cpp">
+		<Unit filename="..\App\ressource\src\LedGreenOn_16x16.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App\ressource\src\LedYellowOff16x16.cpp">
+		<Unit filename="..\App\ressource\src\LedRedOff_16x16.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App\ressource\src\LedYellowOn16x16.cpp">
+		<Unit filename="..\App\ressource\src\LedRedOn_16x16.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App\ressource\src\LedYellowOff_16x16.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App\ressource\src\LedYellowOn_16x16.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\App\ressource\src\ProgressBar.cpp">
@@ -190,7 +198,7 @@
 		<Unit filename="..\Config\Grafx\menu_cfg.h" />
 		<Unit filename="..\Config\Grafx\menu_link_cfg.h" />
 		<Unit filename="..\Config\Grafx\menu_link_list_cfg.h" />
-		<Unit filename="..\Config\Grafx\static_image.h" />
+		<Unit filename="..\Config\Grafx\static_image_def.h" />
 		<Unit filename="..\Config\Grafx\widget_cfg.h" />
 		<Unit filename="..\Config\Grafx\widget_var.h" />
 		<Unit filename="..\Config\memory_cfg.h" />
@@ -427,16 +435,28 @@
 		<Unit filename="..\module\Digini\Utility\inc\lib_fifo.h" />
 		<Unit filename="..\module\Digini\Utility\inc\lib_stacktistic.h" />
 		<Unit filename="..\module\Digini\Utility\inc\lib_utility.h" />
+		<Unit filename="..\module\Digini\Utility\src\lib_1aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Utility\src\lib_2aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\module\Digini\Utility\src\lib_2bcddec.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Utility\src\lib_2decbcd.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\module\Digini\Utility\src\lib_4aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\module\Digini\Utility\src\lib_4bcddec.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Utility\src\lib_4decbcd.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Utility\src\lib_6aschex.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Utility\src\lib_fifo.cpp">
