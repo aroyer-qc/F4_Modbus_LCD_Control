@@ -7,7 +7,7 @@
 
 //-------------------------------------------
 
-const uint32_t Progress_cursor[216] =
+const uint32_t ProgressCursor[216] =
 {
     0xFFACB1B3, 0xFFACB1B3, 0xFFACB1B3, 0xFFACB1B3, 0xFFACB1B3, 0xFFBDC1C2, 0xFFE5E6E6, 0xFFECECEC, 0xFFECECEC, 0xFFECECEC, 0xFFECECEC, 0xFFECECEC, 0xFF657276, 0xFF657276, 0xFF657276, 0xFF657276,
     0xFF657276, 0xFF637074, 0xFF647075, 0xFF98A0A2, 0xFFE0E1E1, 0xFFECECEC, 0xFFECECEC, 0xFFECECEC, 0xFF6F7D82, 0xFF6F7D82, 0xFF6F7D82, 0xFF6F7D82, 0xFF6F7D82, 0xFF6E7C81, 0xFF6D7B80, 0xFF6A787D,
@@ -26,14 +26,14 @@ const uint32_t Progress_cursor[216] =
 };
 
 
-extern const StaticImageInfo_t SII_Progress_cursor;
-const StaticImageInfo_t SII_Progress_cursor =
+extern const StaticImageInfo_t SII_ProgressCursor;
+const StaticImageInfo_t SII_ProgressCursor =
 {
     216,
     216,
     48,
     32,
-    (uint8_t*)Progress_cursor,
+    (uint8_t*)ProgressCursor,
     216,
     PIXEL_FORMAT_ARGB8888,
     COMPX_COMPRESSION_NONE,

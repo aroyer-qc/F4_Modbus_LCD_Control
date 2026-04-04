@@ -7,7 +7,7 @@
 
 //-------------------------------------------
 
-const uint32_t LedYellowOn16x16[256] =
+const uint32_t LedYellowOn_16x16[256] =
 {
     0x00FFFFFF, 0x00FFFFFF, 0x0D43422F, 0x3743422F, 0x8F6E6C3D, 0xE0A09C4B, 0xFAC3BE57, 0xFFDCD65E, 0xFFDCD65E, 0xFAC3BE57, 0xE0A09C4B, 0x8F6E6C3D, 0x3743422F, 0x0D43422F, 0x00FFFFFF, 0x00FFFFFF,
     0x00FFFFFF, 0x0E43422F, 0x43504F33, 0xCDA4A04C, 0xFFD2CC5B, 0xFFD7D15D, 0xFFDBD55E, 0xFFDCD65E, 0xFFDCD65E, 0xFFDBD55E, 0xFFD7D15D, 0xFFD2CC5B, 0xCDA4A04C, 0x43504F33, 0x0E43422F, 0x00FFFFFF,
@@ -28,14 +28,14 @@ const uint32_t LedYellowOn16x16[256] =
 
 };
 
-extern const StaticImageInfo_t SII_LedYellowOn16x16;
-const StaticImageInfo_t SII_LedYellowOn16x16 =
+extern const StaticImageInfo_t SII_LedYellowOn_16x16;
+const StaticImageInfo_t SII_LedYellowOn_16x16 =
 {
     16,
     16,
     64,
     32,
-    LedYellowOn16x16,
+    LedYellowOn_16x16,
     256,
     PIXEL_FORMAT_ARGB8888,
     COMPX_COMPRESSION_NONE,

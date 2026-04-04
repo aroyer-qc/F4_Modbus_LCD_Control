@@ -7,7 +7,7 @@
 
 //-------------------------------------------
 
-const uint32_t LedGrayOff16x16[256] =
+const uint32_t LedGrayOff_16x16[256] =
 {
     0x00000000, 0x00000000, 0x0D101010, 0x37101010, 0x8F262626, 0xE0424242, 0xF4545454, 0xFC545454, 0xFC545454, 0xF2545454, 0xE0424242, 0x8F262626, 0x37101010, 0x0D101010, 0x00000000, 0x00000000,
     0x00000000, 0x0E101010, 0x43171717, 0xCD444444, 0xFF5D5D5D, 0xFF5F5F5F, 0xFF616161, 0xFE626262, 0xFE626262, 0xFF616161, 0xFF5F5F5F, 0xFF5D5D5D, 0xCD444444, 0x43171717, 0x0E101010, 0x00000000,
@@ -28,14 +28,14 @@ const uint32_t LedGrayOff16x16[256] =
 
 };
 
-extern const StaticImageInfo_t SII_LedGrayOff16x16;
-const StaticImageInfo_t SII_LedGrayOff16x16 =
+extern const StaticImageInfo_t SII_LedGrayOff_16x16;
+const StaticImageInfo_t SII_LedGrayOff_16x16 =
 {
     16,
     16,
     64,
     32,
-    LedGrayOff16x16,
+    LedGrayOff_16x16,
     256,
     PIXEL_FORMAT_ARGB8888,
     COMPX_COMPRESSION_NONE,

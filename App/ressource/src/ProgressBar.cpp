@@ -7,21 +7,21 @@
 
 //-------------------------------------------
 
-const uint32_t Progress_bar[18] =
+const uint32_t ProgressBar[18] =
 {
     0xFFACB1B3, 0xFF657276, 0xFF6F7D82, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186, 0xFF728186,
     0xFF728186, 0xFFB3B9BB,
 };
 
 
-extern const StaticImageInfo_t SII_Progress_bar;
-const StaticImageInfo_t SII_Progress_bar =
+extern const StaticImageInfo_t SII_ProgressBar;
+const StaticImageInfo_t SII_ProgressBar =
 {
     18,
     18,
     4,
     32,
-    (uint8_t*)Progress_bar,
+    (uint8_t*)ProgressBar,
     18,
     PIXEL_FORMAT_ARGB8888,
     COMPX_COMPRESSION_NONE,

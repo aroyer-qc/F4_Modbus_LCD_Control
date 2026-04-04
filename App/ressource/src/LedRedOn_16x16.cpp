@@ -7,7 +7,7 @@
 
 //-------------------------------------------
 
-const uint32_t LedRedOn16x16[256] =
+const uint32_t LedRedOn_16x16[256] =
 {
     0x00FFDCDC, 0x00FFDCDC, 0x0D432A28, 0x37432A28, 0x8F6E3834, 0xE0A04840, 0xFAC3544B, 0xFFDC5C51, 0xFFDC5C51, 0xFAC3544B, 0xE0A04840, 0x8F6E3834, 0x37432A28, 0x0D432A28, 0x00FFDCDC, 0x00FFDCDC,
     0x00FFDCDC, 0x0E432A28, 0x43502E2C, 0xCDA44941, 0xFFD2584E, 0xFFD75A50, 0xFFDB5C51, 0xFFDC5C51, 0xFFDC5C51, 0xFFDB5C51, 0xFFD75A50, 0xFFD2584E, 0xCDA44941, 0x43502E2C, 0x0E432A28, 0x00FFDCDC,
@@ -28,14 +28,14 @@ const uint32_t LedRedOn16x16[256] =
 
 };
 
-extern const StaticImageInfo_t SII_LedRedOn16x16;
-const StaticImageInfo_t SII_LedRedOn16x16 =
+extern const StaticImageInfo_t SII_LedRedOn_16x16;
+const StaticImageInfo_t SII_LedRedOn_16x16 =
 {
     16,
     16,
     64,
     32,
-    LedRedOn16x16,
+    LedRedOn_16x16,
     256,
     PIXEL_FORMAT_ARGB8888,
     COMPX_COMPRESSION_NONE,

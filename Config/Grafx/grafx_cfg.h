@@ -51,6 +51,7 @@
 #define GRAFX_USE_QUAD_SPI_FOR_DATABASE                 DEF_DISABLED
 #define GRAFX_USE_RAM_DATABASE                          DEF_DISABLED    // Not used as all graphic/font etc, are static
 #define GRAFX_USE_ROM_DATABASE                          DEF_ENABLED
+#define GRAFX_USE_DISPLAY_LAYER							DEF_DISABLED
 
 #define GRAFX_USE_DISPLAY_RAM                           DEF_ENABLED
 #define GRAFX_USE_RAM_DATA                              DEF_DISABLED     // if ram memory was reserved in loading script for layer

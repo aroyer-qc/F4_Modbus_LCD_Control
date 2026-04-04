@@ -72,13 +72,13 @@
 //-------------------------------------------------------------------------------------------------
 //      Enum ID,         Service,      Sub, Px, Py,   Sx,   Sy,   Icon 0,  		 Icon 1, 	    Icon 2,        Icon 3,        Option,
 #define ICON_DEF(X_ICON) \
-X_ICON( BACK_SCREEN,     SERV_ID_RFSH, 0,   0,  0,    0,    0,    BACK_RCA_IMG,  INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
-X_ICON( ICON_STATUS,     SERV_ID_RFSH, 0,   5,  98,   0,    0,    INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
+X_ICON( BACK_SCREEN,     SERV_ID_RFSH, 0,   0,  0,    0,    0,    BOOT_SCREEN,   INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
+X_ICON( ICON_STATUS,     SERV_ID_RFSH, 0,   5,  98,   0,    0,    LED_GRAY_OFF,  INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
 
 //     Enum ID,              Service,      Sub, Px,   Py,   Sx,   Sy,   TC,      TAC,     TAC2,     Font ID,         Text Blend,   Text Label        Text Option         Option
 #define LABEL_DEF(X_LBL) \
-X_LBL( LABEL_TIME,           SERV_ID_TIME, 0,   0,    7,    128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_TIME,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
-X_LBL( LABEL_DATE,           SERV_ID_DATE, 0,   0,    67,   128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_DATE,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_TIME,           SERV_ID_TIME, 0,   0,    7,    128,  20,   GRAY_16, GRAY_16, GRAY_16,  FONT_ARIAL_12_B,       CLEAR_BLEND,  LBL_TIME,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_DATE,           SERV_ID_DATE, 0,   0,    67,   128,  20,   GRAY_16, GRAY_16, GRAY_16,  FONT_ARIAL_12_B,       CLEAR_BLEND,  LBL_DATE,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
 
 //-------------------------------------------------------------------------------------------------
 
