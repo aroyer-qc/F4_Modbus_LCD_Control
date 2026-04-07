@@ -67,7 +67,7 @@
 			<Add option="$device=cortex-m4" />
 			<Add option="$fpu=fpv4-sp-d16" />
 			<Add option="$lscript=./stm32f437vg_flash.ld" />
-			<Add option="$stack=0x0200" />
+			<Add option="$stack=0x0300" />
 			<Add option="$heap=0x2000" />
 		</Device>
 		<Compiler>
@@ -178,6 +178,7 @@
 		<Unit filename="..\App\startup_stm32f4xx.S">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Config\adc_cfg.h" />
 		<Unit filename="..\Config\bsp_io_def.h" />
 		<Unit filename="..\Config\cli_cfg.h" />
 		<Unit filename="..\Config\cli_var.h" />
@@ -190,7 +191,7 @@
 		<Unit filename="..\Config\digini_cfg.h" />
 		<Unit filename="..\Config\dma_var.h" />
 		<Unit filename="..\Config\driver_cfg.h" />
-		<Unit filename="..\Config\fmc_lcd_cfg.h" />
+		<Unit filename="..\Config\flash_cfg.h" />
 		<Unit filename="..\Config\Grafx\color_cfg.h" />
 		<Unit filename="..\Config\Grafx\fmc_lcd_cfg.h" />
 		<Unit filename="..\Config\Grafx\grafx_cfg.h" />
@@ -373,10 +374,11 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Peripheral\inc\device\core\core_cm4.h" />
-		<Unit filename="..\module\Digini\Peripheral\inc\device\lib_class_custom_resistive_touch.h" />
+		<Unit filename="..\module\Digini\Peripheral\inc\device\lib_class_resistive_touch_discrete.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\device\lib_class_spi_serial_flash.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\device\port\STM32F4xx\stm32f4xx.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\interface\lib_class_pointing_device_interface.h" />
+		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_adc.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_crc.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_dac.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_dma.h" />
@@ -388,10 +390,13 @@
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_io.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_rng.h" />
 		<Unit filename="..\module\Digini\Peripheral\inc\port\STM32F4xx\lib_STM32F4_system_clock.h" />
-		<Unit filename="..\module\Digini\Peripheral\src\device\lib_class_resistive_touch.cpp">
+		<Unit filename="..\module\Digini\Peripheral\src\device\lib_class_resistive_touch_discrete.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Peripheral\src\device\lib_class_spi_serial_flash.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_adc.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_crc.cpp">

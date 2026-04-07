@@ -70,7 +70,9 @@ void TaskIdle(void)
     // Low level main control loop
     while(1)
     {
-        LIB_Delay_mSec(200);
-        //nOS_Sleep(1);
+        LIB_Delay_uSec(200);
+
+        PDI_pDriver->Process();
+
     }
 }

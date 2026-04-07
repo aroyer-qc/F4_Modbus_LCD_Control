@@ -36,7 +36,7 @@
 // Low level Peripheral
 //-------------------------------------------------------------------------------------------------
 
-#define USE_ADC_DRIVER              DEF_DISABLED
+#define USE_ADC_DRIVER              DEF_ENABLED
 #define USE_CAN_DRIVER              DEF_DISABLED
 #define USE_CRC_DRIVER              DEF_ENABLED
 #define USE_DAC_DRIVER              DEF_ENABLED
