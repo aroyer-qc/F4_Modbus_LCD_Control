@@ -76,14 +76,14 @@
     X_IO_CFG( IO_CFG_OUTPUT_PP_HS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       1)                     \
 /* ADC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_ADC,                               IO_MODE_ANALOG,     IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_LOW,        IO_AF0)                \
-/* DAC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_DAC,                               IO_MODE_ANALOG,     IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_LOW,        IO_AF0)                \
 /* FMC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_FMC,                               IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF12_FMC)           \
 /* CAN IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_CAN_AF9,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF9_CAN1)           \
 /* MCO IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_MCO_OUTPUT,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MCO)            \
+/* PWM IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO_CFG( IO_CFG_PWM_AF1,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF1_TIM2)           \
 /* SPI IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF5_SPI)            \
 /* USART IO's CFG --------------------------------------------------------------------------------------------------------------------------------*/\
@@ -126,8 +126,8 @@
     X_IO( IO_RS485_DE,          GPIOC,      IO_PIN_12,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
 /* LCD IO's ------------------------------------------------------------------------------------*/\
     X_IO( IO_LCD_RESET,         GPIOD,      IO_PIN_6,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
-    X_IO( IO_LCD_TFT_BL_ON_OFF, GPIOA,      IO_PIN_5,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
-    X_IO( IO_LCD_TFT_DIMMING,   GPIOA,      IO_PIN_4,       IO_CFG_DAC)                           \
+    X_IO( IO_LCD_TFT_BL_PWM,    GPIOA,      IO_PIN_5,       IO_CFG_PWM_AF1)                       \
+    X_IO( IO_LCD_TFT_BL_ADC,    GPIOA,      IO_PIN_4,       IO_CFG_ADC)                           \
 /* TOUCH IO's ----------------------------------------------------------------------------------*/\
     X_IO( IO_TOUCH_Y1_SWITCH,   GPIOE,      IO_PIN_2,       IO_CFG_OUTPUT_OC_LS_DEF1)             \
     X_IO( IO_TOUCH_X1_SWITCH,   GPIOE,      IO_PIN_5,       IO_CFG_OUTPUT_OC_LS_DEF1)             \

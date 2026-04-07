@@ -69,17 +69,10 @@ const Language_e Lang = LANG_ENGLISH;
 //-------------------------------------------------------------------------------------------------
 void BSP_Initialize(void)
 {
-    //myDAC_Driver.Initialize();
     myADC2_Driver.Initialize();
+    myTIM_LCD_Backlight.Initialize();
+    myPWM_LCD_Backlight.Initialize();
     DIGINI_Initialize();
-
-    IO_TogglePin(IO_LCD_TFT_BL_ON_OFF);
-  //  myADC2_Driver.Initialize();
-  //  myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 10);
-  //  myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 100);
-  //  myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 200);
-  //  myDAC_Driver.SetChannel_1(DAC_8_BITS_RIGHT, 255);
-    //IO_TogglePin(IO_LCD_TFT_BL_ON_OFF);
 }
 
 //-------------------------------------------------------------------------------------------------

@@ -35,8 +35,8 @@
 
 #define CFG_RTC_CLOCK_SOURCE                        CFG_RCC_BDCR_RTCSEL_LSE             // CFG_RCC_BDCR_RTCSEL_NO_CLOCK, CFG_RCC_BDCR_RTCSEL_LSE, CFG_RCC_BDCR_RTCSEL_LSI or CFG_RCC_BDCR_RTCSEL_HSE
 
-// User loop value for LIB_Delay_uSec function.. use IO to check for the right value
-#define CFG_DELAY_TIMING_LOOP_VALUE_FOR_1_USEC      38 // TODO need to be set and fine tuned
+// User loop value for LIB_Delay_uSec function.. Use IO to check for the right value
+//#define CFG_DELAY_TIMING_LOOP_VALUE_FOR_1_USEC                                        // Only require on CPU without cyle counter (M0/M0+ or any CPU other than Cortex-M3, -M4, -M7, -M33, -M55).
 
 // User clock selection
 #define CFG_SYS_CLOCK_MUX                           CFG_RCC_CFGR_SW_PLL                 // CFG_RCC_CFGR_SW_HSI, CFG_RCC_CFGR_SW_HSE or CFG_RCC_CFGR_SW_PLL

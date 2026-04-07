@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  dma_cfg.h
+//  File :  tim_cfg.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2025 Alain Royer.
+// Copyright(c) 2020 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -27,23 +27,14 @@
 #pragma once
 
 //-------------------------------------------------------------------------------------------------
-// Define(s)
+//  Typedef(s)
 //-------------------------------------------------------------------------------------------------
 
-// DMA2 Stream0, Channel 7 — Reserved for memory-to-memory transfers
-#define DMA_MEM2MEM_MODULE          DMA2
-#define DMA_MEM2MEM_ENABLE          RCC_AHB1ENR_DMA2EN
-#define DMA_MEM2MEM_STREAM          DMA2_Stream0
-#define DMA_MEM2MEM_CHANNEL         7
-#define DMA_IFCR                    LIFCR
-#define DMA_FLAG                    (DMA_LIFCR_CTCIF0 | DMA_LIFCR_CHTIF0 | DMA_LIFCR_CTEIF0 | DMA_LIFCR_CDMEIF0 | DMA_LIFCR_CFEIF0)
-#define DMA_ISR                     LISR                    // or HISR according to stream
-#define DMA_TCIF                    DMA_LISR_TCIF0          // DMA_LISR_TCIFx / DMA_HISR_TCIFx
-#define DMA_ERRIF                   (DMA_LISR_TEIF0 | DMA_LISR_DMEIF0 | DMA_LISR_FEIF0)
-#define DMA_MUTEX_GUARD_TIME        10
+enum PWM_ChannelID_e
+{
+	PWM_LCD_BACKLIGHT,
+    NB_OF_PWM_CHANNEL
+};
+// todo use X-macro if more parameter
 
 //-------------------------------------------------------------------------------------------------
-
-
-
-
