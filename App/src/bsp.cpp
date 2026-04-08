@@ -72,7 +72,18 @@ void BSP_Initialize(void)
     myADC2_Driver.Initialize();
     myTIM_LCD_Backlight.Initialize();
     myPWM_LCD_Backlight.Initialize();
+
+    myPWM_LCD_Backlight.Start();
+    myPWM_LCD_Backlight.SetDuty(20);
+    //myPWM_LCD_Backlight.SetDuty(21);
+    //myPWM_LCD_Backlight.SetDuty(22);
+    //myPWM_LCD_Backlight.SetDuty(23);
+    //myPWM_LCD_Backlight.SetDuty(24);
+    myPWM_LCD_Backlight.SetDuty(25);
+
     DIGINI_Initialize();
+
+
 }
 
 //-------------------------------------------------------------------------------------------------

@@ -44,7 +44,7 @@ const PWM_Info_t PWM_Info[NB_OF_PWM_CHANNEL] =
     },
 };
 //use it in the x-macro mode
-class PWM_Driver myPWM_LCD_Backlight   (PWM_LCD_BACKLIGHT,   &myTIM_LCD_Backlight);
+class PWM_Driver myPWM_LCD_Backlight(PWM_LCD_BACKLIGHT, &myTIM_LCD_Backlight);
 
 #else // PWM_DRIVER_GLOBAL
 
