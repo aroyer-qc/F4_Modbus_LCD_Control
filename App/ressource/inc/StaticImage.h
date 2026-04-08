@@ -28,9 +28,7 @@
 
 //-------------------------------------------------------------------------------------------------
 
-extern const StaticImageInfo_t SII_BootScreen;
-extern const StaticImageInfo_t SII_ProgressCursor;
-extern const StaticImageInfo_t SII_ProgressBar;
+extern const StaticImageInfo_t SII_DiamondPlate;
 extern const StaticImageInfo_t SII_LedBlueOff_16x16;
 extern const StaticImageInfo_t SII_LedBlueOn_16x16;
 extern const StaticImageInfo_t SII_LedGrayOff_16x16;

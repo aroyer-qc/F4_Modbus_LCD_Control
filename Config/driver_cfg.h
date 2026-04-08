@@ -62,7 +62,7 @@
 
 // LCD Display
 #define GRAFX_DRIVER_INCLUDE                "./Digini/Grafx/inc/driver/STM32/lib_STM32_fmc_lcd_320x240 - SSD2119.h"
-#define GRAFX_DRIVER_ARGUMENT               nullptr                                     // this driver does not have argument (ex. pointer on structure and/or peripheral)
+#define GRAFX_DRIVER_ARGUMENT               &SII_DiamondPlate                                                           // Need the background image StaticImageInfo_t to contruct on it
 
 // Pointing device, here it is the resistive touch screen
 #define GRAFX_PDI_HARD_INTERFACE            nullptr// (void*)&myI2C_Control

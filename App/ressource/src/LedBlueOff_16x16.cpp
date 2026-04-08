@@ -5,7 +5,7 @@
 #include "./lib_digini.h"
 #ifdef DIGINI_USE_GRAFX
 
-//-------------------------------------------
+//-----------------------------------------
 
 const uint32_t LedBlueOff_16x16[256] =
 {

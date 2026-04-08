@@ -34,9 +34,7 @@
 
 //                  IMAGE_ID        Struct Info Image
 #define STATIC_IMAGE_DEF(X_STATIC_IMAGE)  \
-    X_STATIC_IMAGE( BOOT_SCREEN,        &SII_BootScreen          )\
-    X_STATIC_IMAGE( PROGRESS_CURSOR,    &SII_ProgressCursor      )\
-    X_STATIC_IMAGE( PROGRESS_BAR,       &SII_ProgressBar         )\
+    X_STATIC_IMAGE( BACKGROUND,         &SII_DiamondPlate        )\
     X_STATIC_IMAGE( LED_BLUE_OFF,       &SII_LedBlueOff_16x16    )\
     X_STATIC_IMAGE( LED_BLUE_ON,        &SII_LedBlueOn_16x16     )\
     X_STATIC_IMAGE( LED_GRAY_OFF,       &SII_LedGrayOff_16x16    )\
