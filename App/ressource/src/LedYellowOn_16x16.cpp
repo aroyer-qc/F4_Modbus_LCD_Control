@@ -31,13 +31,15 @@ const uint32_t LedYellowOn_16x16[256] =
 extern const StaticImageInfo_t SII_LedYellowOn_16x16;
 const StaticImageInfo_t SII_LedYellowOn_16x16 =
 {
-    16,
-    16,
+    {
+        LedYellowOn_16x16,
+        16,
+        16,
+        PIXEL_FORMAT_ARGB8888,
+    },
     64,
     32,
-    LedYellowOn_16x16,
     256,
-    PIXEL_FORMAT_ARGB8888,
     COMPX_COMPRESSION_NONE,
 };
 

@@ -116,9 +116,7 @@
 //-------------------------------------------------------------------------------------------------
 // Layer support configuration (other than TOUCH_SENSE_LAYER, we won't use full frame RAM for construction)
 
-#define GRAFX_USE_BACKGROUND_LAYER                      DEF_DISABLED	// We don't have access to display memory and don't have multi layer capability here
 #define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_DISABLED	// We don't have access to display memory and don't have multi layer capability here
-#define GRAFX_USE_FOREGROUND_LAYER           			DEF_DISABLED    // We don't access display memory via layer
 #define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_DISABLED
 #define GRAFX_DEBUG_GUI                                 DEF_DISABLED	// This option can not be set if no layer exist
 

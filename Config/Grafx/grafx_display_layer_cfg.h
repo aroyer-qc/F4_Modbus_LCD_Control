@@ -33,14 +33,13 @@
 //-------------------------------------------------------------------------------------------------
 //           Name of the layer              Initial layer      Pixel Format            Size X                    Size Y
 #define LAYER_DEF(X_LAYER) \
-    X_LAYER( FOREGROUND_DISPLAY,            LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0)\
+    X_LAYER( BACKGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0)\
+    X_LAYER( FOREGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0)\
     X_LAYER( TOUCH_SENSE_LAYER,             LAYER_VIRTUAL,     PIXEL_FORMAT_A8,        GRAFX_DRIVER_SIZE_X / 10, GRAFX_DRIVER_SIZE_Y / 10)\
 
 //-------------------------------------------------------------------------------------------------
 
 // Unused define layer
-// BACKGROUND_DISPLAY_LAYER_0,
-// FOREGROUND_DISPLAY_LAYER_0,
 // CONSTRUCTION_BACKGROUND_LAYER,
 // CONSTRUCTION_FOREGROUND_LAYER,
 // FOREGROUND_SLIDING_LAYER,

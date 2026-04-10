@@ -4816,13 +4816,15 @@ const uint16_t DiamondPlate[76800] =
 extern const StaticImageInfo_t SII_DiamondPlate;
 const StaticImageInfo_t SII_DiamondPlate =
 {
-    320,
-    240,
+    {
+        DiamondPlate,
+        320,
+        240,
+        PIXEL_FORMAT_RGB565,
+    },
     640,
     16,
-    DiamondPlate,
     76800,
-    PIXEL_FORMAT_RGB565,
     COMPX_COMPRESSION_NONE,
 };
 
