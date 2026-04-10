@@ -75,7 +75,7 @@ void BSP_Initialize(void)
 
     myPWM_LCD_Backlight.Start();
     myPWM_LCD_Backlight.SetDuty(20);
-    //myPWM_LCD_Backlight.SetDuty(21);
+    myPWM_LCD_Backlight.SetDuty(21);
     //myPWM_LCD_Backlight.SetDuty(22);
     //myPWM_LCD_Backlight.SetDuty(23);
     //myPWM_LCD_Backlight.SetDuty(24);

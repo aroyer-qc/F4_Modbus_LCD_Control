@@ -70,9 +70,12 @@
 //-------------------------------------------------------------------------------------------------
 // Individual widget Definition
 //-------------------------------------------------------------------------------------------------
+//       Enum ID,         Service,      Sub, Px, Py, IMG0,             IMG_1,         IMG_2,         IMG_3,         IMG_4,         IMG_5,         IMG_6,         IMG_7,         IMG_8,         IMG_9,         IMG_10,        IMG_11,        IMG_12,        IMG_13,        IMG_14,        IMG_15,        Options
+#define BACK_DEF(X_BACK)\
+ X_BACK( BACK_SCREEN,     SERV_ID_RFSH, 0,   0,  0,  BACKGROUND,       INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_DRAW_ONCE_AND_REMOVE )\
+
 //      Enum ID,         Service,      Sub, Px, Py,   Sx,   Sy,   Icon 0,  		 Icon 1, 	    Icon 2,        Icon 3,        Option,
 #define ICON_DEF(X_ICON) \
-X_ICON( BACK_SCREEN,     SERV_ID_RFSH, 0,   0,  0,    0,    0,    BACKGROUND,    INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
 X_ICON( ICON_STATUS,     SERV_ID_RFSH, 0,   5,  98,   0,    0,    LED_GRAY_OFF,  INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
 
 //     Enum ID,              Service,      Sub, Px,   Py,   Sx,   Sy,   TC,      TAC,     TAC2,     Font ID,         Text Blend,   Text Label        Text Option         Option

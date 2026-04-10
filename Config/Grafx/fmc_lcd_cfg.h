@@ -34,12 +34,12 @@
 #define CFG_FMC_LCD_MEM_BUS_WIDTH                       FMC_LCD_MEM_BUS_WIDTH_16    // LCD Memory Bus Width
 
 // LCD Timing
-#define CFG_FMC_LCD_TIMING_ADDRESS_SETUP_TIME           2                           // ~12 nSec
-#define CFG_FMC_LCD_TIMING_ADDRESS_HOLD_TIME            1                           // ~6  nSec
-#define CFG_FMC_LCD_TIMING_DATA_SETUP_TIME              2                           // ~12 nSec
+#define CFG_FMC_LCD_TIMING_ADDRESS_SETUP_TIME           4                           // ~12 nSec
+#define CFG_FMC_LCD_TIMING_ADDRESS_HOLD_TIME            2                           // ~6  nSec
+#define CFG_FMC_LCD_TIMING_DATA_SETUP_TIME              4                           // ~12 nSec
 
-#define CFG_FMC_LCD_WRITE_TIMING_ADDRESS_SETUP_TIME     2                           // ~12 nSec
-#define CFG_FMC_LCD_WRITE_TIMING_ADDRESS_HOLD_TIME      1                           // ~6  nSec
+#define CFG_FMC_LCD_WRITE_TIMING_ADDRESS_SETUP_TIME     4                           // ~12 nSec
+#define CFG_FMC_LCD_WRITE_TIMING_ADDRESS_HOLD_TIME      2                           // ~6  nSec
 #define CFG_FMC_LCD_WRITE_TIMING_DATA_SETUP_TIME        6                           // ~36 nSec
 
 //-------------------------------------------------------------------------------------------------
