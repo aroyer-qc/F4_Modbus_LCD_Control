@@ -37,12 +37,10 @@ const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INV
                                                 {   BTN_TEST4,               INVALID_LINK        },
                                                 {   BTN_TEST5,               INVALID_LINK        },
                                                 {   BTN_TEST6,               INVALID_LINK        },
-                                                {   BTN_TEST7,               INVALID_LINK        },
-                                                {   BTN_TEST8,               INVALID_LINK        },
-                                                {   ICON_LED_STATUS,         INVALID_LINK        },
-                                                {   ICON_LED_STATUS1,        INVALID_LINK        },
-                                                {   ICON_LED_STATUS2,        INVALID_LINK        },
-                                                {   ICON_LED_STATUS3,        INVALID_LINK        },
+                                                {   ICON_LED_GREEN,          INVALID_LINK        },
+                                                {   ICON_LED_RED,            INVALID_LINK        },
+                                                {   ICON_LED_YELLOW,         INVALID_LINK        },
+                                                {   ICON_LED_BLUE,           INVALID_LINK        },
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 

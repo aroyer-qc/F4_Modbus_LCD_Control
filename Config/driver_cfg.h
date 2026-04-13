@@ -61,7 +61,7 @@
 
 
 // LCD Display
-#define GRAFX_DRIVER_INCLUDE                "./Digini/Grafx/inc/driver/STM32/lib_STM32_fmc_lcd_320x240 - SSD2119.h"
+#define GRAFX_DRIVER_INCLUDE                "./Digini/Grafx/inc/driver/STM32/lib_STM32_fmc_lcd_320x240 - UMSH_8252MD_T - SSD2119.h"
 #define GRAFX_DRIVER_ARGUMENT               &SII_DiamondPlate                                                           // Need the background image StaticImageInfo_t to contruct on it
 
 // Pointing device, here it is the resistive touch screen

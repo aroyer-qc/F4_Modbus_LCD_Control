@@ -47,6 +47,12 @@
     X_STATIC_IMAGE( BUTTON_MENU_GRAY,   	&SII_BtMenuGray          )\
     X_STATIC_IMAGE( BUTTON_MENU_NORMAL, 	&SII_BtMenuNormal        )\
     X_STATIC_IMAGE( BUTTON_MENU_PRESSED, 	&SII_BtMenuPressed       )\
+    X_STATIC_IMAGE( GLYPH_DIAGNOSTIC, 	    &SII_Diagnostic          )\
+    X_STATIC_IMAGE( GLYPH_INFO,         	&SII_Info                )\
+    X_STATIC_IMAGE( GLYPH_MEASURE, 	        &SII_Measure             )\
+    X_STATIC_IMAGE( GLYPH_RANGE,         	&SII_Range               )\
+    X_STATIC_IMAGE( GLYPH_REFERENCE,        &SII_Reference           )\
+    X_STATIC_IMAGE( GLYPH_WARNING,      	&SII_Warning             )\
 
 //-------------------------------------------------------------------------------------------------
 

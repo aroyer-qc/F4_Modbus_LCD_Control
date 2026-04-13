@@ -27,20 +27,29 @@
 #pragma once
 
 // Because of the nature of the LCD 8080 FMC mode, and the lack of external memory:
-//	- There is no construction layer
-//	- Coarse touch layer (10 pixels x 10 Pixels) Array 768 Bytes  number of touch zone == 256
-
+//	- There is no full size construction layer
+//	- Coarse touch layer of 10 pixels x 10 Pixels resolution was chosen resulting into an
+//    array of 768 Bytes.  Number of touch zone => 256
+//
+// For the construction layer because of limited RAM
+// 188 x 48 = 9024 unit32_t  = 36096 bytes.
+// no widget Should be bigger than this size.
+//
+// Touch sense zone has been reduce to 32x24 = 768 bytes for the same reason.
+// A total of 36864 bytes out of 256K are reserved to this in memory.
+// See. stm32f437vg_flash.ld
+//
 //-------------------------------------------------------------------------------------------------
 //           Name of the layer              Initial layer      Pixel Format            Size X                    Size Y
 #define LAYER_DEF(X_LAYER) \
     X_LAYER( BACKGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                        )\
     X_LAYER( FOREGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                        )\
-    X_LAYER( CONSTRUCTION_FOREGROUND_LAYER, LAYER_VIRTUAL,     PIXEL_FORMAT_ARGB8888,  150,                      54                       )\
+    X_LAYER( CONSTRUCTION_FOREGROUND_LAYER, LAYER_VIRTUAL,     PIXEL_FORMAT_ARGB8888,  188,                      48                       )\
     X_LAYER( TOUCH_SENSE_LAYER,             LAYER_VIRTUAL,     PIXEL_FORMAT_A8,        GRAFX_DRIVER_SIZE_X / 10, GRAFX_DRIVER_SIZE_Y / 10 )\
 
 //-------------------------------------------------------------------------------------------------
 
-// Unused define layer
+// Unused define layer ( reserved KEYWORD
 // CONSTRUCTION_BACKGROUND_LAYER,
 // FOREGROUND_SLIDING_LAYER,
 
