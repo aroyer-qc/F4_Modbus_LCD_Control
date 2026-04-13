@@ -65,7 +65,7 @@
 #define LCD_BACKLIGHT_TIMER                 TIM_DRIVER_ID_2
 #define LCD_BACKLIGHT_USE_UPDATE_IRQ        false
 #define LCD_BACKLIGHT_MODE                  TIM_OP_MODE_REPETITIVE_DOWN_COUNT
-#define LCD_BACKLIGHT_PRESCALER             84
+#define LCD_BACKLIGHT_PRESCALER             1000
 #define LCD_BACKLIGHT_RELOAD                100
 
 //-------------------------------------------------------------------------------------------------

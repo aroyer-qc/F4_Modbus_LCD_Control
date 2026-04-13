@@ -118,6 +118,15 @@
 		<Unit filename="..\App\ressource\inc\font_cfg.lst" />
 		<Unit filename="..\App\ressource\inc\StaticFont.h" />
 		<Unit filename="..\App\ressource\inc\StaticImage.h" />
+		<Unit filename="..\App\ressource\src\BtMenuGray.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App\ressource\src\BtMenuNormal.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App\ressource\src\BtMenuPressed.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\App\ressource\src\DiamondPlate.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -188,6 +197,7 @@
 		<Unit filename="..\Config\flash_cfg.h" />
 		<Unit filename="..\Config\Grafx\color_cfg.h" />
 		<Unit filename="..\Config\Grafx\fmc_lcd_cfg.h" />
+		<Unit filename="..\Config\Grafx\font_cfg.lst" />
 		<Unit filename="..\Config\Grafx\grafx_cfg.h" />
 		<Unit filename="..\Config\Grafx\grafx_display_layer_cfg.h" />
 		<Unit filename="..\Config\Grafx\menu_cfg.h" />
@@ -196,6 +206,7 @@
 		<Unit filename="..\Config\Grafx\static_image_def.h" />
 		<Unit filename="..\Config\Grafx\widget_cfg.h" />
 		<Unit filename="..\Config\Grafx\widget_var.h" />
+		<Unit filename="..\Config\label_cfg.h" />
 		<Unit filename="..\Config\memory_cfg.h" />
 		<Unit filename="..\Config\nOSConfig.h" />
 		<Unit filename="..\Config\project_def.h" />

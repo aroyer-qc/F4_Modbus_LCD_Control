@@ -32,9 +32,8 @@ extern const StaticImageInfo_t SII_LedGrayOff_16x16;
 const StaticImageInfo_t SII_LedGrayOff_16x16 =
 {
     {
-        LedGrayOff_16x16,
-        16,
-        16,
+        (void*)LedGrayOff_16x16,
+        {16, 16},
         PIXEL_FORMAT_ARGB8888,
     },
     64,

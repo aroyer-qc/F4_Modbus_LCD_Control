@@ -79,7 +79,7 @@ void BSP_Initialize(void)
     //myPWM_LCD_Backlight.SetDuty(22);
     //myPWM_LCD_Backlight.SetDuty(23);
     //myPWM_LCD_Backlight.SetDuty(24);
-    myPWM_LCD_Backlight.SetDuty(25);
+    myPWM_LCD_Backlight.SetDuty(100);
 
     DIGINI_Initialize();
 

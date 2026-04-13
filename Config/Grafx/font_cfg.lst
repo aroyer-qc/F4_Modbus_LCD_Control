@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  Static_image.h
+//  File :  font_cfg.lst
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2026 Alain Royer.
+// Copyright(c) 2020 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -23,21 +23,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 //-------------------------------------------------------------------------------------------------
-
-#pragma once
-
+//
+//  Note: List here all the font in the order they appear in the skin file
+//
 //-------------------------------------------------------------------------------------------------
 
-extern const StaticImageInfo_t SII_DiamondPlate;
-extern const StaticImageInfo_t SII_LedBlueOff_16x16;
-extern const StaticImageInfo_t SII_LedBlueOn_16x16;
-extern const StaticImageInfo_t SII_LedGrayOff_16x16;
-extern const StaticImageInfo_t SII_LedGreenOff_16x16;
-extern const StaticImageInfo_t SII_LedGreenOn_16x16;
-extern const StaticImageInfo_t SII_LedRedOff_16x16;
-extern const StaticImageInfo_t SII_LedRedOn_16x16;
-extern const StaticImageInfo_t SII_LedYellowOff_16x16;
-extern const StaticImageInfo_t SII_LedYellowOn_16x16;
-extern const StaticImageInfo_t SII_BtMenuGray;
-extern const StaticImageInfo_t SII_BtMenuNormal;
-extern const StaticImageInfo_t SII_BtMenuPressed;
+    FONT_ARIAL_10_B,
+    FONT_ARIAL_12_B,
+    FONT_DS_DIGITAL_16_B,

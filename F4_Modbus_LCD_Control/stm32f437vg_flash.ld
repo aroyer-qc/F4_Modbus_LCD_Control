@@ -24,16 +24,18 @@ ENTRY(Reset_Handler)
 
 
 /* Generate a link error if heap and stack don't fit into RAM */
-_Min_Heap_Size  = __HEAP_SIZE;    /* required amount of heap  */
-_Min_Stack_Size = __STACK_SIZE;   /* required amount of stack */
+_Min_Heap_Size  = __HEAP_SIZE;      /* required amount of heap  */
+_Min_Stack_Size = __STACK_SIZE;     /* required amount of stack */
+
+GFX_RAM_SIZE = 32K + 768;           /*  construction layer + touch screen reserved memory */
 
 /* Specify the memory areas */
 MEMORY
 {
-     FLASH       (rx)  : ORIGIN = 0x08000000,                 LENGTH = 2048K      /*  Main FLASH memory            */
-     RAM         (rwx) : ORIGIN = 0x20000000,                 LENGTH = 192K - 768 /*  Main RAM memory              */
-     GFX_DISPLAY (rwx) : ORIGIN = ORIGIN(RAM) + LENGTH(RAM),  LENGTH = 768        /*  touch screen reserved memory */
-     CCMRAM      (rwx) : ORIGIN = 0x10000000,                 LENGTH = 64K        /*  Core Coupled RAM Memory      */
+     FLASH       (rx)  : ORIGIN = 0x08000000,                 LENGTH = 2048K      			/*  Main FLASH memory            */
+     RAM         (rwx) : ORIGIN = 0x20000000,                 LENGTH = 192K - GFX_RAM_SIZE 	/*  Main RAM memory              */
+     GFX_DISPLAY (rwx) : ORIGIN = ORIGIN(RAM) + LENGTH(RAM),  LENGTH = GFX_RAM_SIZE        	/*  construction layer + touch screen reserved memory */
+     CCMRAM      (rwx) : ORIGIN = 0x10000000,                 LENGTH = 64K        			/*  Core Coupled RAM Memory      */
 }
 
 _estack = ORIGIN(RAM) + LENGTH(RAM);

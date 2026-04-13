@@ -38,9 +38,7 @@
 #define     DIGINI_USE_LABEL_DECIMAL_KEY        DEF_DISABLED            // Enable label 0-9 and dot, del, sign, sign inversion
 #define     DIGINI_USE_LABEL_HEXADECIMAL_KEY    DEF_DISABLED            // Enable label A-F
 
-#if 0
-
-#define USER_LABEL_LANGUAGE_DEF(X_LBL_CFG)
+#define USER_LABEL_LANGUAGE_DEF(X_LBL_CFG) \
     X_LBL_CFG( LBL_TEST_MENU,             "    Test Menu\r\n",                                                                                         "    Menu Des Tests\r\n"                ) \
     X_LBL_CFG( LBL_TEST_OPT1,             "LED Control\r\n",                                                                                           "Contrôle LEDs\r\n"                     ) \
     X_LBL_CFG( LBL_TEST_OPT2,             "poutine Control\r\n",                                                                                       "Contrôle Poutine\r\n"                  ) \
@@ -48,14 +46,13 @@
     X_LBL_CFG( LBL_TEST_OPT5,             "Bluetooth\r\n",                                                                                             nullptr                                 ) \
 \
     X_LBL_CFG( LBL_LED_MENU,              "    LED Control Menu\r\n",                                                                                  "    Menu Contrôle LEDs\r\n"            ) \
-    X_LBL_CFG( LBL_LED_OPT1,              "Toggle LED Status          ( )\r\n",                                                                        "Basculer LED Statut\r\n"               ) \
-    X_LBL_CFG( LBL_LED_OPT2,              "Toggle LED Power           ( )\r\n",                                                                        "Basculer LED Power\r\n"                ) \
-    X_LBL_CFG( LBL_LED_OPT3,              "Toggle LED Bluetooth       ( )\r\n",                                                                        "Basculer LED Bluetooth\r\n"            ) \
+    X_LBL_CFG( LBL_LED_GREEN,             "Toggle LED Green           ( )\r\n",                                                                        "Basculer LED Verte\r\n"                ) \
+    X_LBL_CFG( LBL_LED_RED,              "Toggle LED Red             ( )\r\n",                                                                        "Basculer LED Rouge\r\n"                ) \
+    X_LBL_CFG( LBL_LED_BLUE,              "Toggle LED Blue            ( )\r\n",                                                                        "Basculer LED Blue\r\n"                 ) \
+    X_LBL_CFG( LBL_LED_YELLOW,            "Toggle LED Yellow          ( )\r\n",                                                                        "Basculer LED Jaune\r\n"                ) \
 \
     X_LBL_CFG( LBL_SETTING_MENU,          "    System Settings Menu\r\n",                                                                              "    Menu Réglage Système\r\n"          ) \
     X_LBL_CFG( LBL_SETTING_OPT1,          "Time and Date\r\n",                                                                                         "Heure et Date\r\n"                     ) \
 \
-
-#endif
 
 //-------------------------------------------------------------------------------------------------

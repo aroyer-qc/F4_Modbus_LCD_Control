@@ -31,7 +31,18 @@
 #ifdef GFX_GLOBAL
 
 const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INVALID_LINK        },
-                                                {   ICON_STATUS,             INVALID_LINK        },
+                                                {   BTN_TEST1,               INVALID_LINK        },
+                                                {   BTN_TEST2,               INVALID_LINK        },
+                                                {   BTN_TEST3,               INVALID_LINK        },
+                                                {   BTN_TEST4,               INVALID_LINK        },
+                                                {   BTN_TEST5,               INVALID_LINK        },
+                                                {   BTN_TEST6,               INVALID_LINK        },
+                                                {   BTN_TEST7,               INVALID_LINK        },
+                                                {   BTN_TEST8,               INVALID_LINK        },
+                                                {   ICON_LED_STATUS,         INVALID_LINK        },
+                                                {   ICON_LED_STATUS1,        INVALID_LINK        },
+                                                {   ICON_LED_STATUS2,        INVALID_LINK        },
+                                                {   ICON_LED_STATUS3,        INVALID_LINK        },
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 

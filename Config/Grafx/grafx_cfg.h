@@ -51,14 +51,13 @@
 #define GRAFX_USE_QUAD_SPI_FOR_DATABASE                 DEF_DISABLED
 #define GRAFX_USE_RAM_DATABASE                          DEF_DISABLED    // Not used as all graphic/font etc, are static
 #define GRAFX_USE_ROM_DATABASE                          DEF_ENABLED
-#define GRAFX_USE_DISPLAY_LAYER							DEF_DISABLED
 
 #define GRAFX_USE_DISPLAY_RAM                           DEF_ENABLED
 #define GRAFX_USE_RAM_DATA                              DEF_DISABLED     // if ram memory was reserved in loading script for layer
 #define GRAFX_USE_ROM_DATA                              DEF_DISABLED
 
 // Special section use in this project
-#define GRAFX_USE_MULTI_LINE                            DEF_DISABLED
+#define GRAFX_USE_MULTI_LINE                            DEF_ENABLED //DISABLED
 
 #define GRAFX_USE_SLIDING_PAGE                          DEF_DISABLED
 #define GRAFX_SLIDING_PAGE_GRANULARITY                  16              // Each step is 10 Pixel wide
@@ -114,10 +113,11 @@
 #define GRAFX_TICK_WAIT_BETWEEN_REFRESH_LOOP            8
 
 //-------------------------------------------------------------------------------------------------
-// Layer support configuration (other than TOUCH_SENSE_LAYER, we won't use full frame RAM for construction)
+// Layer support configuration
 
+#define GRAFX_USE_FULL_FRAME_CONSTRUCTION_LAYER         DEF_DISABLED    // We won't use full frame RAM for construction
 #define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_DISABLED	// We don't have access to display memory and don't have multi layer capability here
-#define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_DISABLED
+#define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_ENABLED
 #define GRAFX_DEBUG_GUI                                 DEF_DISABLED	// This option can not be set if no layer exist
 
 //-------------------------------------------------------------------------------------------------
