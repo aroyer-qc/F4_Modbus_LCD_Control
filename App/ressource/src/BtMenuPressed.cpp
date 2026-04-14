@@ -151,8 +151,6 @@ const StaticImageInfo_t SII_BtMenuPressed =
         {148, 38},
         PIXEL_FORMAT_ARGB8888
     },
-    296,
-    16,
     1051,
     COMPX_RLE_32
 };

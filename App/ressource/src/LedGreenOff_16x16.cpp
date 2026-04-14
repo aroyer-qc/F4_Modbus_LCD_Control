@@ -36,8 +36,6 @@ const StaticImageInfo_t SII_LedGreenOff_16x16 =
         {16, 16},
         PIXEL_FORMAT_ARGB8888,
     },
-    64,
-    32,
     256,
     COMPX_COMPRESSION_NONE,
 };

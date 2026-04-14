@@ -32,11 +32,11 @@
 //    array of 768 Bytes.  Number of touch zone => 256
 //
 // For the construction layer because of limited RAM
-// 188 x 48 = 9024 unit32_t  = 36096 bytes.
+// 176 x 56 = 9856 uint16_t  = 19712 bytes.
 // no widget Should be bigger than this size.
 //
 // Touch sense zone has been reduce to 32x24 = 768 bytes for the same reason.
-// A total of 36864 bytes out of 256K are reserved to this in memory.
+// A total of 20480 bytes out of 256K are reserved to this in memory.
 // See. stm32f437vg_flash.ld
 //
 //-------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@
 #define LAYER_DEF(X_LAYER) \
     X_LAYER( BACKGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                        )\
     X_LAYER( FOREGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                        )\
-    X_LAYER( CONSTRUCTION_FOREGROUND_LAYER, LAYER_VIRTUAL,     PIXEL_FORMAT_RGB565,    188,                      48                       )\
+    X_LAYER( CONSTRUCTION_FOREGROUND_LAYER, LAYER_VIRTUAL,     PIXEL_FORMAT_RGB565,    176,                      56                       )\
     X_LAYER( TOUCH_SENSE_LAYER,             LAYER_VIRTUAL,     PIXEL_FORMAT_A8,        GRAFX_DRIVER_SIZE_X / 10, GRAFX_DRIVER_SIZE_Y / 10 )\
 
 //-------------------------------------------------------------------------------------------------

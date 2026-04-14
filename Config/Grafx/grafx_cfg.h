@@ -46,6 +46,7 @@
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_DISABLED    // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device IRQ (touch)
 #define GRAFX_USE_CUSTOM_COLOR                          DEF_DISABLED    // Will not try to load color_cfg.h
+//  #define GRAFX_USE_TIMED_WIDGET   // TODO in future widget refresh 
 
 #define GRAFX_USE_HARD_DATABASE                         DEF_ENABLED     // Use graphic/font etc from flash memory
 #define GRAFX_USE_QUAD_SPI_FOR_DATABASE                 DEF_DISABLED
@@ -63,11 +64,10 @@
 #define GRAFX_SLIDING_PAGE_GRANULARITY                  16              // Each step is 10 Pixel wide
 #define GRAFX_TICK_WAIT_BETWEEN_SLIDE_IN_LOOP           16
 
-#define GRAFX_DEBUG_GUI                                 DEF_DISABLED	// This option can not be set if no layer exist
 #define GRAFX_PAINT_BOX_DEBUG                           DEF_DISABLED
 #define GRAFX_PAINT_BOX_DEBUG_COLOR                     RED
 
-#define DIGINI_USE_QUAD_SPI_FOR_GRAFX_DATABASE      	DEF_DISABLED
+#define DIGINI_USE_QUAD_SPI_FOR_GRAFX_DATABASE          DEF_DISABLED
 
 #if (GRAFX_USE_POINTING_DEVICE == DEF_ENABLED)
   #define GRAFX_PDI_SWAP_XY                             DEF_ENABLED

@@ -27,7 +27,7 @@ ENTRY(Reset_Handler)
 _Min_Heap_Size  = __HEAP_SIZE;      /* required amount of heap  */
 _Min_Stack_Size = __STACK_SIZE;     /* required amount of stack */
 
-GFX_RAM_SIZE = 36096 + 768;           /*  construction layer + touch screen reserved memory */
+GFX_RAM_SIZE = 19712 + 768;           /*  construction layer + touch screen reserved memory */
 
 /* Specify the memory areas */
 MEMORY

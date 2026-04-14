@@ -4820,8 +4820,6 @@ const StaticImageInfo_t SII_DiamondPlate =
         {320, 240},
         PIXEL_FORMAT_RGB565,
     },
-    640,
-    16,
     76800,
     COMPX_COMPRESSION_NONE,
 };
