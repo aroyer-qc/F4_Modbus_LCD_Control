@@ -44,7 +44,7 @@
 #define LAYER_DEF(X_LAYER) \
     X_LAYER( BACKGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                        )\
     X_LAYER( FOREGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                        )\
-    X_LAYER( CONSTRUCTION_FOREGROUND_LAYER, LAYER_VIRTUAL,     PIXEL_FORMAT_ARGB8888,  188,                      48                       )\
+    X_LAYER( CONSTRUCTION_FOREGROUND_LAYER, LAYER_VIRTUAL,     PIXEL_FORMAT_RGB565,    188,                      48                       )\
     X_LAYER( TOUCH_SENSE_LAYER,             LAYER_VIRTUAL,     PIXEL_FORMAT_A8,        GRAFX_DRIVER_SIZE_X / 10, GRAFX_DRIVER_SIZE_Y / 10 )\
 
 //-------------------------------------------------------------------------------------------------
