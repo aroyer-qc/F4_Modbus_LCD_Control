@@ -58,7 +58,7 @@
 #define GRAFX_USE_ROM_DATA                              DEF_DISABLED
 
 // Special section use in this project
-#define GRAFX_USE_MULTI_LINE                            DEF_ENABLED //DISABLED
+#define GRAFX_USE_MULTI_LINE                            DEF_ENABLED//DISABLED
 
 #define GRAFX_USE_SLIDING_PAGE                          DEF_DISABLED
 #define GRAFX_SLIDING_PAGE_GRANULARITY                  16              // Each step is 10 Pixel wide
