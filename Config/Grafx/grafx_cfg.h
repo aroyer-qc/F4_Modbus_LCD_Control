@@ -46,7 +46,7 @@
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_DISABLED    // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device IRQ (touch)
 #define GRAFX_USE_CUSTOM_COLOR                          DEF_DISABLED    // Will not try to load color_cfg.h
-//  #define GRAFX_USE_TIMED_WIDGET   // TODO in future widget refresh 
+//  #define GRAFX_USE_TIMED_WIDGET   // TODO in future widget refresh
 
 #define GRAFX_USE_HARD_DATABASE                         DEF_ENABLED     // Use graphic/font etc from flash memory
 #define GRAFX_USE_QUAD_SPI_FOR_DATABASE                 DEF_DISABLED
@@ -115,6 +115,7 @@
 //-------------------------------------------------------------------------------------------------
 // Layer support configuration
 
+#define GRAFX_USE_CONSTRUCTION_ON_SINGLE_LAYER          DEF_ENABLED
 #define GRAFX_USE_FULL_FRAME_CONSTRUCTION_LAYER         DEF_DISABLED    // We won't use full frame RAM for construction
 #define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_DISABLED	// We don't have access to display memory and don't have multi layer capability here
 #define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_ENABLED
