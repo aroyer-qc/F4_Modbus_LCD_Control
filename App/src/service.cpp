@@ -131,6 +131,86 @@ static ServiceReturn_t* SERV_INFO(ServiceEvent_e* pServiceState, uint16_t SubSer
 
 //-------------------------------------------------------------------------------------------------
 //
+//  Name:           SERV_LEDS
+//
+//  Parameter(s):   ServiceEvent_e*  pServiceState
+//                  uint16_t         SubService
+//  Return:         ServiceReturn_t
+//
+//  Description:    This function return information on software
+//
+//-------------------------------------------------------------------------------------------------
+static ServiceReturn_t* SERV_LEDS(ServiceEvent_e* pServiceState, uint16_t SubService)
+{
+    static TickCount_t LedTimeOut[4]         = {350, 250, 300, 400};
+    static bool        StateLed[4]           = {true, true, false, true};
+    ServiceReturn_t*   pService              = nullptr;
+    static TickCount_t Start[4]              = {0, 0, 0, 0};
+
+    if((pService = GetServiceStruct(SERVICE_RETURN)) != nullptr)
+    {
+        switch(SubService)
+        {
+            case 0:
+            {
+                if(TickHasTimeOut(Start[0], LedTimeOut[0]) == true)
+                {
+                    Start[0] = GetTick();
+                    LedTimeOut[0] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[0] = (StateLed[0] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[0] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+
+            case 1:
+            {
+                if(TickHasTimeOut(Start[1], LedTimeOut[1]) == true)
+                {
+                    Start[1] = GetTick();
+                    LedTimeOut[1] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[1] = (StateLed[1] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[1] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+
+            case 2:
+            {
+                if(TickHasTimeOut(Start[2], LedTimeOut[2]) == true)
+                {
+                    Start[2] = GetTick();
+                    LedTimeOut[2] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[2] = (StateLed[2] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[2] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+
+            case 3:
+            {
+                if(TickHasTimeOut(Start[3], LedTimeOut[3]) == true)
+                {
+                    Start[3] = GetTick();
+                    LedTimeOut[3] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[3] = (StateLed[0] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[3] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+        }
+
+    }
+
+    return pService;
+}
+
+//-------------------------------------------------------------------------------------------------
+//
 //  Name:           ServiceCallApp
 //  Parameter(s):   Service_t*       pService
 //                  ServiceEvent_e*  pServiceState
@@ -191,9 +271,17 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
         {
             switch(pService->ID)
             {
-                //case SERV_ID_INCH:  pServiceReturn = SERV_INCH(pServiceState, pService->SubID);  break;
                 case SERV_ID_INFO:  pServiceReturn = SERV_INFO(pServiceState, pService->SubID);  break;
-                //case SERV_ID_INPU:  pServiceReturn = SERV_INPU(pServiceState, pService->SubID);  break;
+            }
+            break;
+
+        }
+
+        case 'L':
+        {
+            switch(pService->ID)
+            {
+                case SERV_ID_LEDS:  pServiceReturn = SERV_LEDS(pServiceState, pService->SubID);  break;
             }
             break;
 
