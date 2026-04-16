@@ -53,11 +53,12 @@
 #define GRAFX_USE_RAM_DATABASE                          DEF_DISABLED    // Not used as all graphic/font etc, are static
 #define GRAFX_USE_ROM_DATABASE                          DEF_ENABLED
 
+//-------------------------------------------------------------------------------------------------
+
 #define GRAFX_USE_DISPLAY_RAM                           DEF_ENABLED
 #define GRAFX_USE_RAM_DATA                              DEF_DISABLED     // if ram memory was reserved in loading script for layer
 #define GRAFX_USE_ROM_DATA                              DEF_DISABLED
 
-// Special section use in this project
 #define GRAFX_USE_MULTI_LINE                            DEF_ENABLED//DISABLED
 
 #define GRAFX_USE_SLIDING_PAGE                          DEF_DISABLED
@@ -66,8 +67,6 @@
 
 #define GRAFX_PAINT_BOX_DEBUG                           DEF_DISABLED
 #define GRAFX_PAINT_BOX_DEBUG_COLOR                     RED
-
-#define DIGINI_USE_QUAD_SPI_FOR_GRAFX_DATABASE          DEF_DISABLED
 
 #if (GRAFX_USE_POINTING_DEVICE == DEF_ENABLED)
   #define GRAFX_PDI_SWAP_XY                             DEF_ENABLED
@@ -106,10 +105,6 @@
 #define USE_SERV_TIME                                   DEF_DISABLED    // Service to provide time
 #define USE_SERV_XCHG                                   DEF_DISABLED    // Special service to exchange data.
 
-// Define for GRAFX Driver
-#define GRAFX_LCD_BASE                                  FMC_BANK1_NE1_ADDDRESS  // NE1 region
-#define GRAFX_LCD_REGISTER_SELECT_BIT                   16                      // A16
-
 #define GRAFX_TICK_WAIT_BETWEEN_REFRESH_LOOP            8
 
 //-------------------------------------------------------------------------------------------------
@@ -122,3 +117,8 @@
 #define GRAFX_DEBUG_GUI                                 DEF_DISABLED	// This option can not be set if no layer exist
 
 //-------------------------------------------------------------------------------------------------
+//
+// Define for specific GRAFX Driver
+#define GRAFX_LCD_BASE                                  FMC_BANK1_NE1_ADDDRESS  // NE1 region
+#define GRAFX_LCD_REGISTER_SELECT_BIT                   16                      // A16
+
