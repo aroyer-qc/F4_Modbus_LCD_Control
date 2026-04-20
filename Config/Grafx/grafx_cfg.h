@@ -69,7 +69,7 @@
 #define GRAFX_PAINT_BOX_DEBUG_COLOR                     RED
 
 #if (GRAFX_USE_POINTING_DEVICE == DEF_ENABLED)
-  #define GRAFX_PDI_SWAP_XY                             DEF_ENABLED
+  #define GRAFX_PDI_SWAP_XY                             DEF_DISABLED
   #define GRAFX_PDI_INVERT_X                            DEF_DISABLED    // Not existent on this setup
   #define GRAFX_PDI_INVERT_Y                            DEF_DISABLED    // Not existent on this setup
 #endif
@@ -89,8 +89,9 @@
 #define GRAFX_COLOR_AL44                                DEF_DISABLED
 #define GRAFX_COLOR_AL88                                DEF_DISABLED
 #define GRAFX_COLOR_L4                                  DEF_DISABLED
-#define GRAFX_COLOR_A8                                  DEF_ENABLED     // Needed for the FONT and also for the touch sensing layer
+#define GRAFX_COLOR_A8                                  DEF_DISABLED
 #define GRAFX_COLOR_A4                                  DEF_DISABLED
+// Those does not exist on F4
 #define GRAFX_COLOR_RGB332                              DEF_DISABLED
 #define GRAFX_COLOR_RGB444                              DEF_DISABLED
 
@@ -121,4 +122,7 @@
 // Define for specific GRAFX Driver
 #define GRAFX_LCD_BASE                                  FMC_BANK1_NE1_ADDDRESS  // NE1 region
 #define GRAFX_LCD_REGISTER_SELECT_BIT                   16                      // A16
+
+#define GRAFX_TOUCH_SIZE_X                              GRAFX_DRIVER_SIZE_X / 10
+#define GRAFX_TOUCH_SIZE_Y                              GRAFX_DRIVER_SIZE_Y / 10
 

@@ -68,8 +68,6 @@
 /* input IO's CFG --------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_INPUT_NP_LS,                       IO_MODE_INPUT,      IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_LOW,        0)                     \
 /* Output IO's CFG -------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        0)                     \
-    X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        1)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        1)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_MS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     1)                     \
@@ -93,6 +91,10 @@
 /* USB IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_USB_AF10,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF10_OTG_FS)        \
 /* -----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+//    X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        0)                     
+    //X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        1)                     
 
 //-------------------------------------------------------------------------------------------------
 //
@@ -129,10 +131,10 @@
     X_IO( IO_LCD_TFT_BL_PWM,    GPIOA,      IO_PIN_5,       IO_CFG_PWM_AF1)                       \
     X_IO( IO_LCD_TFT_BL_ADC,    GPIOA,      IO_PIN_4,       IO_CFG_ADC)                           \
 /* TOUCH IO's ----------------------------------------------------------------------------------*/\
-    X_IO( IO_TOUCH_Y1_SWITCH,   GPIOE,      IO_PIN_2,       IO_CFG_OUTPUT_OC_LS_DEF1)             \
-    X_IO( IO_TOUCH_X1_SWITCH,   GPIOE,      IO_PIN_5,       IO_CFG_OUTPUT_OC_LS_DEF1)             \
-    X_IO( IO_TOUCH_X2_SWITCH,   GPIOE,      IO_PIN_3,       IO_CFG_OUTPUT_OC_LS_DEF1)             \
-    X_IO( IO_TOUCH_Y2_SWITCH,   GPIOE,      IO_PIN_4,       IO_CFG_OUTPUT_OC_LS_DEF1)             \
+    X_IO( IO_TOUCH_Y1_SWITCH,   GPIOE,      IO_PIN_2,       IO_CFG_OUTPUT_PP_LS_DEF1)             \
+    X_IO( IO_TOUCH_X2_SWITCH,   GPIOE,      IO_PIN_3,       IO_CFG_OUTPUT_PP_LS_DEF1)             \
+    X_IO( IO_TOUCH_Y2_SWITCH,   GPIOE,      IO_PIN_4,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_TOUCH_X1_SWITCH,   GPIOE,      IO_PIN_5,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_1,             GPIOA,      IO_PIN_8,       IO_CFG_MCO_OUTPUT)                    \
 /* ---------------------------------------------------------------------------------------------*/

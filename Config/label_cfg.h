@@ -39,20 +39,21 @@
 #define     DIGINI_USE_LABEL_HEXADECIMAL_KEY    DEF_DISABLED            // Enable label A-F
 
 #define USER_LABEL_LANGUAGE_DEF(X_LBL_CFG) \
-    X_LBL_CFG( LBL_TEST_MENU,             "    Test Menu\r\n",                                                                                         "    Menu Des Tests\r\n"                ) \
-    X_LBL_CFG( LBL_TEST_OPT1,             "LED Control\r\n",                                                                                           "Contrôle LEDs\r\n"                     ) \
-    X_LBL_CFG( LBL_TEST_OPT2,             "poutine Control\r\n",                                                                                       "Contrôle Poutine\r\n"                  ) \
-    X_LBL_CFG( LBL_TEST_OPT4,             "Input Reading And Sensor\r\n",                                                                              "Lecture D'Entrée et Capteur"           ) \
-    X_LBL_CFG( LBL_TEST_OPT5,             "Bluetooth\r\n",                                                                                             nullptr                                 ) \
+    X_LBL_CFG( LBL_TEST_MENU,             "    Test Menu\r\n",                                                                                         "    Menu Des Tests\r\n"                   ) \
+    X_LBL_CFG( LBL_TEST_OPT1,             "LED Control\r\n",                                                                                           "Contr\x93le LEDs\r\n"                     ) \
+    X_LBL_CFG( LBL_TEST_OPT2,             "poutine Control\r\n",                                                                                       "Contr\x93le Poutine\r\n"                  ) \
+    X_LBL_CFG( LBL_TEST_OPT4,             "Input Reading And Sensor\r\n",                                                                              "Lecture D'Entr\x82 et Capteur"            ) \
+    X_LBL_CFG( LBL_TEST_OPT5,             "Bluetooth\r\n",                                                                                             nullptr                                    ) \
 \
-    X_LBL_CFG( LBL_LED_MENU,              "    LED Control Menu\r\n",                                                                                  "    Menu Contrôle LEDs\r\n"            ) \
-    X_LBL_CFG( LBL_LED_GREEN,             "Toggle LED Green           ( )\r\n",                                                                        "Basculer LED Verte\r\n"                ) \
-    X_LBL_CFG( LBL_LED_RED,              "Toggle LED Red             ( )\r\n",                                                                        "Basculer LED Rouge\r\n"                ) \
-    X_LBL_CFG( LBL_LED_BLUE,              "Toggle LED Blue            ( )\r\n",                                                                        "Basculer LED Blue\r\n"                 ) \
-    X_LBL_CFG( LBL_LED_YELLOW,            "Toggle LED Yellow          ( )\r\n",                                                                        "Basculer LED Jaune\r\n"                ) \
+    X_LBL_CFG( LBL_LED_MENU,              "    LED Control Menu\r\n",                                                                                  "    Menu Contr\x93le LEDs\r\n"            ) \
+    X_LBL_CFG( LBL_LED_GREEN,             "Test 1",                                                                                                    nullptr                                    ) \
+    X_LBL_CFG( LBL_LED_RED,               "Poutine",                                                                                                   nullptr                                    ) \
+    X_LBL_CFG( LBL_LED_BLUE,              "Hello!",                                                                                                    nullptr                                    ) \
+    X_LBL_CFG( LBL_LED_YELLOW,            "coucou",                                                                                                    nullptr                                    ) \
 \
-    X_LBL_CFG( LBL_SETTING_MENU,          "    System Settings Menu\r\n",                                                                              "    Menu Réglage Système\r\n"          ) \
-    X_LBL_CFG( LBL_SETTING_OPT1,          "Time and Date\r\n",                                                                                         "Heure et Date\r\n"                     ) \
+    X_LBL_CFG( LBL_SETTING_MENU,          "    System Settings Menu\r\n",                                                                              "    Menu R\x82glage Syst\x8ame\r\n"       ) \
+    X_LBL_CFG( LBL_SETTING_OPT1,          "Time and Date\r\n",                                                                                         "Heure et Date\r\n"                        ) \
 \
+    X_LBL_CFG( LBL_4_DEC,                 "%04d",                                                                                                      nullptr                                    ) \
 
 //-------------------------------------------------------------------------------------------------

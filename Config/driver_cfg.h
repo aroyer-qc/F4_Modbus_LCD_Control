@@ -65,5 +65,5 @@
 #define GRAFX_DRIVER_ARGUMENT               &SII_DiamondPlate                                                           // Need the background image StaticImageInfo_t to contruct on it
 
 // Pointing device, here it is the resistive touch screen
-#define GRAFX_PDI_HARD_INTERFACE            nullptr// (void*)&myI2C_Control
+#define GRAFX_PDI_HARD_INTERFACE            nullptr
 #define PDI_DRIVER_INCLUDE                  "./Digini/Peripheral/inc/device/lib_class_resistive_touch_discrete.h"

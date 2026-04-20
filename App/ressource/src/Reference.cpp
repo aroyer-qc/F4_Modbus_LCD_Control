@@ -33,15 +33,13 @@ const StaticImageRLE_32_t Reference[162] =
     { 0x00, 0x78FFFFFF }, { 0x24, 0x00000000 }
 };
 
-const ImageInfo_t II_Reference =
-{
-    (void*)Reference,
-    {29, 18},
-    PIXEL_FORMAT_ARGB8888
-};
-
 const StaticImageInfo_t SII_Reference =
 {
+    {
+		(void*)Reference,
+		{29, 18},
+		PIXEL_FORMAT_ARGB8888
+	},
     162,
     COMPX_RLE_32
 };

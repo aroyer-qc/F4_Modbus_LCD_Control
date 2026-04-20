@@ -211,6 +211,45 @@ static ServiceReturn_t* SERV_LEDS(ServiceEvent_e* pServiceState, uint16_t SubSer
 
 //-------------------------------------------------------------------------------------------------
 //
+//  Name:           SERV_TEST
+//
+//  Parameter(s):   ServiceEvent_e*  pServiceState
+//                  uint16_t         SubService
+//  Return:         ServiceReturn_t
+//
+//  Description:    This function increment a counter for a label test
+//
+//-------------------------------------------------------------------------------------------------
+static ServiceReturn_t* SERV_TEST(ServiceEvent_e* pServiceState, uint16_t SubService)
+{
+    ServiceReturn_t*   pService = nullptr;
+    static TickCount_t Start = 0;
+    static uint16_t    Count = 0;
+
+    if((pService = GetServiceStruct(SERVICE_RETURN)) != nullptr)
+    {
+        switch(SubService)
+        {
+            case 0:
+            {
+                if(TickHasTimeOut(Start, 1000) == true)
+                {
+                    Start = GetTick();
+                    Count++;
+                }
+
+                pService->IndexState = Count;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+        }
+    }
+
+    return pService;
+}
+
+//-------------------------------------------------------------------------------------------------
+//
 //  Name:           ServiceCallApp
 //  Parameter(s):   Service_t*       pService
 //                  ServiceEvent_e*  pServiceState
@@ -297,11 +336,11 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
             break;
         }
 
-        case 'S':
+        case 'T':
         {
             switch(pService->ID)
             {
-                //case SERV_ID_SPIN:  pServiceReturn = SERV_SPIN(pServiceState, pService->SubID);  break;
+                case SERV_ID_TEST:  pServiceReturn = SERV_TEST(pServiceState, pService->SubID);  break;
             }
             break;
         }

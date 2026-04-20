@@ -39,6 +39,7 @@
 #define SERV_ID_INFO        U32MACRO('I','N','F','O')
 #define SERV_ID_LEDS        U32MACRO('L','E','D','S')
 #define SERV_ID_XCHG        U32MACRO('X','C','H','G')
+#define SERV_ID_TEST        U32MACRO('T','E','S','T')
 
 //-------------------------------------------------------------------------------------------------
 
