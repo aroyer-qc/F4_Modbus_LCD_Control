@@ -90,11 +90,12 @@ X_ICON( ICON_LED_RED,     SERV_ID_LEDS, 1,   198,  4,    0,    0,    LED_RED_OFF
 X_ICON( ICON_LED_YELLOW,  SERV_ID_LEDS, 2,   96,   4,    0,    0,    LED_YELLOW_OFF, LED_YELLOW_ON, INVALID_IMAGE, INVALID_IMAGE,  GRAFX_OPTION_NONE  ) \
 X_ICON( ICON_LED_BLUE,    SERV_ID_LEDS, 3,   4,    4,    0,    0,    LED_BLUE_OFF,   LED_BLUE_ON,   INVALID_IMAGE, INVALID_IMAGE,  GRAFX_OPTION_NONE  ) \
 
-//     Enum ID,              Service,      Sub, Px,   Py,   Sx,   Sy,   TC,      TAC,     TAC2,     Font ID,               Text Blend,   Text Label        Text Option         Option
+
+//     Enum ID,              Service,      Sub, Px,   Py,   Sx,   Sy,   TC,      TAC,     TAC2,     Font ID,               Text Blend,   Text Label        Background Text Label,  Text Option         Option
 #define LABEL_DEF(X_LBL) \
-X_LBL( LABEL_TEST,           SERV_ID_TEST, 0,   165,  145,  150,  56,   GREEN,   GRAY_16, GRAY_16,  FONT_DS_DIGITAL_16_B,  ALPHA_BLEND,  LBL_4_DEC,        _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
-X_LBL( LABEL_TIME,           SERV_ID_TIME, 0,   0,    7,    128,  20,   GRAY_16, GRAY_16, GRAY_16,  FONT_ARIAL_12_B,       ALPHA_BLEND,  LBL_TIME,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
-X_LBL( LABEL_DATE,           SERV_ID_DATE, 0,   0,    67,   128,  20,   GRAY_16, GRAY_16, GRAY_16,  FONT_ARIAL_12_B,       ALPHA_BLEND,  LBL_DATE,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_TEST,           SERV_ID_TEST, 0,   165,  145,  150,  56,   GREEN,   GRAY_16, GRAY_16,  FONT_DS_DIGITAL_24_B,  ALPHA_BLEND,  LBL_5_DEC,        LBL_5_BACK,             _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_TIME,           SERV_ID_TIME, 0,   0,    7,    128,  20,   GRAY_16, GRAY_16, GRAY_16,  FONT_ARIAL_16_B,       ALPHA_BLEND,  LBL_TIME,         INVALID_LABEL,          _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_DATE,           SERV_ID_DATE, 0,   0,    67,   128,  20,   GRAY_16, GRAY_16, GRAY_16,  FONT_ARIAL_16_B,       ALPHA_BLEND,  LBL_DATE,         INVALID_LABEL,          _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
 
 //-------------------------------------------------------------------------------------------------
 

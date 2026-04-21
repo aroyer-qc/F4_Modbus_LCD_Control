@@ -54,6 +54,7 @@
     X_LBL_CFG( LBL_SETTING_MENU,          "    System Settings Menu\r\n",                                                                              "    Menu R\x82glage Syst\x8ame\r\n"       ) \
     X_LBL_CFG( LBL_SETTING_OPT1,          "Time and Date\r\n",                                                                                         "Heure et Date\r\n"                        ) \
 \
-    X_LBL_CFG( LBL_4_DEC,                 "%04d",                                                                                                      nullptr                                    ) \
+    X_LBL_CFG( LBL_5_BACK,                "88888",                                                                                                     nullptr                                    ) \
+    X_LBL_CFG( LBL_5_DEC,                 "%05d",                                                                                                      nullptr                                    ) \
 
 //-------------------------------------------------------------------------------------------------
