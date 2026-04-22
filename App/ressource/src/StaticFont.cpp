@@ -1887,14 +1887,3 @@ const FontInfo_t FONT_InfoTable[NUMBER_OF_FONT] =
 //-------------------------------------------
 
 #endif // DIGINI_USE_GRAFX
-
-struct FontInfo_t
-{
-    const uint8_t*          pLookUpTable;       // maybe it should be a pointer
-    uint8_t                 FirstCaracter;
-    uint8_t                 LastCaracter;
-    uint8_t                 Width;
-    uint8_t                 Height;
-    uint8_t                 Interline;
-    const FontDescriptor_t* pDescriptor;
-};

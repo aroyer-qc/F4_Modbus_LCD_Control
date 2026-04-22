@@ -222,26 +222,44 @@ static ServiceReturn_t* SERV_LEDS(ServiceEvent_e* pServiceState, uint16_t SubSer
 //-------------------------------------------------------------------------------------------------
 static ServiceReturn_t* SERV_TEST(ServiceEvent_e* pServiceState, uint16_t SubService)
 {
+    static TickCount_t Start = GetTick();
+    static bool        IsItFirstServiceStart = true;
     ServiceReturn_t*   pService = nullptr;
-    static TickCount_t Start = 0;
     static uint16_t    Count = 0;
+    static char*       pBuffer = nullptr;
 
-    if((pService = GetServiceStruct(SERVICE_RETURN)) != nullptr)
+    if(*pServiceState == SERVICE_START)
     {
-        switch(SubService)
+        if(IsItFirstServiceStart == true)
         {
-            case 0:
-            {
-                if(TickHasTimeOut(Start, 1000) == true)
-                {
-                    Start = GetTick();
-                    Count++;
-                }
+            IsItFirstServiceStart = false;
+            pBuffer = (char*)pMemoryPool->Alloc(SERVICE_PRINT_BUFFER_SIZE);
+        }
+    }
+    else if(*pServiceState == SERVICE_FINALIZE)
+    {
+        if(IsItFirstServiceStart == false)
+        {
+            IsItFirstServiceStart = true;
+            pMemoryPool->Free((void**)&pBuffer);
+        }
+    }
+    else
+    {
+        *pServiceState = SERVICE_IDLE;
 
-                pService->IndexState = Count;
+        if(TickHasTimeOut(Start, 1000) == true)
+        {
+            Start = GetTick();
+            Count++;
+
+            snprintf(pBuffer, 6, "%05d", Count);
+
+            if((pService = GetServiceStruct(SERVICE_RETURN_TYPE4)) != nullptr)
+            {
+                ((ServiceType4_t*)pService)->pString[0] = pBuffer;
                 *pServiceState = SERVICE_REFRESH;
             }
-            break;
         }
     }
 
