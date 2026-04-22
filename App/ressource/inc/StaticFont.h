@@ -8,7 +8,7 @@
 //-------------------------------------------
 
 extern const FontInfo_t FONT_InfoTable[NUMBER_OF_FONT];
-extern const uint8_t FONT_RawData[26079];
+extern const uint8_t FONT_RawData[29242];
 
 //-------------------------------------------
 
