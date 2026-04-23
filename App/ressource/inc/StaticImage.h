@@ -47,3 +47,6 @@ extern const StaticImageInfo_t SII_Measure;
 extern const StaticImageInfo_t SII_Range;
 extern const StaticImageInfo_t SII_Reference;
 extern const StaticImageInfo_t SII_Warning;
+extern const StaticImageInfo_t SII_Ok;
+extern const StaticImageInfo_t SII_Sphere;
+extern const StaticImageInfo_t SII_SpherePressed;

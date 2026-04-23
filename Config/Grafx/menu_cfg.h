@@ -45,6 +45,25 @@ const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INV
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 
+const PageWidget_t PageInfo             [] =  { {   BTN_RETURN,              PREVIOUS_LINK       },
+                                                {   LABEL_INFO,              INVALID_LINK        },
+                                                {   LABEL_FW_NAME_INFO,      INVALID_LINK        },
+                                                {   LABEL_FW_VERSION_INFO,   INVALID_LINK        },
+                                                {   LABEL_GUI_NAME_INFO,     INVALID_LINK        },
+                                                {   LABEL_GUI_VERSION_INFO,  INVALID_LINK        },
+                                                {   LABEL_HARDWARE_INFO,     INVALID_LINK        },
+                                                {   LABEL_SERIAL_INFO,       INVALID_LINK        },
+                                                {   LABEL_COMPILE_DATE_INFO, INVALID_LINK        },
+                                                {   LABEL_INFO_FIRMWARE,     INVALID_LINK        },
+                                                {   LABEL_INFO_VERSION,      INVALID_LINK        },
+                                                {   LABEL_INFO_GUI_FIRMWARE, INVALID_LINK        },
+                                                {   LABEL_INFO_GUI_VERSION,  INVALID_LINK        },
+                                                {   LABEL_INFO_HARDWARE,     INVALID_LINK        },
+                                                {   LABEL_INFO_SERIAL,       INVALID_LINK        },
+                                                {   LABEL_INFO_DATE,         INVALID_LINK        },
+                                                {   INVALID_WIDGET,          INVALID_LINK        }
+                                              };
+
 const PageWidget_t PageMainHub          [] =  {
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
@@ -95,25 +114,6 @@ const PageWidget_t PageTerminal         [] =  { //{   BACK_DIAMOND,            I
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 
-const PageWidget_t PageInfo             [] =  { //{   BACK_DIAMOND,            INVALID_LINK        },
-                                                //{   BTN_RETURN_DOWN,         PREVIOUS_LINK       },
-                                                //{   LABEL_INFO,              INVALID_LINK        },
-                                                //{   LABEL_FW_NAME_INFO,      INVALID_LINK        },
-                                                //{   LABEL_FW_VERSION_INFO,   INVALID_LINK        },
-                                                //{   LABEL_GUI_NAME_INFO,     INVALID_LINK        },
-                                                //{   LABEL_GUI_VERSION_INFO,  INVALID_LINK        },
-                                                //{   LABEL_HARDWARE_INFO,     INVALID_LINK        },
-                                                //{   LABEL_SERIAL_INFO,       INVALID_LINK        },
-                                                //{   LABEL_COMPILE_DATE_INFO, INVALID_LINK        },
-                                                //{   LABEL_INFO_FIRMWARE,     INVALID_LINK        },
-                                                //{   LABEL_INFO_VERSION,      INVALID_LINK        },
-                                                //{   LABEL_INFO_GUI_FIRMWARE, INVALID_LINK        },
-                                                //{   LABEL_INFO_GUI_VERSION,  INVALID_LINK        },
-                                                //{   LABEL_INFO_HARDWARE,     INVALID_LINK        },
-                                                //{   LABEL_INFO_SERIAL,       INVALID_LINK        },
-                                                //{   LABEL_INFO_DATE,         INVALID_LINK        },
-                                                {   INVALID_WIDGET,          INVALID_LINK        }
-                                              };
 
 #endif  // GFX_GLOBAL
 

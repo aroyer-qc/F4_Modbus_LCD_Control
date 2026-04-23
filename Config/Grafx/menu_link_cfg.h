@@ -37,7 +37,7 @@
     X_LINK( LINK_MAIN_MENU,       PageMenu             ) \
     X_LINK( LINK_DIAGNOSTICS,     PageDiagnostic       ) \
     X_LINK( LINK_PAGE_INFO,       PageInfo             ) \
-
+ 
 #define
 
 //-------------------------------------------------------------------------------------------------
