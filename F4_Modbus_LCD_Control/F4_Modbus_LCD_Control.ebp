@@ -269,6 +269,10 @@
 		<Unit filename="..\Module\Digini\Comm\Console\src\lib_console.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\Comm\Modbus\inc\lib_class_modbus_serial.h" />
+		<Unit filename="..\Module\Digini\Comm\Modbus\src\lib_class_modbus_serial.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Comm\VT100\inc\lib_vt100.h" />
 		<Unit filename="..\Module\Digini\Comm\VT100\inc\lib_vt100_code.h" />
 		<Unit filename="..\Module\Digini\Comm\VT100\inc\lib_vt100_expanding_macro.h" />
@@ -412,6 +416,14 @@
 		<Unit filename="..\Module\Digini\Memory\src\lib_memory.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\Modbus\inc\lib_class_modbus.h" />
+		<Unit filename="..\Module\Digini\Modbus\inc\lib_class_modbus_app.h" />
+		<Unit filename="..\Module\Digini\Modbus\src\lib_class_modbus.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Modbus\src\lib_class_modbus_app.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\core\core_cm4.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\lib_class_resistive_touch_discrete.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\lib_class_spi_serial_flash.h" />
@@ -512,6 +524,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_6aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_class_crc.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_fifo.cpp">

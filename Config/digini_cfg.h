@@ -48,6 +48,13 @@
 #define DIGINI_USE_LABEL                                DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
+// Modbus generic support and option
+//
+#define DIGINI_USE_MODBUS                               DEF_ENABLED
+#define DIGINI_USE_SERIAL_MODBUS                        DEF_DISABLED
+#define DIGINI_USE_TCP_MODBUS                           DEF_DISABLED		// Not develop yet
+
+//-------------------------------------------------------------------------------------------------
 // COMM support (Console, CLI, VT100)
 //
 #define DIGINI_USE_COMM_MODULE                          DEF_ENABLED

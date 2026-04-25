@@ -84,7 +84,7 @@
 #define DIGINI_USE_CRC_16_KERMIT            DEF_DISABLED
 #define DIGINI_USE_CRC_16_MAXIM             DEF_DISABLED
 #define DIGINI_USE_CRC_16_MCRF4XX           DEF_DISABLED
-#define DIGINI_USE_CRC_16_MODBUS            DEF_DISABLED
+#define DIGINI_USE_CRC_16_MODBUS            DEF_ENABLED
 #define DIGINI_USE_CRC_16_RIELLO            DEF_DISABLED
 #define DIGINI_USE_CRC_16_T10_DIF           DEF_DISABLED
 #define DIGINI_USE_CRC_16_TELEDISK          DEF_DISABLED
@@ -132,10 +132,10 @@
 //-------------------------------------------------------------------------------------------------
 //
 // Hardware CRC for STM32F4 ( NO CRC using RefIn / RefOut are supported)
-#define DIGINI_USE_HW_CRC32_BZIP2           DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_MPEG_2          DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_POSIX           DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_SATA            DEF_ENABLED
+#define DIGINI_USE_HW_CRC32_BZIP2           DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_MPEG_2          DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_POSIX           DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_SATA            DEF_DISABLED
 
 
 
