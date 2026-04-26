@@ -1842,7 +1842,7 @@ const uint8_t FONT_RawData[29242] =
 const FontDescriptor_t Font_Arial_10_B_Data[95] =
 {
 //       LB   RB  WP    HP    HA       OY     TS    PTRddress
-    {    0,    0, 0x1B, 0x39, 0x04,    0,     0, &FONT_RawData[     0] },   // ' ',
+    {    0,    0, 0x1B, 0x39, 0x04,    0,     0, nullptr               },   // ' ',
     {    1,    1, 0x04, 0x0A, 0x04,    1,    40, &FONT_RawData[  2400] },   // '!',
     {    1,    1, 0x06, 0x03, 0x06,    1,    18, &FONT_RawData[  2440] },   // '"',
     {    0,    0, 0x09, 0x0A, 0x07,    1,    90, &FONT_RawData[  2458] },   // '#',
@@ -1941,7 +1941,7 @@ const FontDescriptor_t Font_Arial_10_B_Data[95] =
 
 const FontDescriptor_t Font_Arial_16_B_Data[95] =
 {
-    {    0,    0, 0x1B, 0x39, 0x06,    0,     0, &FONT_RawData[     0] },   // ' ',
+    {    0,    0, 0x1B, 0x39, 0x06,    0,     0, nullptr               },   // ' ',
     {    2,    2, 0x05, 0x0F, 0x07,    1,    75, &FONT_RawData[  8684] },   // '!',
     {    1,    1, 0x0A, 0x05, 0x0A,    1,    50, &FONT_RawData[  8759] },   // '"',
     {    0,    0, 0x0D, 0x0F, 0x0C,    1,   195, &FONT_RawData[  8809] },   // '#',
