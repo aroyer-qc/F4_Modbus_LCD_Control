@@ -46,10 +46,12 @@
     X_LBL_CFG( LBL_TEST_OPT5,             "Bluetooth\r\n",                                                                                             nullptr                                    ) \
 \
     X_LBL_CFG( LBL_LED_MENU,              "    LED Control Menu\r\n",                                                                                  "    Menu Contr\x93le LEDs\r\n"            ) \
-    X_LBL_CFG( LBL_LED_GREEN,             "Test 1",                                                                                                    nullptr                                    ) \
+    X_LBL_CFG( LBL_PROD_INFO,             "Information",                                                                                               nullptr                                    ) \
     X_LBL_CFG( LBL_LED_RED,               "Poutine",                                                                                                   nullptr                                    ) \
     X_LBL_CFG( LBL_LED_BLUE,              "Hello!",                                                                                                    nullptr                                    ) \
     X_LBL_CFG( LBL_LED_YELLOW,            "coucou",                                                                                                    nullptr                                    ) \
+    X_LBL_CFG( LBL_DIAG,                  "Diagnostic",                                                                                                "Diagnostique"                             ) \
+    X_LBL_CFG( LBL_TODO,                  "TODO feature",                                                                                              "Fonction a faire"                         ) \
 \
     X_LBL_CFG( LBL_SETTING_MENU,          "    System Settings Menu\r\n",                                                                              "    Menu R\x82glage Syst\x8ame\r\n"       ) \
     X_LBL_CFG( LBL_SETTING_OPT1,          "Time and Date\r\n",                                                                                         "Heure et Date\r\n"                        ) \

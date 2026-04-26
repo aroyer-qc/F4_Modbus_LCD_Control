@@ -51,7 +51,7 @@
 // Modbus generic support and option
 //
 #define DIGINI_USE_MODBUS                               DEF_ENABLED
-#define DIGINI_USE_SERIAL_MODBUS                        DEF_DISABLED
+#define DIGINI_USE_SERIAL_MODBUS                        DEF_ENABLED
 #define DIGINI_USE_TCP_MODBUS                           DEF_DISABLED		// Not develop yet
 
 //-------------------------------------------------------------------------------------------------

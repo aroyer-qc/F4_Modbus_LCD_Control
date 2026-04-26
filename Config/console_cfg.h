@@ -58,8 +58,8 @@
 
 //-------------------------------------------------------------------------------------------------
 
-#define CON_DEBUG_CONSOLE                       &DebugConsole
-#define CON_DEBUG_UART                          &UART_DebugTerminal
+//#define CON_DEBUG_CONSOLE                       &DebugConsole
+//#define CON_DEBUG_UART                          &UART_DebugTerminal
 
 //-------------------------------------------------------------------------------------------------
 

@@ -33,12 +33,11 @@
 //          Enum ID,              Struct object name
 #define LINK_DEF(X_LINK)                                 \
     X_LINK( LINK_START_PAGE,      PageBootScreen       ) \
-    X_LINK( LINK_MAIN_HUB,        PageMainHub          ) \
-    X_LINK( LINK_MAIN_MENU,       PageMenu             ) \
     X_LINK( LINK_DIAGNOSTICS,     PageDiagnostic       ) \
     X_LINK( LINK_PAGE_INFO,       PageInfo             ) \
- 
-#define
+    X_LINK( LINK_PAGE_TODO,       PageTodo             ) \
+    X_LINK( LINK_MAIN_HUB,        PageMainHub          ) \
+    X_LINK( LINK_MAIN_MENU,       PageMenu             ) \
 
 //-------------------------------------------------------------------------------------------------
 
