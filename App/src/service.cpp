@@ -226,41 +226,17 @@ static ServiceReturn_t* SERV_TEST(ServiceEvent_e* pServiceState, uint16_t SubSer
     static bool        IsItFirstServiceStart = true;
     ServiceReturn_t*   pService = nullptr;
     static uint16_t    Count = 0;
-    static char*       pBuffer = nullptr;
 
-    if(*pServiceState == SERVICE_START)
+    if(TickHasTimeOut(Start, 10) == true)
     {
-        if(IsItFirstServiceStart == true)
-        {
-            IsItFirstServiceStart = false;
-            pBuffer = (char*)pMemoryPool->Alloc(SERVICE_PRINT_BUFFER_SIZE);
-        }
+        Start = GetTick();
+        Count++;
     }
-    else if(*pServiceState == SERVICE_FINALIZE)
+
+    if((pService = GetServiceStruct(SERVICE_RETURN_TYPE1)) != nullptr)
     {
-        if(IsItFirstServiceStart == false)
-        {
-            IsItFirstServiceStart = true;
-            pMemoryPool->Free((void**)&pBuffer);
-        }
-    }
-    else
-    {
-        *pServiceState = SERVICE_IDLE;
-
-        if(TickHasTimeOut(Start, 1000) == true)
-        {
-            Start = GetTick();
-            Count++;
-
-            snprintf(pBuffer, 6, "%05d", Count);
-
-            if((pService = GetServiceStruct(SERVICE_RETURN_TYPE4)) != nullptr)
-            {
-                ((ServiceType4_t*)pService)->pString[0] = pBuffer;
-                *pServiceState = SERVICE_REFRESH;
-            }
-        }
+        ((ServiceType1_t*)pService)->Data = Count;
+        *pServiceState = SERVICE_REFRESH;
     }
 
     return pService;

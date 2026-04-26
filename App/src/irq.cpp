@@ -47,7 +47,7 @@ extern "C"
 
 NOS_ISR(DMA2_Stream6_IRQHandler)
 {
-	myUART_Terminal.DMA_TX_IRQ_Handler();
+	UART_DebugTerminal.DMA_TX_IRQ_Handler();
 }
 
 NOS_ISR(DMA2_Stream0_IRQHandler)
@@ -90,7 +90,7 @@ NOS_ISR(DMA2_Stream3_IRQHandler)
 
 NOS_ISR(USART6_IRQHandler)
 {
-    myUART_Terminal.IRQ_Handler();
+    UART_DebugTerminal.IRQ_Handler();
 }
 
 //-------------------------------------------------------------------------------------------------

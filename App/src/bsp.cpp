@@ -109,3 +109,22 @@ SystemState_e BSP_PostOS_Initialize(void)
 
 //-------------------------------------------------------------------------------------------------
 
+void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}
+
+void WriteSingleReg(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}
+
+void Poutine(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}
+
+void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}

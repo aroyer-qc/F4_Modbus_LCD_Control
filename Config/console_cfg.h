@@ -30,8 +30,6 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define CON_USE_COMM_UART                       &myUART_Terminal
-
 #define CON_USE_DEBUG_LOG                       DEF_ENABLED
 #define CON_USE_CMD_HELP                        DEF_ENABLED         // Adding the help command to the command line
 
@@ -57,6 +55,11 @@
 #define SYS_DEBUG_LEVEL_NANO_IP                 SYS_DEBUG_LEVEL_7
 #define SYS_DEBUG_LEVEL_MEMORY_POOL             SYS_DEBUG_LEVEL_8
 #define SYS_DEBUG_LEVEL_APPLICATION             SYS_DEBUG_LEVEL_9
+
+//-------------------------------------------------------------------------------------------------
+
+#define CON_DEBUG_CONSOLE                       &DebugConsole
+#define CON_DEBUG_UART                          &UART_DebugTerminal
 
 //-------------------------------------------------------------------------------------------------
 

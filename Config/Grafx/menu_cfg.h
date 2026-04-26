@@ -31,7 +31,7 @@
 #ifdef GFX_GLOBAL
 
 const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INVALID_LINK        },
-                                                {   BTN_TEST1,               INVALID_LINK        },
+                                                {   BTN_TEST1,               LINK_PAGE_INFO      },
                                                 {   BTN_TEST2,               INVALID_LINK        },
                                                 {   BTN_TEST3,               INVALID_LINK        },
                                                 {   BTN_TEST4,               INVALID_LINK        },
@@ -45,7 +45,8 @@ const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INV
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 
-const PageWidget_t PageInfo             [] =  { {   BTN_RETURN,              PREVIOUS_LINK       },
+const PageWidget_t PageInfo             [] =  { {   BACK_SCREEN,             INVALID_LINK        },
+                                                {   BTN_RETURN,              PREVIOUS_LINK       },
                                                 {   LABEL_INFO,              INVALID_LINK        },
                                                 {   LABEL_FW_NAME_INFO,      INVALID_LINK        },
                                                 {   LABEL_FW_VERSION_INFO,   INVALID_LINK        },

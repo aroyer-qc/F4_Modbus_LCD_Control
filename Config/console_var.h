@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  grafx_display_layer_cfg.h
+//  File :  console_var.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2026 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -26,32 +26,26 @@
 
 #pragma once
 
-// Because of the nature of the LCD 8080 FMC mode, and the lack of external memory:
-//	- There is no full size construction layer
-//	- Coarse touch layer of 10 pixels x 10 Pixels resolution was chosen resulting into an
-//    array of 768 Bytes.  Number of touch zone => 256
-//
-// For the construction layer because of limited RAM
-// 176 x 56 = 9856 uint16_t  = 19712 bytes.
-// no widget Should be bigger than this size.
-//
-// Touch sense zone has been reduce to 32x24 * 2 = 1536 bytes for the same reason.
-// A total of 21248 bytes out of 256K are reserved to this in memory.
-// See. stm32f437vg_flash.ld
-//
 //-------------------------------------------------------------------------------------------------
-//           Name of the layer              Initial layer      Pixel Format            Size X                    Size Y
-#define LAYER_DEF(X_LAYER) \
-    X_LAYER( BACKGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                  )\
-    X_LAYER( FOREGROUND_DISPLAY_LAYER_0,    LAYER_DUMMY,       PIXEL_FORMAT_RGB565,    0,                        0                  )\
-    X_LAYER( CONSTRUCTION_FOREGROUND_LAYER, LAYER_VIRTUAL,     PIXEL_FORMAT_ARGB8888,  250,                      64                 )\
-    X_LAYER( TOUCH_SENSE_LAYER,             LAYER_VIRTUAL,     PIXEL_FORMAT_RGB565,    GRAFX_TOUCH_SIZE_X,       GRAFX_TOUCH_SIZE_Y )\
+// Global variable(s) and constant(s)
+//-------------------------------------------------------------------------------------------------
+
+#ifdef CONSOLE_GLOBAL
+
+class Console DebugConsole;                         // This console if for the debug, CLI, VT100
+class Console ModbusConsole;                        // This console if for the MODBUS Serial
+
+#else
+
+extern class Console DebugConsole;
+extern class Console ModbusConsole;
+
+#endif // CONSOLE_GLOBAL
+
+
 
 //-------------------------------------------------------------------------------------------------
 
-// Unused define layer ( reserved KEYWORD
-// CONSTRUCTION_BACKGROUND_LAYER,
-// FOREGROUND_SLIDING_LAYER,
 
 
 

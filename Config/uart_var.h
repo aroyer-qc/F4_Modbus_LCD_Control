@@ -304,12 +304,12 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
 //-------------------------------------------------------------------------------------------------
 
-class UART_Driver myUART_Terminal (TERMINAL_SERIAL);
-class UART_Driver RS485_Modbus    (RS485_SERIAL);
+class UART_Driver UART_DebugTerminal    (TERMINAL_SERIAL);
+class UART_Driver RS485_Modbus          (RS485_SERIAL);
 
 #else // UART_DRIVER_GLOBAL
 
-extern class UART_Driver myUART_Terminal;
+extern class UART_Driver UART_DebugTerminal;
 extern class UART_Driver RS485_Modbus;
 
 #endif // UART_DRIVER_GLOBAL
