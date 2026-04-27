@@ -223,7 +223,6 @@ static ServiceReturn_t* SERV_LEDS(ServiceEvent_e* pServiceState, uint16_t SubSer
 static ServiceReturn_t* SERV_TEST(ServiceEvent_e* pServiceState, uint16_t SubService)
 {
     static TickCount_t Start = GetTick();
-    static bool        IsItFirstServiceStart = true;
     ServiceReturn_t*   pService = nullptr;
     static uint16_t    Count = 0;
 

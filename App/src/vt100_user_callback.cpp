@@ -155,12 +155,8 @@ VT100_InputType_e VT100_Terminal::CALLBACK_TouchInformation(uint8_t Input, VT100
 {
     static uint8_t  LastPosX;
     static uint8_t  LastPosY;
-    uint32_t        Refresh;
-    uint32_t        EditedValue;        // if we come back from decimal input
     uint16_t        ADC_Value;
     Cartesian_t     Position;
-
-//    Refresh = VT100_CFG_NO_REFRESH;
 
     switch(Type)
     {
@@ -191,7 +187,6 @@ VT100_InputType_e VT100_Terminal::CALLBACK_TouchInformation(uint8_t Input, VT100
             VT100_Printf(VT100_LBL_Y2);
             VT100_Printf(4, 13, VT100_LBL_TOUCH_POS_X);
             VT100_Printf(4, 14, VT100_LBL_TOUCH_POS_Y);
-            Refresh = VT100_CFG_REFRESH_ALL;
         }
         break;
 
