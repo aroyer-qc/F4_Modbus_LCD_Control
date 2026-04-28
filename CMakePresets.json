@@ -1,0 +1,57 @@
+{
+    "version": 3,
+
+    "configurePresets": [
+        {
+            "name": "Default",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}"
+        },
+
+        {
+            "name": "mcu",
+            "hidden": true,
+            "inherits": "Default",
+
+            "toolchainFile": "${workspaceFolder}/arm-none-eabi-gcc.cmake",
+
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+
+            "environment": {
+                "COMPILER_WANTED_VERSION": "13.2.1"
+            }
+        },
+
+        {
+            "name": "Debug_F437",
+            "inherits": "mcu",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+
+        {
+            "name": "Release_F437",
+            "inherits": "mcu",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+
+    "buildPresets": [
+        {
+            "name": "Debug_F437",
+            "configurePreset": "Debug_F437",
+            "jobs": 8
+        },
+        {
+            "name": "Release_F437",
+            "configurePreset": "Release_F437",
+            "jobs": 8
+        }
+    ]
+}

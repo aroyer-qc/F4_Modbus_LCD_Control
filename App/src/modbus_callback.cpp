@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  modbus_cfg.h
+//  File : modbus_callback.cpp
 //
 //-------------------------------------------------------------------------------------------------
 //
@@ -24,44 +24,34 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-#pragma once
+//-------------------------------------------------------------------------------------------------
+// Include file(s)
+//-------------------------------------------------------------------------------------------------`
+
+#include "./Digini/lib_digini.h"
 
 //-------------------------------------------------------------------------------------------------
-// Define(s)
-//-------------------------------------------------------------------------------------------------
+// Function(s)
+//-------------------------------------------------------------------------------------------------`
 
-#define MODBUS_MAX_BACKENDS                         1   // Only one backend on this project (RTU)
+void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}
 
-#define MODBUS_MAX_COMMAND_ENTRY   					20  // Capacity of the application command table
+void WriteSingleReg(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}
 
-#define MODBUS_USE_ROUTER_PASSTHRU                  DEF_DISABLED
-#define MODBUS_MAX_PASSTHRU_RULES 		            10  // Maximum number of MODBUS routing entries (address/function/handler)
+void Poutine(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}
 
-//-------------------------------------------------------------------------------------------------
-
-// Digini default MODBUS_RTU configuration
-#define MODBUS_RTU_IO_RE_DE_CONTROL_PIN             IO_RS485_DE				// see bsp_io_def.h
-#define MODBUS_RTU_UART							    &RS485_Modbus			// see uart_var.h
-#define MODBUS_RTU_MIN_ADDRESS					    100
-#define MODBUS_RTU_MAX_ADDRESS					    120
-
-//-------------------------------------------------------------------------------------------------
-
-#define MODBUS_APP_TABLE(ENTRY) 										\
-    ENTRY(100, 	MODBUS_READ_HOLDING_REGISTERS, 		ReadHoldingRegs) 	\
-    ENTRY(101, 	MODBUS_WRITE_SINGLE_REGISTER, 		WriteSingleReg) 	\
-    ENTRY(102, 	MODBUS_READ_HOLDING_REGISTERS, 		Poutine) 			\
-    ENTRY(103, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	WriteMultipleRegs)
-
+void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    // TODO: implement
+}
 
 //-------------------------------------------------------------------------------------------------
-
-// Passthrough rules used by the Modbus router. Each entry rewrites the slave address
-// before forwarding the command (SourceAddress → DestinationAddress).
-// MODBUS_USE_ROUTER_PASSTHRU must be enabled.
-#define MODBUS_ROUTER_PASSTHRU_TABLE(ENTRY) \
-    ENTRY(101, 201) \
-    ENTRY(102, 202)
-//-------------------------------------------------------------------------------------------------
-
-
