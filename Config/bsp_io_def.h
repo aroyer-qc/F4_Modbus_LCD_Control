@@ -70,6 +70,7 @@
 /* Output IO's CFG -------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        1)                     \
+    X_IO_CFG( IO_CFG_OUTPUT_PP_MS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       0)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_MS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     1)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_HS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       1)                     \
 /* ADC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
@@ -93,8 +94,8 @@
 /* -----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-//    X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        0)                     
-    //X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        1)                     
+//    X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        0)
+    //X_IO_CFG( IO_CFG_OUTPUT_OC_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_OD,        IO_SPEED_FREQ_LOW,        1)
 
 //-------------------------------------------------------------------------------------------------
 //
@@ -125,7 +126,7 @@
     X_IO( IO_ADC_Y1,            GPIOA,      IO_PIN_6,       IO_CFG_ADC)                           \
     X_IO( IO_ADC_Y2,            GPIOC,      IO_PIN_4,       IO_CFG_ADC)                           \
 /* RS485 IO's ----------------------------------------------------------------------------------*/\
-    X_IO( IO_RS485_DE,          GPIOC,      IO_PIN_12,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
+    X_IO( IO_RS485_DE,          GPIOC,      IO_PIN_12,      IO_CFG_OUTPUT_PP_MS_DEF0)             \
 /* LCD IO's ------------------------------------------------------------------------------------*/\
     X_IO( IO_LCD_RESET,         GPIOD,      IO_PIN_6,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
     X_IO( IO_LCD_TFT_BL_PWM,    GPIOA,      IO_PIN_5,       IO_CFG_PWM_AF1)                       \
