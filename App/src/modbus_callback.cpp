@@ -36,22 +36,34 @@
 
 void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
 {
-    // TODO: implement
+	//Response.Payload[0] = ByteCount;
+	//Response.Payload[1] = HighByte;
+	//Response.Payload[2] = LowByte;
+	//Response.Length = 3;
 }
 
 void WriteSingleReg(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
 {
-    // TODO: implement
+	//Response.Payload[0] = ByteCount;
+	//Response.Payload[1] = HighByte;
+	//Response.Payload[2] = LowByte;
+	//Response.Length = 3;
 }
 
 void Poutine(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
 {
-    // TODO: implement
+	//Response.Payload[0] = ByteCount;
+	//Response.Payload[1] = HighByte;
+	//Response.Payload[2] = LowByte;
+	//Response.Length = 3;
 }
 
 void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
 {
-    // TODO: implement
+	//Response.Payload[0] = ByteCount;
+	//Response.Payload[1] = HighByte;
+	//Response.Payload[2] = LowByte;
+	//Response.Length = 3;
 }
 
 //-------------------------------------------------------------------------------------------------

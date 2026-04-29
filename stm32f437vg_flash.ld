@@ -33,9 +33,9 @@ GFX_RAM_SIZE = 0x10000;  /* 64000 + 1536;          construction layer + touch sc
 MEMORY
 {
      FLASH       (rx)  : ORIGIN = 0x08000000,                 LENGTH = 2048K      			/*  Main FLASH memory            */
-     RAM         (rwx) : ORIGIN = 0x20000000,                 LENGTH = 192K - GFX_RAM_SIZE 	/*  Main RAM memory              */
-     GFX_DISPLAY (rwx) : ORIGIN = ORIGIN(RAM) + LENGTH(RAM),  LENGTH = GFX_RAM_SIZE        	/*  construction layer + touch screen reserved memory */
-     CCMRAM      (rwx) : ORIGIN = 0x10000000,                 LENGTH = 64K        			/*  Core Coupled RAM Memory      */
+     RAM         (rw)  : ORIGIN = 0x20000000,                 LENGTH = 192K - GFX_RAM_SIZE 	/*  Main RAM memory              */
+     GFX_DISPLAY (rw)  : ORIGIN = ORIGIN(RAM) + LENGTH(RAM),  LENGTH = GFX_RAM_SIZE        	/*  construction layer + touch screen reserved memory */
+     CCMRAM      (rw)  : ORIGIN = 0x10000000,                 LENGTH = 64K        			/*  Core Coupled RAM Memory      */
 }
 
 _estack = ORIGIN(RAM) + LENGTH(RAM);

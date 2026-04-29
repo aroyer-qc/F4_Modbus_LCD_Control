@@ -22,7 +22,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g2 ${CPU_FLAGS} ${COMMON_CXX_FLAGS} -Wno-regis
 
 set(CMAKE_ASM_FLAGS "${CPU_FLAGS} -Wa,--gdwarf-2")
 
-set(CMAKE_EXE_LINKER_FLAGS "${CPU_FLAGS} -Wl,--gc-sections -Wl,--cref -lm -lstdc++ -T${LINKER_SCRIPT}")
+set(CMAKE_EXE_LINKER_FLAGS "${CPU_FLAGS} --specs=nano.specs --specs=nosys.specs -Wl,--gc-sections -T${LINKER_SCRIPT}")
 
 set(SOURCES
     ./App/ressource/src/BtMenuGray.cpp
@@ -41,8 +41,11 @@ set(SOURCES
     ./App/ressource/src/LedYellowOff_16x16.cpp
     ./App/ressource/src/LedYellowOn_16x16.cpp
     ./App/ressource/src/Measure.cpp
+    ./App/ressource/src/Ok.cpp
     ./App/ressource/src/Range.cpp
     ./App/ressource/src/Reference.cpp
+    ./App/ressource/src/Sphere.cpp
+    ./App/ressource/src/SpherePressed.cpp
     ./App/ressource/src/StaticFont.cpp
     ./App/ressource/src/Warning.cpp
 
@@ -147,6 +150,7 @@ set(SOURCES
     ./Module/Digini/Utility/src/lib_4decbcd.cpp
     ./Module/Digini/Utility/src/lib_6aschex.cpp
     ./Module/Digini/Utility/src/lib_bit_reversal.cpp
+    ./Module/Digini/Utility/src/lib_class_crc.cpp
     ./Module/Digini/Utility/src/lib_fifo.cpp
     ./Module/Digini/Utility/src/lib_stacktistic.cpp
     ./Module/Digini/Utility/src/lib_time_and_delay.cpp
@@ -170,6 +174,11 @@ set(SOURCES
 )
 
 add_executable(F4_Modbus_LCD_Control.elf ${SOURCES})
+
+target_link_options(F4_Modbus_LCD_Control.elf  PRIVATE
+    -Wl,--defsym=__HEAP_SIZE=0x00002000
+    -Wl,--defsym=__STACK_SIZE=0x00000300
+)
 
 target_compile_definitions(F4_Modbus_LCD_Control.elf PRIVATE
     STM32F4xx
