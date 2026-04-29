@@ -70,7 +70,7 @@
 /* Output IO's CFG -------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        1)                     \
-    X_IO_CFG( IO_CFG_OUTPUT_PP_MS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       0)                     \
+    X_IO_CFG( IO_CFG_OUTPUT_PP_MS_DEF0,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     0)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_MS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     1)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_HS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       1)                     \
 /* ADC IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
@@ -88,7 +88,7 @@
 /* USART IO's CFG --------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_USART6_AF8,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF8_USART6)         \
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_UART4_AF8,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF8_UART4)          \
+    X_IO_CFG( IO_CFG_USART3_AF7,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF7_USART3)         \
 /* USB IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_USB_AF10,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF10_OTG_FS)        \
 /* -----------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -171,7 +171,7 @@
 
 //--------------------------------------------
 // UART4 grouping configuration
-#define UART4_PIN_ON_PORT_C     (IO_PIN_10 | IO_PIN_11)
+#define USART3_PIN_ON_PORT_C    (IO_PIN_10 | IO_PIN_11)
 
 //--------------------------------------------
 // USB grouping configuration
@@ -192,7 +192,7 @@
 /* USART ------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_USART6_ON_PORT_C,    GPIOC,      USART6_PIN_ON_PORT_C,       IO_CFG_USART6_AF8)         \
 /* UART -------------------------------------------------------------------------------------------------*/\
-    X_IO_GROUP( IO_UART4_ON_PORT_C,     GPIOC,      UART4_PIN_ON_PORT_C,        IO_CFG_UART4_AF8)          \
+    X_IO_GROUP( IO_USART3_ON_PORT_C,    GPIOC,      USART3_PIN_ON_PORT_C,       IO_CFG_USART3_AF7)         \
 /* USB --------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_USB_ON_PORT_A,       GPIOA,      USB_PIN_ON_PORT_A,          IO_CFG_USB_AF10)           \
 /* ------------------------------------------------------------------------------------------------------*/

@@ -45,7 +45,6 @@
 //-------------------------------------------------------------------------------------------------
 int main()
 {
-
     ISR_Disable();
     nOS_Init();
     BSP_Initialize();                           // All hardware and system initialization

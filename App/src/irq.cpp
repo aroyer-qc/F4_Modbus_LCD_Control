@@ -50,6 +50,11 @@ NOS_ISR(DMA2_Stream6_IRQHandler)
 	UART_DebugTerminal.DMA_TX_IRQ_Handler();
 }
 
+NOS_ISR(DMA1_Stream3_IRQHandler)
+{
+	RS485_Modbus.DMA_TX_IRQ_Handler();
+}
+
 NOS_ISR(DMA2_Stream0_IRQHandler)
 {
 	SPI_Driver::DMA_RX_IRQ_Handler(DRIVER_SPI2_ID);
@@ -92,6 +97,12 @@ NOS_ISR(USART6_IRQHandler)
 {
     UART_DebugTerminal.IRQ_Handler();
 }
+
+NOS_ISR(USART3_IRQHandler)
+{
+    RS485_Modbus.IRQ_Handler();
+}
+
 
 //-------------------------------------------------------------------------------------------------
 /*
