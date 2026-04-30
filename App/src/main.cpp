@@ -45,6 +45,10 @@
 //-------------------------------------------------------------------------------------------------
 int main()
 {
+CRC_Calc ModbusCRC(CRC_16_MODBUS);
+volatile uint16_t ComputedCRC = ModbusCRC.CalculateBuffer((uint8_t*)"\x64\x03\x00\x00\x00\0x01", 6);
+
+
     ISR_Disable();
     nOS_Init();
     BSP_Initialize();                           // All hardware and system initialization

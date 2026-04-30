@@ -36,10 +36,13 @@
 
 void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
 {
-	//Response.Payload[0] = ByteCount;
-	//Response.Payload[1] = HighByte;
-	//Response.Payload[2] = LowByte;
-	//Response.Length = 3;
+    // 1 registre → ByteCount = 2
+    Response.pPayload[0] = 2;          // ByteCount
+    Response.pPayload[1] = 0x12;       // High byte
+    Response.pPayload[2] = 0x34;       // Low byte
+
+    Response.Length = 3;               // ByteCount + 2 bytes de data
+    Response.IsException = false;
 }
 
 void WriteSingleReg(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
