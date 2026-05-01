@@ -34,18 +34,52 @@
 // Function(s)
 //-------------------------------------------------------------------------------------------------`
 
-void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+/* Example
+bool MyReadHoldingRegisters(MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+{
+    const uint16_t Start = Command.Address;
+    const uint16_t Qty   = Command.Quantity;
+
+    // Verify limits
+    if(Start + Qty > MY_REGISTER_COUNT)
+    {
+        // Exception Modbus : Illegal Data Address
+        Response.IsException   = true;
+        Response.Function      = Command.Function;
+        Response.pPayload[0]   = MODBUS_EXCEPTION_ILLEGAL_DATA_ADDRESS;
+        Response.PayloadLength = 1;
+        return true;
+    }
+
+    //  Build normal response
+    Response.IsException    = false;
+    Response.Function       = Command.Function;
+    Response.PayloadLength  = Qty * 2;
+    Response.pPayload[0]    = Response.PayloadLength;
+
+    for(uint16_t i = 0; i < Qty; i++)
+    {
+        uint16_t value = MyRegisterTable[Start + i];
+        Response.pPayload[1 + (i * 2)] = uint8_t(value >> 8);
+        Response.pPayload[2 + (i * 2)] = uint8_t(value);
+    }
+
+    return true;
+}
+*/
+
+void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
     // 1 registre → ByteCount = 2
     Response.pPayload[0] = 2;          // ByteCount
     Response.pPayload[1] = 0x12;       // High byte
     Response.pPayload[2] = 0x34;       // Low byte
 
-    Response.Length = 3;               // ByteCount + 2 bytes de data
-    Response.IsException = false;
+    Response.PayloadLength = 3;               // ByteCount + 2 bytes de data
+    Response.IsException   = false;
 }
 
-void WriteSingleReg(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+void WriteSingleReg(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
 	//Response.Payload[0] = ByteCount;
 	//Response.Payload[1] = HighByte;
@@ -53,7 +87,7 @@ void WriteSingleReg(const MODBUS_Command_t& Command, MODBUS_Response_t& Response
 	//Response.Length = 3;
 }
 
-void Poutine(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+void Poutine(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
 	//Response.Payload[0] = ByteCount;
 	//Response.Payload[1] = HighByte;
@@ -61,7 +95,7 @@ void Poutine(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
 	//Response.Length = 3;
 }
 
-void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
 	//Response.Payload[0] = ByteCount;
 	//Response.Payload[1] = HighByte;

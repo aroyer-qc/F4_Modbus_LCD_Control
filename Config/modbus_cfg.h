@@ -32,7 +32,8 @@
 
 #define MODBUS_MAX_BACKENDS                         1   // Only one backend on this project (RTU)
 
-#define MODBUS_MAX_COMMAND_ENTRY   					20  // Capacity of the application command table
+#define MODBUS_MAX_SLAVE_COMMAND_ENTRY  			20
+#define MODBUS_MAX_MASTER_REQUEST_ENTRY  			20
 
 #define MODBUS_USE_ROUTER_PASSTHRU                  DEF_DISABLED
 #define MODBUS_MAX_PASSTHRU_RULES 		            10  // Maximum number of MODBUS routing entries (address/function/handler)
@@ -47,11 +48,11 @@
 
 //-------------------------------------------------------------------------------------------------
 
-#define MODBUS_APP_TABLE(ENTRY) 										\
-    ENTRY(100, 	MODBUS_READ_HOLDING_REGISTERS, 		ReadHoldingRegs) 	\
-    ENTRY(101, 	MODBUS_WRITE_SINGLE_REGISTER, 		WriteSingleReg) 	\
-    ENTRY(102, 	MODBUS_READ_HOLDING_REGISTERS, 		Poutine) 			\
-    ENTRY(103, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	WriteMultipleRegs)
+#define MODBUS_APP_TABLE(ENTRY) 									    	\
+    ENTRY(100, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  ReadHoldingRegs) 	\
+    ENTRY(101, 	MODBUS_WRITE_SINGLE_REGISTER, 		1,  WriteSingleReg) 	\
+    ENTRY(102, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  Poutine) 			\
+    ENTRY(103, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	1,  WriteMultipleRegs)
 
 
 //-------------------------------------------------------------------------------------------------

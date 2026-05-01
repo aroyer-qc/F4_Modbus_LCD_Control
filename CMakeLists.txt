@@ -9,7 +9,7 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
 set(CPU_FLAGS "-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard")
 
-set(COMMON_C_FLAGS "-fno-strict-aliasing -ffunction-sections -fdata-sections")
+set(COMMON_C_FLAGS "-fno-strict-aliasing -ffunction-sections -fdata-sections ")
 set(COMMON_CXX_FLAGS "-fno-strict-aliasing -ffunction-sections -fdata-sections -fno-use-cxa-atexit")
 
 set(LINKER_SCRIPT "${CMAKE_CURRENT_LIST_DIR}/stm32f437vg_flash.ld")
@@ -17,14 +17,93 @@ set(LINKER_SCRIPT "${CMAKE_CURRENT_LIST_DIR}/stm32f437vg_flash.ld")
 set(CMAKE_C_FLAGS_DEBUG   "-O0 -g3 ${CPU_FLAGS} ${COMMON_C_FLAGS} -DDEBUG")
 set(CMAKE_C_FLAGS_RELEASE "-O2 -g2 ${CPU_FLAGS} ${COMMON_C_FLAGS}")
 
-set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g3 ${CPU_FLAGS} ${COMMON_CXX_FLAGS} -DDEBUG -Wno-psabi -Wno-literal-suffix -fpermissive -Wno-register")
-set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g2 ${CPU_FLAGS} ${COMMON_CXX_FLAGS} -Wno-register")
+set(CMAKE_CXX_FLAGS_DEBUG   "-O0 -g3 ${CPU_FLAGS} ${COMMON_CXX_FLAGS} -DDEBUG -Wno-psabi -Wno-literal-suffix -fpermissive -fschedule-insns -Wno-register")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g2 ${CPU_FLAGS} ${COMMON_CXX_FLAGS} -fschedule-insns -Wno-register")
 
-set(CMAKE_ASM_FLAGS "${CPU_FLAGS} -Wa,--gdwarf-2")
+set(CMAKE_ASM_FLAGS "${CPU_FLAGS} -Wa,--gdwarf-2 -save-temps -fdata-sections -ffunction-sections")
 
-set(CMAKE_EXE_LINKER_FLAGS "${CPU_FLAGS} --specs=nano.specs --specs=nosys.specs -Wl,--gc-sections -T${LINKER_SCRIPT}")
+set(CMAKE_EXE_LINKER_FLAGS "${CPU_FLAGS} --specs=nosys.specs -Wl,--warn-common=no -Wl,--no-warn-rwx-segments -Wl,--no-warn-mismatch -Wl,--gc-sections -Wl,--no-warn-rwx-segments -lm -T${LINKER_SCRIPT}")
+
+# ---------------------------------------------------------------------------
+# Generate syscalls.c automatically in the build directory
+# ---------------------------------------------------------------------------
+set(SYSCALLS_FILE "${CMAKE_BINARY_DIR}/syscalls.c")
+
+file(WRITE ${SYSCALLS_FILE} "
+#include <sys/stat.h>
+#include <errno.h>
+#include <stdint.h>
+
+extern uint32_t _end;
+static uint8_t *heap_end = 0;
+
+caddr_t _sbrk(int incr)
+{
+    if (heap_end == 0) {
+        heap_end = (uint8_t *)&_end;
+    }
+
+    uint8_t *prev = heap_end;
+    heap_end += incr;
+    return (caddr_t)prev;
+}
+
+int _write(int file, char *ptr, int len)
+{
+    return len;
+}
+
+int _read(int file, char *ptr, int len)
+{
+    errno = EINVAL;
+    return -1;
+}
+
+int _close(int file)
+{
+    return -1;
+}
+
+int _lseek(int file, int ptr, int dir)
+{
+    return 0;
+}
+
+int _fstat(int file, struct stat *st)
+{
+    st->st_mode = S_IFCHR;
+    return 0;
+}
+
+int _isatty(int file)
+{
+    return 1;
+}
+int _kill(int pid, int sig)
+{
+    errno = EINVAL;
+    return -1;
+}
+
+int _getpid(void)
+{
+    return 1;
+}
+
+void _exit(int status)
+{
+    while (1) {}
+}
+
+void _abort(void)
+{
+    while (1) {}
+}
+")
+
 
 set(SOURCES
+    ${SYSCALLS_FILE}
     ./App/ressource/src/BtMenuGray.cpp
     ./App/ressource/src/BtMenuNormal.cpp
     ./App/ressource/src/BtMenuPressed.cpp
