@@ -34,6 +34,12 @@
 #undef  TASK_MAIN_GLOBAL
 
 //-------------------------------------------------------------------------------------------------
+// Define(s)
+//-------------------------------------------------------------------------------------------------
+
+#define MODBUS_REQUEST_DELAY    1000
+
+//-------------------------------------------------------------------------------------------------
 //
 //  Name:           TaskMain_Wrapper
 //
@@ -91,10 +97,18 @@ SystemState_e TaskMain::Initialize(void)
 //-------------------------------------------------------------------------------------------------
 void TaskMain::Run(void)
 {
+    TickCount_t Tick = GetTick();
+
     for(;;)
     {
         nOS_Sleep(200);
         LED_Toggle(IO_LED_GREEN_STATUS);
+
+        if(TickHasTimeOut(Tick, MODBUS_REQUEST_DELAY) == true)
+        {
+            Tick = GetTick();
+            myMODBUS_Application.MasterRequest(0, 1);
+        }
     }
 }
 

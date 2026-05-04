@@ -103,4 +103,30 @@ void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& 
 	//Response.Length = 3;
 }
 
+
+
+void ModbusMasterTest1(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+{
+    VAR_UNUSED(RequestID);
+    VAR_UNUSED(Response);
+}
+
+void ModbusMasterTest2(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+{
+    VAR_UNUSED(RequestID);
+    VAR_UNUSED(Response);
+}
+
+void ModbusMasterTest3(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+{
+    VAR_UNUSED(RequestID);
+    VAR_UNUSED(Response);
+}
+
+void ModbusMasterTest4(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+{
+    VAR_UNUSED(RequestID);
+    VAR_UNUSED(Response);
+}
+
 //-------------------------------------------------------------------------------------------------

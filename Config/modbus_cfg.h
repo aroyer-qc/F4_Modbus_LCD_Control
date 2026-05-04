@@ -44,16 +44,23 @@
 #define MODBUS_RTU_IO_RE_DE_CONTROL_PIN             IO_RS485_DE				// see bsp_io_def.h
 #define MODBUS_RTU_UART							    &RS485_Modbus			// see uart_var.h
 #define MODBUS_RTU_MIN_ADDRESS					    100
-#define MODBUS_RTU_MAX_ADDRESS					    120
+#define MODBUS_RTU_MAX_ADDRESS					    220
 
 //-------------------------------------------------------------------------------------------------
 
-#define MODBUS_APP_TABLE(ENTRY) 									    	\
-    ENTRY(100, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  ReadHoldingRegs) 	\
-    ENTRY(101, 	MODBUS_WRITE_SINGLE_REGISTER, 		1,  WriteSingleReg) 	\
-    ENTRY(102, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  Poutine) 			\
-    ENTRY(103, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	1,  WriteMultipleRegs)
+#define MODBUS_APP_SLAVE_TABLE(ENTRY) 								    	\
+    ENTRY(200, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  ReadHoldingRegs) 	\
+    ENTRY(201, 	MODBUS_WRITE_SINGLE_REGISTER, 		1,  WriteSingleReg) 	\
+    ENTRY(202, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  Poutine) 			\
+    ENTRY(203, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	1,  WriteMultipleRegs)
 
+//-------------------------------------------------------------------------------------------------
+
+#define MODBUS_APP_MASTER_TABLE(ENTRY) 							        	      \
+    ENTRY(100, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  1000, ModbusMasterTest1)  \
+    ENTRY(101, 	MODBUS_WRITE_SINGLE_REGISTER, 		1,  1000, ModbusMasterTest2)  \
+    ENTRY(102, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  1000, ModbusMasterTest3)  \
+    ENTRY(103, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	1,  1000, ModbusMasterTest4)
 
 //-------------------------------------------------------------------------------------------------
 
