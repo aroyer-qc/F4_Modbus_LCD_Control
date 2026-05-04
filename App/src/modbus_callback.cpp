@@ -34,6 +34,10 @@
 // Function(s)
 //-------------------------------------------------------------------------------------------------`
 
+char GuiID[12];
+char IP_Address[16];   // max "255.255.255.255" + '\0'
+char MAC_Address[18];   // 17 chars + '\0'
+
 /* Example
 bool MyReadHoldingRegisters(MODBUS_Command_t& Command, MODBUS_Response_t& Response)
 {
@@ -103,30 +107,55 @@ void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& 
 	//Response.Length = 3;
 }
 
-
-
-void ModbusMasterTest1(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+void ReadMainGUI_ID(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
 {
+    // We expect 6 bytes of data → ByteCount = 6
+    if(Response.PayloadLength < 8)   // 1 func + 1 bytecount + 6 data
+    {
+        return;
+	}
+
+    const uint8_t* pData = &Response.pPayload[2]; // début des 6 bytes
+
+    // Convert 6 bytes into 12 hex character
+    for(int i = 0; i < 6; i++)
+    {
+        sprintf(&GuiID[i * 2], "%02X", pData[i]);
+    }
+
+    GuiID[12] = '\0'; // null-terminate
     VAR_UNUSED(RequestID);
-    VAR_UNUSED(Response);
 }
 
-void ModbusMasterTest2(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+void ReadIP_Address(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
 {
+    // Response.pPayload[0] = Function
+    // Response.pPayload[1] = ByteCount (should be 4)
+    // Response.pPayload[2..5] = 4 bytes of IP
+
+    if(Response.PayloadLength < 6)   // 1 func + 1 bytecount + 4 data
+	{
+        return;
+	}
+
+    const uint8_t* p = &Response.pPayload[2];
+
+    // Format: A.B.C.D
+    snprintf(IP_Address, sizeof(IP_Address), "%u.%u.%u.%u", p[0], p[1], p[2], p[3]);
     VAR_UNUSED(RequestID);
-    VAR_UNUSED(Response);
 }
 
-void ModbusMasterTest3(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+void ReadMAC_Address(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
 {
-    VAR_UNUSED(RequestID);
-    VAR_UNUSED(Response);
-}
+    // Expect 6 bytes of MAC
+    if(Response.PayloadLength < 8)   // 1 func + 1 bytecount + 6 data
+    {
+		return;
+	}
 
-void ModbusMasterTest4(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
-{
+    const uint8_t* p = &Response.pPayload[2];
+    snprintf(MAC_Address, sizeof(MAC_Address), "%02X:%02X:%02X:%02X:%02X:%02X", p[0], p[1], p[2], p[3], p[4], p[5]);
     VAR_UNUSED(RequestID);
-    VAR_UNUSED(Response);
 }
 
 //-------------------------------------------------------------------------------------------------

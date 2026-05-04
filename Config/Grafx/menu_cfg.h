@@ -31,7 +31,7 @@
 #ifdef GFX_GLOBAL
 
 const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INVALID_LINK        },
-                                                {   BTN_TEST1,               LINK_PAGE_TODO      },
+                                                {   BTN_MDL_INFO,            LINK_PAGE_MODL      },
                                                 {   BTN_TEST2,               LINK_PAGE_TODO      },
                                                 {   BTN_DIAG,                LINK_PAGE_TODO      },
                                                 {   BTN_INFO,                LINK_PAGE_INFO      },
@@ -62,6 +62,18 @@ const PageWidget_t PageInfo             [] =  { {   BACK_SCREEN,             INV
                                                 {   LABEL_INFO_HARDWARE,     INVALID_LINK        },
                                                 {   LABEL_INFO_SERIAL,       INVALID_LINK        },
                                                 {   LABEL_INFO_DATE,         INVALID_LINK        },
+                                                {   INVALID_WIDGET,          INVALID_LINK        }
+                                              };
+
+const PageWidget_t PageModuleInfo       [] =  { {   BACK_SCREEN,             INVALID_LINK        },
+                                                {   BTN_RETURN,              PREVIOUS_LINK       },
+                                                {   LABEL_MODULE_INFO,       INVALID_LINK        },
+                                                {   LABEL_GUI_ID_INFO,       INVALID_LINK        },
+                                                {   LABEL_IP_ADDRESS_INFO,   INVALID_LINK        },
+                                                {   LABEL_MAC_ADDRESS_INFO,  INVALID_LINK        },
+                                                {   LABEL_GUI_ID,            INVALID_LINK        },
+                                                {   LABEL_IP_ADDRESS,        INVALID_LINK        },
+                                                {   LABEL_MAC_ADDRESS,       INVALID_LINK        },
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 

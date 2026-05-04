@@ -49,7 +49,6 @@
     X_LBL_CFG( LBL_PROD_INFO,             "Information",                                                                                               nullptr                                    ) \
     X_LBL_CFG( LBL_LED_RED,               "Poutine",                                                                                                   nullptr                                    ) \
     X_LBL_CFG( LBL_LED_BLUE,              "Hello!",                                                                                                    nullptr                                    ) \
-    X_LBL_CFG( LBL_LED_YELLOW,            "coucou",                                                                                                    nullptr                                    ) \
     X_LBL_CFG( LBL_DIAG,                  "Diagnostic",                                                                                                "Diagnostique"                             ) \
     X_LBL_CFG( LBL_TODO,                  "TODO feature",                                                                                              "Fonction a faire"                         ) \
 \
@@ -59,5 +58,10 @@
     X_LBL_CFG( LBL_5_BACK,                "88888",                                                                                                     nullptr                                    ) \
     X_LBL_CFG( LBL_5_DEC,                 "%05d",                                                                                                      nullptr                                    ) \
 \
+    X_LBL_CFG( LBL_BTN_MODL,              "Module Info",                                                                                               "Info Module"                              ) \
+    X_LBL_CFG( LBL_MODULE_INFO,           "Module Information",                                                                                        "Information Module"                       ) \
+    X_LBL_CFG( LBL_GUI_ID_INFO,			  "GUI ID",																									   nullptr									  ) \
+    X_LBL_CFG( LBL_IP_ADDRESS_INFO,       "IP Address",																								   "Addresse IP" 							  ) \
+    X_LBL_CFG( LBL_MAC_ADDRESS_INFO,	  "MAC Address",                                                                                               "Addresse MAC"							  ) \
 
 //-------------------------------------------------------------------------------------------------

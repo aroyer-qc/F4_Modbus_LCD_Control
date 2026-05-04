@@ -51,6 +51,14 @@ Service type 7 - Return data to override position of a widget (Must be a memory 
 #define SERVICE_PRINT_BUFFER_SIZE   80
 
 //-------------------------------------------------------------------------------------------------
+// external(s)
+//-------------------------------------------------------------------------------------------------`
+
+extern char GuiID		[];
+extern char IP_Address	[];
+extern char MAC_Address	[];
+
+//-------------------------------------------------------------------------------------------------
 // Support Function(s)
 //-------------------------------------------------------------------------------------------------`
 
@@ -118,7 +126,11 @@ static ServiceReturn_t* SERV_INFO(ServiceEvent_e* pServiceState, uint16_t SubSer
                 case 4: snprintf(pBuffer, 24, "%s", OEM_MODEL_NAME);              break;
                 case 5: snprintf(pBuffer, 24, "%s", OEM_SERIAL_NUMBER);           break;
                 case 6: snprintf(pBuffer, 24, "%s", OUR_FIRMWARE_BUILD_DATE);     break;
-                // Add Config version
+                // Add ... Config version
+
+                case 7: snprintf(pBuffer, 24, "%s", GuiID);                       break;
+                case 8: snprintf(pBuffer, 24, "%s", IP_Address);                  break;
+                case 9: snprintf(pBuffer, 24, "%s", MAC_Address);                 break;
             }
 
             ((ServiceType4_t*)pService)->pString[0] = pBuffer;

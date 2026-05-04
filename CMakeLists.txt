@@ -26,6 +26,7 @@ set(CMAKE_EXE_LINKER_FLAGS "${CPU_FLAGS} --specs=nosys.specs -Wl,--warn-common=n
 
 # ---------------------------------------------------------------------------
 # Generate syscalls.c automatically in the build directory
+# I don't want that crap into my repo
 # ---------------------------------------------------------------------------
 set(SYSCALLS_FILE "${CMAKE_BINARY_DIR}/syscalls.c")
 

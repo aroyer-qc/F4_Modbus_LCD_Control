@@ -57,10 +57,9 @@
 //-------------------------------------------------------------------------------------------------
 
 #define MODBUS_APP_MASTER_TABLE(ENTRY) 							        	      \
-    ENTRY(100, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  1000, ModbusMasterTest1)  \
-    ENTRY(101, 	MODBUS_WRITE_SINGLE_REGISTER, 		1,  1000, ModbusMasterTest2)  \
-    ENTRY(102, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  1000, ModbusMasterTest3)  \
-    ENTRY(103, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	1,  1000, ModbusMasterTest4)
+	ENTRY(109, 	MODBUS_READ_HOLDING_REGISTERS,      6,  1000, ReadMainGUI_ID)     \
+	ENTRY(126, 	MODBUS_READ_HOLDING_REGISTERS,      2,  1000, ReadIP_Address)     \
+	ENTRY(130, 	MODBUS_READ_HOLDING_REGISTERS,      3,  1000, ReadMAC_Address)    \
 
 //-------------------------------------------------------------------------------------------------
 
