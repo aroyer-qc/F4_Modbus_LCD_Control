@@ -39,37 +39,57 @@ char IP_Address[16];   // max "255.255.255.255" + '\0'
 char MAC_Address[18];   // 17 chars + '\0'
 
 /* Example
-bool MyReadHoldingRegisters(MODBUS_Command_t& Command, MODBUS_Response_t& Response)
+void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
-    const uint16_t Start = Command.Address;
-    const uint16_t Qty   = Command.Quantity;
-
-    // Verify limits
-    if(Start + Qty > MY_REGISTER_COUNT)
+    // Table locale des sources
+    const uint16_t* Table[] =
     {
-        // Exception Modbus : Illegal Data Address
-        Response.IsException   = true;
-        Response.Function      = Command.Function;
-        Response.pPayload[0]   = MODBUS_EXCEPTION_ILLEGAL_DATA_ADDRESS;
-        Response.PayloadLength = 1;
-        return true;
+        &Reg_A, // 200
+        &Reg_B, // 201
+        &Reg_C, // 202
+        &Reg_D  // 203
+    };
+
+    const uint16_t Offset = Command.Address - 200;
+
+    // ByteCount = Quantity * 2
+    Response.pPayload[0] = Command.Quantity * 2;
+
+    uint8_t* pOut = &Response.pPayload[1];
+
+    for(uint16_t i = 0; i < Command.Quantity; i++)
+    {
+        uint16_t value = *Table[Offset + i];
+        pOut[i*2 + 0] = value >> 8;
+        pOut[i*2 + 1] = value & 0xFF;
     }
 
-    //  Build normal response
-    Response.IsException    = false;
-    Response.Function       = Command.Function;
-    Response.PayloadLength  = Qty * 2;
-    Response.pPayload[0]    = Response.PayloadLength;
-
-    for(uint16_t i = 0; i < Qty; i++)
-    {
-        uint16_t value = MyRegisterTable[Start + i];
-        Response.pPayload[1 + (i * 2)] = uint8_t(value >> 8);
-        Response.pPayload[2 + (i * 2)] = uint8_t(value);
-    }
-
-    return true;
+    Response.PayloadLength = 1 + (Command.Quantity * 2);
+    Response.IsException   = false;
 }
+
+void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
+{
+    const uint16_t* pBase = (const uint16_t*)&g_DeviceRegs;
+
+    const uint16_t Offset = Command.Address - 200;
+
+    // ByteCount = Quantity * 2
+    Response.pPayload[0] = Command.Quantity * 2;
+
+    uint8_t* pOut = &Response.pPayload[1];
+
+    for(uint16_t i = 0; i < Command.Quantity; i++)
+    {
+        uint16_t value = pBase[Offset + i];
+        pOut[i*2 + 0] = value >> 8;
+        pOut[i*2 + 1] = value & 0xFF;
+    }
+
+    Response.PayloadLength = 1 + (Command.Quantity * 2);
+    Response.IsException   = false;
+}
+
 */
 
 void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
@@ -107,7 +127,7 @@ void WriteMultipleRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& 
 	//Response.Length = 3;
 }
 
-void ReadMainGUI_ID(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+void ReadMainGUI_ID(const MODBUS_MasterResponse_t& Response)
 {
     // We expect 6 bytes of data → ByteCount = 6
     if(Response.PayloadLength < 8)   // 1 func + 1 bytecount + 6 data
@@ -124,10 +144,9 @@ void ReadMainGUI_ID(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
     }
 
     GuiID[12] = '\0'; // null-terminate
-    VAR_UNUSED(RequestID);
 }
 
-void ReadIP_Address(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+void ReadIP_Address(const MODBUS_MasterResponse_t& Response)
 {
     // Response.pPayload[0] = Function
     // Response.pPayload[1] = ByteCount (should be 4)
@@ -142,10 +161,9 @@ void ReadIP_Address(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
 
     // Format: A.B.C.D
     snprintf(IP_Address, sizeof(IP_Address), "%u.%u.%u.%u", p[0], p[1], p[2], p[3]);
-    VAR_UNUSED(RequestID);
 }
 
-void ReadMAC_Address(uint32_t RequestID, const MODBUS_MasterResponse_t& Response)
+void ReadMAC_Address(const MODBUS_MasterResponse_t& Response)
 {
     // Expect 6 bytes of MAC
     if(Response.PayloadLength < 8)   // 1 func + 1 bytecount + 6 data
@@ -155,7 +173,6 @@ void ReadMAC_Address(uint32_t RequestID, const MODBUS_MasterResponse_t& Response
 
     const uint8_t* p = &Response.pPayload[2];
     snprintf(MAC_Address, sizeof(MAC_Address), "%02X:%02X:%02X:%02X:%02X:%02X", p[0], p[1], p[2], p[3], p[4], p[5]);
-    VAR_UNUSED(RequestID);
 }
 
 //-------------------------------------------------------------------------------------------------
