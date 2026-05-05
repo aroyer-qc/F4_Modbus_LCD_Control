@@ -43,23 +43,24 @@
 // Digini default MODBUS_RTU configuration
 #define MODBUS_RTU_IO_RE_DE_CONTROL_PIN             IO_RS485_DE				// see bsp_io_def.h
 #define MODBUS_RTU_UART							    &RS485_Modbus			// see uart_var.h
+#define MODBUS_RTU_SLAVE_ID                         1
 #define MODBUS_RTU_MIN_ADDRESS					    100
 #define MODBUS_RTU_MAX_ADDRESS					    220
 
 //-------------------------------------------------------------------------------------------------
 
-#define MODBUS_APP_SLAVE_TABLE(ENTRY) 								    	\
-    ENTRY(200, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  ReadHoldingRegs) 	\
-    ENTRY(201, 	MODBUS_WRITE_SINGLE_REGISTER, 		1,  WriteSingleReg) 	\
-    ENTRY(202, 	MODBUS_READ_HOLDING_REGISTERS, 		1,  Poutine) 			\
-    ENTRY(203, 	MODBUS_WRITE_MULTIPLE_REGISTERS, 	1,  WriteMultipleRegs)
+#define MODBUS_APP_SLAVE_TABLE(ENTRY) 								    	    \
+    ENTRY(1, MODBUS_READ_HOLDING_REGISTERS, 	200,	1,  ReadHoldingRegs) 	\
+    ENTRY(1, MODBUS_WRITE_SINGLE_REGISTER, 	    201, 	1,  WriteSingleReg) 	\
+    ENTRY(1, MODBUS_READ_HOLDING_REGISTERS, 	202, 	1,  Poutine) 			\
+    ENTRY(1, MODBUS_WRITE_MULTIPLE_REGISTERS, 	203, 	1,  WriteMultipleRegs)
 
 //-------------------------------------------------------------------------------------------------
-
-#define MODBUS_APP_MASTER_TABLE(ENTRY) 							        	      \
-	ENTRY(109, 	MODBUS_READ_HOLDING_REGISTERS,      6,  1000, ReadMainGUI_ID)     \
-	ENTRY(126, 	MODBUS_READ_HOLDING_REGISTERS,      2,  1000, ReadIP_Address)     \
-	ENTRY(130, 	MODBUS_READ_HOLDING_REGISTERS,      3,  1000, ReadMAC_Address)    \
+// Master has no ID it request to a slave
+#define MODBUS_APP_MASTER_TABLE(ENTRY) 							        	          \
+	ENTRY(1, MODBUS_READ_HOLDING_REGISTERS,     109, 	6,  1000, ReadMainGUI_ID)     \
+	ENTRY(1, MODBUS_READ_HOLDING_REGISTERS,     126, 	2,  1000, ReadIP_Address)     \
+	ENTRY(1, MODBUS_READ_HOLDING_REGISTERS,     130, 	3,  1000, ReadMAC_Address)    \
 
 //-------------------------------------------------------------------------------------------------
 
