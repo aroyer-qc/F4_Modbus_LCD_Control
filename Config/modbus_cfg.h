@@ -50,7 +50,7 @@
 //-------------------------------------------------------------------------------------------------
 
 #define MODBUS_APP_SLAVE_TABLE(ENTRY) 								    	    						\
-    ENTRY(MODBUS_RTU_SLAVE_ID, 		MODBUS_READ_HOLDING_REGISTERS, 		200,	10,  ReadHoldingRegs) 	\
+    ENTRY(MODBUS_RTU_SLAVE_ID, 		MODBUS_READ_HOLDING_REGISTERS, 		200,	16,  ReadHoldingRegs) 	\
     ENTRY(MODBUS_RTU_SLAVE_ID, 		MODBUS_WRITE_SINGLE_REGISTER, 	    221, 	1,   WriteSingleReg) 	\
     ENTRY(MODBUS_RTU_SLAVE_ID, 		MODBUS_READ_HOLDING_REGISTERS, 		221, 	1,   Poutine) 			\
     ENTRY(MODBUS_RTU_SLAVE_ID, 		MODBUS_WRITE_MULTIPLE_REGISTERS, 	200, 	10,  WriteMultipleRegs)
@@ -58,6 +58,7 @@
 //-------------------------------------------------------------------------------------------------
 // Master has no ID it request to a slave
 #define MODBUS_APP_MASTER_TABLE(ENTRY) 							        	          	 	   \
+	ENTRY(1,		MODBUS_READ_HOLDING_REGISTERS,     0, 	   10,   1000, TestQT)     \
 	ENTRY(1,		MODBUS_READ_HOLDING_REGISTERS,     109, 	6,   1000, ReadMainGUI_ID)     \
 	ENTRY(1, 		MODBUS_READ_HOLDING_REGISTERS,     126,     2,   1000, ReadIP_Address)     \
 	ENTRY(1, 		MODBUS_READ_HOLDING_REGISTERS,     130, 	3,   1000, ReadMAC_Address)    \

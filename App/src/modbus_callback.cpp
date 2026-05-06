@@ -38,6 +38,29 @@ char GuiID[12];
 char IP_Address[16];   // max "255.255.255.255" + '\0'
 char MAC_Address[18];   // 17 chars + '\0'
 
+
+uint16_t Register[16] =
+{
+    0x0000,
+    0x1111,
+    0x2222,
+    0x3333,
+    0x4444,
+    0x5555,
+    0x6666,
+    0x7777,
+    0x8888,
+    0x9999,
+    0xAAAA,
+    0xBBBB,
+    0xCCCC,
+    0xDDDD,
+    0xEEEE,
+    0xFFFF
+};
+
+
+
 /* Example
 void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
@@ -70,7 +93,7 @@ void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Re
 
 void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
-    const uint16_t* pBase = (const uint16_t*)&g_DeviceRegs;
+    const uint16_t* pBase = (const uint16_t*)&Register;
 
     const uint16_t Offset = Command.Address - 200;
 
@@ -94,12 +117,23 @@ void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Re
 
 void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Response)
 {
-    // 1 registre → ByteCount = 2
-    Response.pPayload[0] = 2;          // ByteCount
-    Response.pPayload[1] = 0x12;       // High byte
-    Response.pPayload[2] = 0x34;       // Low byte
+    const uint16_t* pBase = (const uint16_t*)&Register;
 
-    Response.PayloadLength = 3;               // ByteCount + 2 bytes de data
+    const uint16_t Offset = Command.Address - 200;
+
+    // ByteCount = Quantity * 2
+    Response.pPayload[0] = Command.Quantity * 2;
+
+    uint8_t* pOut = &Response.pPayload[1];
+
+    for(uint16_t i = 0; i < Command.Quantity; i++)
+    {
+        uint16_t value = pBase[Offset + i];
+        pOut[i*2 + 0] = value >> 8;
+        pOut[i*2 + 1] = value & 0xFF;
+    }
+
+    Response.PayloadLength = 1 + (Command.Quantity * 2);
     Response.IsException   = false;
 }
 
@@ -174,5 +208,11 @@ void ReadMAC_Address(const MODBUS_MasterResponse_t& Response)
     const uint8_t* p = &Response.pPayload[2];
     snprintf(MAC_Address, sizeof(MAC_Address), "%02X:%02X:%02X:%02X:%02X:%02X", p[0], p[1], p[2], p[3], p[4], p[5]);
 }
+
+void TestQT(const MODBUS_MasterResponse_t& Response)
+{
+    __asm("nop");
+}
+
 
 //-------------------------------------------------------------------------------------------------

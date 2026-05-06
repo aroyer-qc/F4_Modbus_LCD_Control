@@ -107,7 +107,7 @@ void TaskMain::Run(void)
         if(TickHasTimeOut(Tick, MODBUS_REQUEST_DELAY) == true)
         {
             Tick = GetTick();
-            myMODBUS_Application.MasterRequest(0, 1);
+            myMODBUS_Application.MasterRequest(0, 10);
         }
     }
 }
