@@ -39,13 +39,14 @@
 #define MODBUS_MAX_PASSTHRU_RULES 		            10  // Maximum number of MODBUS routing entries (address/function/handler)
 
 //-------------------------------------------------------------------------------------------------
+// Digini configuration for MODBUS_RTU (this is for the default port in digini)
 
-// Digini default MODBUS_RTU configuration
 #define MODBUS_RTU_IO_RE_DE_CONTROL_PIN             IO_RS485_DE				// see bsp_io_def.h
 #define MODBUS_RTU_UART							    &RS485_Modbus			// see uart_var.h
 #define MODBUS_RTU_SLAVE_ID                         1
 #define MODBUS_RTU_MIN_ADDRESS					    100
 #define MODBUS_RTU_MAX_ADDRESS					    220
+#define MODBUS_RTU_DEFAULT_MODE						MODBUS_BACKEND_IS_SLAVE
 
 //-------------------------------------------------------------------------------------------------
 
@@ -71,6 +72,7 @@
 #define MODBUS_ROUTER_PASSTHRU_TABLE(ENTRY) \
     ENTRY(101, 201) \
     ENTRY(102, 202)
+	
 //-------------------------------------------------------------------------------------------------
 
 
