@@ -46,7 +46,7 @@
 #define MODBUS_RTU_SLAVE_ID                         1
 #define MODBUS_RTU_MIN_ADDRESS					    100
 #define MODBUS_RTU_MAX_ADDRESS					    220
-#define MODBUS_RTU_DEFAULT_MODE						MODBUS_BACKEND_IS_SLAVE
+#define MODBUS_RTU_DEFAULT_MODE						MODBUS_BACKEND_IS_MASTER
 
 //-------------------------------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@
 //-------------------------------------------------------------------------------------------------
 // Master has no ID it request to a slave
 #define MODBUS_APP_MASTER_TABLE(ENTRY) 							        	          	 	   \
-	ENTRY(1,		MODBUS_READ_HOLDING_REGISTERS,     0, 	   10,   1000, TestQT)     \
+	ENTRY(1,		MODBUS_READ_HOLDING_REGISTERS,     200,	   10,   1000, TestQT)     \
 	ENTRY(1,		MODBUS_READ_HOLDING_REGISTERS,     109, 	6,   1000, ReadMainGUI_ID)     \
 	ENTRY(1, 		MODBUS_READ_HOLDING_REGISTERS,     126,     2,   1000, ReadIP_Address)     \
 	ENTRY(1, 		MODBUS_READ_HOLDING_REGISTERS,     130, 	3,   1000, ReadMAC_Address)    \
@@ -72,7 +72,7 @@
 #define MODBUS_ROUTER_PASSTHRU_TABLE(ENTRY) \
     ENTRY(101, 201) \
     ENTRY(102, 202)
-	
+
 //-------------------------------------------------------------------------------------------------
 
 
