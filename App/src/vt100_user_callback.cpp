@@ -251,6 +251,72 @@ VT100_InputType_e VT100_Terminal::CALLBACK_TouchInformation(uint8_t Input, VT100
 }
 
 //-------------------------------------------------------------------------------------------------
+//
+//  Name:           CALLBACK_FlashDrive
+//
+//  Description:    Display the input of the Module
+//
+//  Note(s):
+//
+//-------------------------------------------------------------------------------------------------
+#if 0
+VT100_InputType_e VT100_Terminal::CALLBACK_FlashDrive(uint8_t Input, VT100_CallBackType_e Type)
+{
+    VAR_UNUSED(Input);
+
+    switch(Type)
+    {
+        case VT100_CALLBACK_INIT:
+        {
+            SetForeColor(VT100_COLOR_WHITE);
+            VT100_Printf(1, 5, LBL_FLASH_INFO);			//  X_LABEL( LBL_FLASH_INFO,               "Flash Information",            "Information Flash"                         ) \
+
+            SetForeColor(VT100_COLOR_WHITE);
+            VT100_Printf(2,  8,  LBL_FLASH_TYPE);
+            VT100_Printf(2,  9,  LBL_FLASH_SIZE);
+            VT100_Printf(2,  10, LBL_FLASH_PAGE_SIZE);
+            VT100_Printf(2,  11, LBL_FLASH_FAT_MEMORY_USED);
+            VT100_Printf(2,  12, LBL_FLASH_FAT_MEMORY_TOTAL);
+
+            VT100_Printf(        VT100_LBL_ESCAPE);
+            LogInitialize(56, 6, 78, 40);
+        }
+        break;
+
+        case VT100_CALLBACK_REFRESH:
+        {
+			SetForeColor(VT100_COLOR_WHITE);
+
+			Buffer <- pFlashDrive->GetFlashType();
+			VT100_Printf(28, 8,  LBL_STRING, Buffer);
+			Buffer <- pFlashDrive-> GetFlashSize();
+			VT100_Printf(28, 9,   LBL_STRING, Buffer);
+			Buffer <- pFlashDrive->GetFlashPageSize();
+			VT100_Printf(28, 10, LBL_STRING, Buffer);
+			Buffer <- pFlashDrive->GeMemUsed();
+			VT100_Printf(28, 11, LBL_STRING, Buffer);
+			Buffer <- pFlashDrive->GeMemTotal();
+		  	VT100_Printf(28, 12, LBL_STRING, Buffer);
+
+			LogDisplay();
+        }
+        break;
+
+        case VT100_CALLBACK_FLUSH:
+        {
+        }
+        break;
+
+        default:
+            break;
+    }
+
+    return VT100_INPUT_ESCAPE;
+}
+
+#endif
+
+//-------------------------------------------------------------------------------------------------
 
 #endif // (DIGINI_USE_VT100_MENU == DEF_ENABLED)
 
