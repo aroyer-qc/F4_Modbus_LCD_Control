@@ -269,7 +269,7 @@ VT100_InputType_e VT100_Terminal::CALLBACK_FlashDrive(uint8_t Input, VT100_CallB
         case VT100_CALLBACK_INIT:
         {
             SetForeColor(VT100_COLOR_WHITE);
-            VT100_Printf(1, 5, LBL_FLASH_INFO);			//  X_LABEL( LBL_FLASH_INFO,               "Flash Information",            "Information Flash"                         ) \
+            VT100_Printf(1, 5, LBL_FLASH_INFO);			//  X_LABEL( LBL_FLASH_INFO,               "Flash Information",            "Information Flash"                         )
 
             SetForeColor(VT100_COLOR_WHITE);
             VT100_Printf(2,  8,  LBL_FLASH_TYPE);
