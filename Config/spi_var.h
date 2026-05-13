@@ -277,11 +277,11 @@ SPI_Info_t SPI_Info[NB_OF_SPI_DRIVER] =
   #endif
 };
 
-class SPI_Driver SPI_Flash(DRIVER_SPI2_ID);
+class SPI_Driver SPI_ForFlash(DRIVER_SPI2_ID);
 
 #else // SPI_DRIVER_GLOBAL
 
-extern class SPI_Driver     SPI_Flash;
+extern class SPI_Driver     SPI_ForFlash;
 
 #endif // SPI_DRIVER_GLOBAL
 

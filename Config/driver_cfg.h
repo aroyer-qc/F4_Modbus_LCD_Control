@@ -55,8 +55,8 @@
 #define USE_SPI_DRIVER              DEF_ENABLED
 #define USE_TIM_DRIVER              DEF_ENABLED
 #define USE_UART_DRIVER             DEF_ENABLED
-#define USE_USB_DRIVER              DEF_DISABLED
-    #define USE_USB_OTG_FS_CODE     DEF_DISABLED
+#define USE_USB_DRIVER              DEF_ENABLED
+    #define USE_USB_OTG_FS_CODE     DEF_ENABLED
     #define USE_USB_OTG_HS_CODE     DEF_DISABLED
 
 

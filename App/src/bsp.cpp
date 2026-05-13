@@ -41,6 +41,7 @@
 #include "bsp.h"
 #undef  BSP_GLOBAL
 #include "task_main.h"
+#include "task_usb_host.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -101,6 +102,10 @@ SystemState_e BSP_PostOS_Initialize(void)
 
     State = DIGINI_PostInitialize();
     pMainTask->Initialize();
+
+  #if (USE_USB_DRIVER == DEF_ENABLED)
+	pUSB_HostTask->Initialize();
+  #endif
 
     return State;
 }

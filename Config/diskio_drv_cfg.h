@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  flash_cfg.h
+//  File : diskio_drv_cfg.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2026 Alain Royer.
+// Copyright(c) 2023 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -22,15 +22,25 @@
 // DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
+//
+//  Add here any custom driver for the FatFS. 
+//
+//
 //-------------------------------------------------------------------------------------------------
 
-#pragma once
+// #include "lib_class_fatfs_my_custom_driver.h"
+// #include etc..
 
-//-------------------------------------------------------------------------------------------------
-// Define(s)
-//-------------------------------------------------------------------------------------------------
+#define FAT_FS_DRIVE_DEF(X_DRIVE)\
+/*                                                    ID of the FatFS drive,	Class object,         sub driver,     optional argument */\
+    IF_USE( DIGINI_FATFS_USE_SPI_FLASH_CHIP, X_DRIVE( DISK_SPI_FLASH,           FatFS_SPI_FlashDisk,  SPI_ForFlash,   nullptr))           \
 
-#define FLASH_USE_AUTO_DETECT_FLASH             DEF_DISABLED
-#define FLASH_USE_W25Q32JV                      DEF_ENABLED
+#if 0 // other example of drive
+    IF_USE( DIGINI_FATFS_USE_SPI_SD_CARD,    X_DRIVE( SPI_SD_CARD,       		FatFS_SD_Card,        SPI_SD_Card,    nullptr  ))\
+    IF_USE( DIGINI_FATFS_USE_SDIO_SD_CARD,   X_DRIVE( DISK_SDIO_SD_CARD, 		FatFS_SDIO,           SDIO_SD_Card,   nullptr  ))\
+    IF_USE( DIGINI_FATFS_USE_USB_KEY,        X_DRIVE( DISK_USB_KEY,      		FatFS_USB,            USB_Key,        nullptr  ))\
+    IF_USE( DIGINI_FATFS_USE_RAM_DISK,       X_DRIVE( DISK_RAM_DISK,     		FatFS_RAM_Disk,       RAM_Disk,       nullptr  ))\
+	
+#endif
 
 //-------------------------------------------------------------------------------------------------
