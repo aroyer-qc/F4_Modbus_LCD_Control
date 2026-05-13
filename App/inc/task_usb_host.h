@@ -77,17 +77,23 @@ class TaskUSB_Host
         SystemState_e   		Initialize                  	(void);
         void            		Run                         	(void);
 		ApplicationTypeDef      GetState                    	(void)                          			{ return m_ApplicationState; }
+
+		// MSC
         MSC_LUNTypeDef*         GetLUN_Info                     (void)                                      { return &m_LUN_Info; }
+		bool					Get_MSC_IsConnected				(void)										{ return m_MSC_Connected; }
+		USBH_HandleTypeDef* 	GetUSBH_Handle					(void) 										{ return &m_HandleUSB_HostFS; }
 
         static TaskUSB_Host*	GetInstance         			(void)                          			{ return TaskUSB_Host::m_Instance; }
 
     private:
 
 		void    				USBH_UserProcess    			(USBH_HandleTypeDef* pHost, uint8_t ID);
+
+        //void    				CDC_Process		     			(void);
+        //void    				HID_Process		     			(void);
         void    				MSC_Process		     			(void);
 
 		static void 			USBH_UserProcessCallBack		(USBH_HandleTypeDef *pHost, uint8_t ID);
-
 
         nOS_Thread              m_Handle;
         nOS_Stack               m_Stack                     	[TASK_USB_HOST_STACK_SIZE];

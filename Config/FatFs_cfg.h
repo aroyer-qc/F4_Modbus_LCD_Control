@@ -50,3 +50,11 @@
 #define _USE_IOCTL                                          1       // 1: Enable FatFs disk_ioctl function
 
 //-------------------------------------------------------------------------------------------------
+
+#define FAT_FS_DRIVE_DEF(X_DRIVE)\
+/*  		 ID of Disk,        Specific FatFs Class                Parameter for     */ \
+    X_DRIVE( DISK_SPI_FLASH,   	FatFS_SPI_Flash,      SPI_Flash,    &mySPI_FLASH))		 \
+    X_DRIVE( DISK_USB_KEY,      FatFS_USB_Key,        USB_Key,      &mySPI_SD   ))		 \
+
+//-------------------------------------------------------------------------------------------------
+

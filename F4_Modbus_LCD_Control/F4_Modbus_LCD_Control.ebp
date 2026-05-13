@@ -485,6 +485,21 @@
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\lib_class_resistive_touch_discrete.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\lib_class_spi_serial_flash.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32F4xx\stm32f4xx.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\FatFs\digini_diskio.h">
+			<Option target="Debug LCD Control + USB" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\inc\FatFs\diskio.h">
+			<Option target="Debug LCD Control + USB" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\inc\FatFs\diskio_def.h">
+			<Option target="Debug LCD Control + USB" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\inc\FatFs\diskio_interface.h">
+			<Option target="Debug LCD Control + USB" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\inc\FatFs\lib_class_fatfs_usb_key.h">
+			<Option target="Debug LCD Control + USB" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\inc\interface\lib_class_pointing_device_interface.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_adc.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32F4xx\lib_class_STM32F4_crc.h" />
@@ -505,6 +520,14 @@
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\device\lib_class_spi_serial_flash.cpp">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\src\FatFS\diskio.cpp">
+			<Option compilerVar="CC" />
+			<Option target="Debug LCD Control + USB" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\src\FatFS\lib_class_fatfs_usb_key.cpp">
+			<Option compilerVar="CC" />
+			<Option target="Debug LCD Control + USB" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32F4xx\lib_class_STM32F4_adc.cpp">
 			<Option compilerVar="CC" />
@@ -599,6 +622,12 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\port\STM32F4xx\lib_stacktistic_STM32F4.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\module_FatFs\inc\ff.h">
+			<Option target="Debug LCD Control + USB" />
+		</Unit>
+		<Unit filename="..\Module\module_FatFs\src\ff.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\module_STM22_USB\inc\usb_defines.h">
