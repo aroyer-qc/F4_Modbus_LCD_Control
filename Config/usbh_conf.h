@@ -27,17 +27,15 @@ extern "C" {
 //-------------------------------------------------------------------------------------------------
 
 #include "stm32f4xx.h"
+#include "stm32f4xx_ll_usb.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include "./inc/usb_defines.h"
 #include "./Digini/Memory/inc/lib_c_memory_wrapper.h"
 
 //-------------------------------------------------------------------------------------------------
 // Define(s)
 //-------------------------------------------------------------------------------------------------
-
-#define UNUSED(v)                           ((void)(v))
 
 #define USBH_MAX_NUM_ENDPOINTS              2U
 #define USBH_MAX_NUM_INTERFACES             2U
@@ -55,7 +53,7 @@ extern "C" {
 #define USBH_free(PTR)            			MemoryPool_Free(PTR)
 #define USBH_memset               			memset
 #define USBH_memcpy              		 	memcpy
-#define HAL_Delay(d)			  			
+#define HAL_Delay(d)
 
 // DEBUG macros
 #if (USBH_DEBUG_LEVEL > 0U)

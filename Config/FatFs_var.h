@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  flash_cfg.h
+//  File : FatFs_var.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2026 Alain Royer.
+// Copyright(c) 2023 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -27,10 +27,41 @@
 #pragma once
 
 //-------------------------------------------------------------------------------------------------
-// Define(s)
+// constf(s)
 //-------------------------------------------------------------------------------------------------
 
-#define FLASH_USE_AUTO_DETECT_FLASH             DEF_DISABLED
-#define FLASH_USE_W25Q32JV                      DEF_ENABLED
+#ifdef DISKIO_GLOBAL
+
+SPI_Param_t SPI_FlashParameter               // Parameter for initialization of the SPI for the flash
+{
+    &SPI_ForFlash,
+    IO_CS_FLASH,
+};
+#else
+
+extern SPI_Param_t SPI_FlashParameter;
+
+#endif
+
+//-------------------------------------------------------------------------------------------------
+// forward declaration(s)
+//-------------------------------------------------------------------------------------------------
+
+#ifdef __cplusplus
+class FatFS_SPI_Flash;
+class FatFS_USB_Key;
+#endif
+
+//-------------------------------------------------------------------------------------------------
+// X-Macro(s)
+//-------------------------------------------------------------------------------------------------
+
+#define FAT_FS_DRIVE_DEF(X_DRIVE)\
+/*  		 ID of Disk,        Specific FatFs class, Object to create,    Parameter for     */          \
+    X_DRIVE( DISK_SPI_FLASH,   	FatFS_SPI_Flash,      SPI_FlashDisk,        (void*)&SPI_FlashParameter)	 \
+    X_DRIVE( DISK_USB_KEY,      FatFS_USB_Key,        USB_KeyDisk,          nullptr )		             \
+
+
+
 
 //-------------------------------------------------------------------------------------------------

@@ -84,8 +84,8 @@
 //
 #define DIGINI_USE_FATFS                                DEF_ENABLED
 
-#define DIGINI_FATFS_USE_SPI_EEPROM_CHIP                DEF_DISABLED 	 // to be added to peripheral list
-#define DIGINI_FATFS_USE_SPI_FLASH_CHIP                 DEF_DISABLED
+#define DIGINI_FATFS_USE_SPI_EEPROM                     DEF_DISABLED 	 // to be added to peripheral list
+#define DIGINI_FATFS_USE_SPI_FLASH                      DEF_ENABLED
 #define DIGINI_FATFS_USE_QSPI                           DEF_DISABLED 	 // to be added to peripheral list
 #define DIGINI_FATFS_USE_SDIO_SD_CARD                   DEF_DISABLED 	 // to be added to peripheral list
 #define DIGINI_FATFS_USE_SPI_SD_CARD                    DEF_DISABLED 	 // to be added to peripheral list

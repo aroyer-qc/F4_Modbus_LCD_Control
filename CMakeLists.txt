@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.18)
 
 project(F4_Modbus_LCD_Control C CXX ASM)
 
+option(ENABLE_FATFS "Build with FatFS support" ON)
+
+
+
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -253,6 +257,20 @@ set(SOURCES
     ./Module/nOS/src/port/GCC/ARM_Cortex_M4/nOSPort.c
 )
 
+set(FATFS_SOURCES
+    ./Module/module_FatFs/src/ff.c
+    ./Module/module_FatFs/src/ffsystem.c
+    ./Module/module_FatFs/src/ffunicode.c
+    ./Module/Digini/Peripheral/src/FatFS/diskio.cpp
+    ./Module/Digini/Peripheral/src/FatFS/lib_class_fatfs_ram.cpp
+    ./Module/Digini/Peripheral/src/FatFS/lib_class_fatfs_spi_flash.cpp
+    ./Module/Digini/Peripheral/src/FatFS/lib_class_fatfs_usb_key.cpp
+)
+
+if(ENABLE_FATFS)
+    list(APPEND SOURCES ${FATFS_SOURCES})
+endif()
+
 add_executable(F4_Modbus_LCD_Control.elf ${SOURCES})
 
 target_link_options(F4_Modbus_LCD_Control.elf  PRIVATE
@@ -305,6 +323,13 @@ target_include_directories(F4_Modbus_LCD_Control.elf PRIVATE
     ./Module/nOS/inc
     ./Module/nOS/inc/port/GCC/ARM_Cortex_M4
 )
+
+if(ENABLE_FATFS)
+    target_include_directories(F4_Modbus_LCD_Control.elf PRIVATE
+        ./Module/module_FatFs/inc
+        ./Module/Digini/Peripheral/inc/FatFs
+    )
+endif()
 
 set_target_properties(F4_Modbus_LCD_Control.elf PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY_DEBUG   "${CMAKE_CURRENT_LIST_DIR}/bin/Debug"

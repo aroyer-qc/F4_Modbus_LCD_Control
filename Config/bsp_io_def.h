@@ -136,6 +136,8 @@
     X_IO( IO_TOUCH_X2_SWITCH,   GPIOE,      IO_PIN_3,       IO_CFG_OUTPUT_PP_LS_DEF1)             \
     X_IO( IO_TOUCH_Y2_SWITCH,   GPIOE,      IO_PIN_4,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
     X_IO( IO_TOUCH_X1_SWITCH,   GPIOE,      IO_PIN_5,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
+/* SPI Chip select IO's ------------------------------------------------------------------------*/\
+    X_IO( IO_CS_FLASH,          GPIOB,      IO_PIN_12,      IO_CFG_OUTPUT_PP_MS_DEF1)             \
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_1,             GPIOA,      IO_PIN_8,       IO_CFG_MCO_OUTPUT)                    \
 /* ---------------------------------------------------------------------------------------------*/
@@ -163,7 +165,7 @@
 
 //---------------------------------------------------------
 // SPI2 grouping configuration
-#define SPI2_PIN_ON_PORT_B      (IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
+#define SPI2_PIN_ON_PORT_B      (IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
 
 //--------------------------------------------
 // USART1 grouping configuration

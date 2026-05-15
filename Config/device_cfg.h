@@ -30,14 +30,13 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define USE_SPI_SERIAL_FLASH_DRIVER                 DEF_ENABLED
+#define FLASH_USE_AUTO_DETECT_FLASH             DEF_ENABLED
+#define FLASH_USE_W25Q32JV                      DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Include file(s)
 //-------------------------------------------------------------------------------------------------
 
-#if USE_SPI_SERIAL_FLASH_DRIVER == DEF_ENABLED
 #include "./Digini/Peripheral/inc/device/lib_class_spi_serial_flash.h"
-#endif
 
 //-------------------------------------------------------------------------------------------------
