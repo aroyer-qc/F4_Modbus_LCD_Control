@@ -64,6 +64,12 @@ typedef enum
 } ApplicationTypeDef;
 
 //-------------------------------------------------------------------------------------------------
+// Wrapper(s)
+//-------------------------------------------------------------------------------------------------
+
+extern "C" void USBH_UserProcessCallBack    (USBH_HandleTypeDef *pHost, uint8_t ID);
+
+//-------------------------------------------------------------------------------------------------
 // Class definition(s)
 //-------------------------------------------------------------------------------------------------
 
@@ -84,16 +90,14 @@ class TaskUSB_Host
 		USBH_HandleTypeDef* 	GetUSBH_Handle					(void) 										{ return &m_HandleUSB_HostFS; }
 
         static TaskUSB_Host*	GetInstance         			(void)                          			{ return TaskUSB_Host::m_Instance; }
+		void        			UserProcessCallBack	        	(USBH_HandleTypeDef *pHost, uint8_t ID);
+
 
     private:
-
-		void    				USBH_UserProcess    			(USBH_HandleTypeDef* pHost, uint8_t ID);
 
         //void    				CDC_Process		     			(void);
         //void    				HID_Process		     			(void);
         void    				MSC_Process		     			(void);
-
-		static void 			USBH_UserProcessCallBack		(USBH_HandleTypeDef *pHost, uint8_t ID);
 
         nOS_Thread              m_Handle;
         nOS_Stack               m_Stack                     	[TASK_USB_HOST_STACK_SIZE];

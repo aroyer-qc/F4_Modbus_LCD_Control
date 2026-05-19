@@ -90,7 +90,7 @@
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_USART3_AF7,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF7_USART3)         \
 /* USB IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_USB_AF10,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF10_OTG_FS)        \
+    X_IO_CFG( IO_CFG_USB_AF10,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF10_OTG_FS)        \
 /* -----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -138,6 +138,9 @@
     X_IO( IO_TOUCH_X1_SWITCH,   GPIOE,      IO_PIN_5,       IO_CFG_OUTPUT_PP_LS_DEF0)             \
 /* SPI Chip select IO's ------------------------------------------------------------------------*/\
     X_IO( IO_CS_FLASH,          GPIOB,      IO_PIN_12,      IO_CFG_OUTPUT_PP_MS_DEF1)             \
+/* USB IO's ------------------------------------------------------------------------------------*/\
+    X_IO( IO_USB_POWER,         GPIOA,      IO_PIN_10,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_USB_VBUS_SENSING,  GPIOA,      IO_PIN_9,       IO_CFG_INPUT_NP_LS)                   \
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_1,             GPIOA,      IO_PIN_8,       IO_CFG_MCO_OUTPUT)                    \
 /* ---------------------------------------------------------------------------------------------*/
@@ -177,7 +180,7 @@
 
 //--------------------------------------------
 // USB grouping configuration
-#define USB_PIN_ON_PORT_A       (IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12)
+#define USB_PIN_ON_PORT_A       (IO_PIN_11 | IO_PIN_12)
 
 
 //---------------------------------------------------------------------------------------

@@ -97,7 +97,6 @@ SystemState_e TaskUSB_Host::Initialize(void)
     m_ApplicationState     	 = APPLICATION_IDLE;
     memset(&m_LUN_Info, 0, sizeof(MSC_LUNTypeDef));
 
-
     return (Error != NOS_OK) ? SYS_ERROR : SYS_READY;
 }
 
@@ -116,7 +115,7 @@ void TaskUSB_Host::Run(void)
     //TickCount_t Tick = GetTick();
 
     // Init host Library, add supported class and start the library.
-    if(USBH_Init(&m_HandleUSB_HostFS, &TaskUSB_Host::USBH_UserProcessCallBack, TASK_USB_HOST_FS) != USBH_OK)
+    if(USBH_Init(&m_HandleUSB_HostFS, USBH_UserProcessCallBack, TASK_USB_HOST_FS) != USBH_OK)
     {
         __asm("nop");
     }
@@ -157,6 +156,8 @@ void TaskUSB_Host::MSC_Process(void)
     {
         if(m_HandleUSB_HostFS.gState == HOST_ENUMERATION)
         {
+             __asm("nop");// Here we can mount FatFS or using callback
+
             #if (USB_FULL_DEBUG == DEF_ENABLED)
             // ("Enumeration!");
             #endif
@@ -174,7 +175,7 @@ void TaskUSB_Host::MSC_Process(void)
 
         case APPLICATION_READY:
         {
-            // Here we can mount FatFS or using callback
+            __asm("nop");// Here we can mount FatFS or using callback
         }
         break;
 
@@ -189,39 +190,26 @@ void TaskUSB_Host::MSC_Process(void)
     }
 }
 
-
 // ---------------------------------------------------------------------------------------------------------
 
-void TaskUSB_Host::USBH_UserProcessCallBack(USBH_HandleTypeDef *pHost, uint8_t ID)
+void TaskUSB_Host::UserProcessCallBack(USBH_HandleTypeDef* pHost, uint8_t ID)
 {
-    if(TaskUSB_Host::m_Instance)
+    switch(ID)
     {
-        TaskUSB_Host::m_Instance->USBH_UserProcess(pHost, ID);
-    }
-}
-
-// ---------------------------------------------------------------------------------------------------------
-
-void TaskUSB_Host::USBH_UserProcess(USBH_HandleTypeDef* pHost, uint8_t ID)
-{
-    VAR_UNUSED(pHost);
-
-    switch(int(ID))
-    {
-        case int(HOST_USER_SELECT_CONFIGURATION):
+        case HOST_USER_SELECT_CONFIGURATION:
             break;
 
-        case int(HOST_USER_CONNECTION):
+        case HOST_USER_CONNECTION:
         {
             // The device is connected, but not yet ready
             m_ApplicationState = APPLICATION_IDLE;
-			m_MSC_Connected = false;
-            //m_CDC_Connected = false;
-            //m_HID_Connected = false;
+            m_MSC_Connected    = false;
+            //m_CDC_Connected  = false;
+            //m_HID_Connected  = false;
         }
         break;
 
-        case int(HOST_USER_CLASS_ACTIVE):
+        case HOST_USER_CLASS_ACTIVE:
         {
             uint8_t ActiveClass = USBH_GetActiveClass(pHost);
 
@@ -229,52 +217,52 @@ void TaskUSB_Host::USBH_UserProcess(USBH_HandleTypeDef* pHost, uint8_t ID)
             {
 /*
                 case USB_CDC_CLASS:
-				{
+                {
                     m_CDC_Connected = true;
-				}
+                }
                 break;
 
                 case USB_HID_CLASS:
-				{
+                {
                     m_HID_Connected = true;
-				}
+                }
                 break;
-					
-*/					
+*/
                 case USB_MSC_CLASS:
-				{
+                {
                     m_MSC_Connected = true;
 
-					if(m_LUN_Info.capacity.block_nbr == 0)
-					{
-						if(USBH_MSC_GetLUNInfo(&m_HandleUSB_HostFS, 0, &m_LUN_Info) == USBH_OK)
-						{
-							// LUN info loaded
-						}
-					}
-					// the MSC class is active -> USB Key Ready
-				}
+                    if(m_LUN_Info.capacity.block_nbr == 0U)
+                    {
+                        if(USBH_MSC_GetLUNInfo(&m_HandleUSB_HostFS, 0U, &m_LUN_Info) == USBH_OK)
+                        {
+                            // LUN info loaded
+                        }
+                    }
+                    // the MSC class is active -> USB Key Ready
+                }
                 break;
-            }			
+            }
 
             m_ApplicationState = APPLICATION_START;
         }
         break;
 
-        case int(HOST_USER_DISCONNECTION):
+        case HOST_USER_DISCONNECTION:
         {
-			//if(m_CDC_Connected == true)
-			//{
-			//}
-			
-			//if(m_HID_Connected == true)
-			//{
-			//}
+            //if(m_CDC_Connected == true)
+            //{
+            //}
 
-			if(m_MSC_Connected == true)
-			{
-				memset(&m_LUN_Info, 0, sizeof(MSC_LUNTypeDef));
-			}
+            //if(m_HID_Connected == true)
+            //{
+            //}
+
+            if(m_MSC_Connected == true)
+            {
+                memset(&m_LUN_Info, 0, sizeof(MSC_LUNTypeDef));
+                m_MSC_Connected = false;
+            }
 
             m_ApplicationState = APPLICATION_DISCONNECT;
         }
@@ -304,6 +292,14 @@ bool USB_Host_Ready()
 extern "C"
 {
 
+void USBH_UserProcessCallBack(USBH_HandleTypeDef *pHost, uint8_t id)
+{
+    if(TaskUSB_Host::GetInstance())
+    {
+        TaskUSB_Host::GetInstance()->UserProcessCallBack(pHost, id);
+    }
+}
+
 // ---------------------------------------------------------------------------------------------------------
 
 extern HCD_HandleTypeDef hhcd_USB_OTG_FS;
@@ -320,8 +316,40 @@ void HAL_HCD_MspInit(HCD_HandleTypeDef *pHCD)
 	if(pHCD->Instance == USB_OTG_FS)
 	{
 		RCC->AHB2ENR |= RCC_AHB2ENR_OTGFSEN;				// Enable USB OTG FS clock
-		ISR_Init(OTG_FS_IRQn, 3);								// USB OTG FS interrupt Init
+        USB_OTG_FS->GUSBCFG |= USB_OTG_GUSBCFG_FDMOD;       // Force OTG FS into HOST mode (ID pin not used)
+        USB_OTG_FS->GCCFG &= ~(USB_OTG_GCCFG_VBUSBSEN | USB_OTG_GCCFG_VBUSASEN);
+        USB_OTG_FS->GCCFG |= USB_OTG_GCCFG_PWRDWN | USB_OTG_GCCFG_NOVBUSSENS;
+        LIB_Delay_mSec(50);                                 // Mandatory delay for mode switch
+		ISR_Init(OTG_FS_IRQn, 3);							// USB OTG FS interrupt Init
 	}
+}
+
+// ---------------------------------------------------------------------------------------------------------
+
+void HAL_HCD_Connect_Callback(HCD_HandleTypeDef *hhcd)
+{
+    USBH_LL_Connect((USBH_HandleTypeDef*)hhcd->pData);
+}
+
+// ---------------------------------------------------------------------------------------------------------
+
+void HAL_HCD_Disconnect_Callback(HCD_HandleTypeDef *hhcd)
+{
+    USBH_LL_Disconnect((USBH_HandleTypeDef*)hhcd->pData);
+}
+
+// ---------------------------------------------------------------------------------------------------------
+
+void HAL_HCD_PortEnabled_Callback(HCD_HandleTypeDef *hhcd)
+{
+    USBH_LL_PortEnabled((USBH_HandleTypeDef*)hhcd->pData);
+}
+
+// ---------------------------------------------------------------------------------------------------------
+
+void HAL_HCD_PortDisabled_Callback(HCD_HandleTypeDef *hhcd)
+{
+    USBH_LL_PortDisabled((USBH_HandleTypeDef*)hhcd->pData);
 }
 
 // ---------------------------------------------------------------------------------------------------------

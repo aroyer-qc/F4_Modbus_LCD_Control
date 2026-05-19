@@ -59,6 +59,8 @@
     #define USE_USB_OTG_FS_CODE     DEF_ENABLED
     #define USE_USB_OTG_HS_CODE     DEF_DISABLED
 
+#define USE_DWT_PERIPHERAL          DEF_ENABLED
+
 
 // LCD Display
 #define GRAFX_DRIVER_INCLUDE                "./Digini/Grafx/inc/driver/STM32/lib_STM32_fmc_lcd_320x240 - UMSH_8252MD_T - SSD2119.h"

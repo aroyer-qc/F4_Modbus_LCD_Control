@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbh_core.h"
 #include "stm32f4xx_hal_hcd.h"
+#include "lib_delay.h"
 
 
 // Returns the USB status depending on the HAL status:
@@ -259,11 +260,7 @@ USBH_StatusTypeDef USBH_LL_SubmitURB(USBH_HandleTypeDef *pHost,
   */
 USBH_URBStateTypeDef USBH_LL_GetURBState(USBH_HandleTypeDef *pHost, uint8_t pipe)
 {
-  /* Prevent unused argument(s) compilation warning */
-  UNUSED(pHost);
-  UNUSED(pipe);
-
-  return USBH_URB_IDLE;
+    return HAL_HCD_HC_GetURBState(pHost->pData, pipe);
 }
 
 /**
@@ -330,6 +327,7 @@ uint8_t USBH_LL_GetToggle(USBH_HandleTypeDef *pHost, uint8_t pipe)
   */
 void USBH_Delay(uint32_t Delay)
 {
-  /* Prevent unused argument(s) compilation warning */
-  UNUSED(Delay);
+  LIB_Delay_mSec(Delay);
+
 }
+
