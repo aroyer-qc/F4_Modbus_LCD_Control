@@ -48,7 +48,7 @@ extern SPI_Param_t SPI_FlashParameter;
 //-------------------------------------------------------------------------------------------------
 
 #ifdef __cplusplus
-class FatFS_SPI_Flash;
+class FatFS_SPI_Memory;
 class FatFS_USB_Key;
 #endif
 
@@ -58,7 +58,7 @@ class FatFS_USB_Key;
 
 #define FAT_FS_DRIVE_DEF(X_DRIVE)\
 /*  		 ID of Disk,        Specific FatFs class, Object to create,    Parameter for     */          \
-    X_DRIVE( DISK_SPI_FLASH,   	FatFS_SPI_Flash,      SPI_FlashDisk,        (void*)&SPI_FlashParameter)	 \
+    X_DRIVE( DISK_SPI_FLASH,   	FatFS_SPI_Memory,     SPI_FlashDisk,        (void*)&SPI_FlashParameter)	 \
     X_DRIVE( DISK_USB_KEY,      FatFS_USB_Key,        USB_KeyDisk,          nullptr )		             \
 
 

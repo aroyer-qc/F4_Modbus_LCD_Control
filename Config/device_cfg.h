@@ -30,13 +30,13 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define FLASH_USE_AUTO_DETECT_FLASH             DEF_ENABLED
-#define FLASH_USE_W25Q32JV                      DEF_ENABLED
+#define SERIAL_MEMORY_USE_AUTO_DETECT           DEF_ENABLED
+#define MEM_USE_W25Q32JV                        DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Include file(s)
 //-------------------------------------------------------------------------------------------------
 
-#include "./Digini/Peripheral/inc/device/lib_class_spi_serial_flash.h"
+#include "./Digini/Peripheral/inc/device/lib_class_spi_serial_memory.h"
 
 //-------------------------------------------------------------------------------------------------

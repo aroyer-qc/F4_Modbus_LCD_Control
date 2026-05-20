@@ -139,7 +139,7 @@
 /* SPI Chip select IO's ------------------------------------------------------------------------*/\
     X_IO( IO_CS_FLASH,          GPIOB,      IO_PIN_12,      IO_CFG_OUTPUT_PP_MS_DEF1)             \
 /* USB IO's ------------------------------------------------------------------------------------*/\
-    X_IO( IO_USB_POWER,         GPIOA,      IO_PIN_10,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_USB_POWER,         GPIOA,      IO_PIN_10,      IO_CFG_OUTPUT_PP_LS_DEF1)             \
     X_IO( IO_USB_VBUS_SENSING,  GPIOA,      IO_PIN_9,       IO_CFG_INPUT_NP_LS)                   \
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_1,             GPIOA,      IO_PIN_8,       IO_CFG_MCO_OUTPUT)                    \

@@ -39,6 +39,8 @@
 
 #define MODBUS_REQUEST_DELAY    1000
 
+bool CheckAndFormatDrive(uint8_t drive);
+
 //-------------------------------------------------------------------------------------------------
 //
 //  Name:           TaskMain_Wrapper
@@ -99,6 +101,10 @@ void TaskMain::Run(void)
 {
     TickCount_t Tick = GetTick();
 
+	// Check if the drive has a file system, then if no error but it has no file system it will be formatted.
+	CheckAndFormatDrive(DISK_SPI_FLASH);
+	CheckAndFormatDrive(DISK_USB_KEY);
+
     for(;;)
     {
         nOS_Sleep(200);
@@ -109,7 +115,48 @@ void TaskMain::Run(void)
             Tick = GetTick();
             myMODBUS_Application.MasterRequest(0, 200, 10);
         }
+
     }
 }
 
 //-------------------------------------------------------------------------------------------------
+// support function... must be move into service call for FatFs
+bool CheckAndFormatDrive(uint8_t drive)
+{
+    FATFS fs;
+    FATFS* pfs;
+    DWORD freeClusters;
+
+    char path[4];
+    snprintf(path, sizeof(path), "%u:", drive);
+
+    // Tentative de montage
+    FRESULT res = f_mount(&fs, path, 1);
+
+    if (res != FR_OK)
+    {
+        // failed to mount -> Do not format
+        return false;
+    }
+
+    //  Check if drive is formatted
+    res = f_getfree(path, &freeClusters, &pfs);
+
+    if (res == FR_OK)
+    {
+        // The drive is formatted -> OK
+        f_mount(NULL, path, 1);
+        return true;
+    }
+
+    if (res == FR_NO_FILESYSTEM)
+    {
+        DRESULT dres = FatFS_DiskIO.IO_Ctrl((DiskMedia_e)drive, CTRL_FORMAT, nullptr);
+        f_mount(NULL, path, 1);
+        return (dres == RES_OK);
+    }
+
+    // any other error -> Do not format
+    f_mount(NULL, path, 1);
+    return false;
+}
