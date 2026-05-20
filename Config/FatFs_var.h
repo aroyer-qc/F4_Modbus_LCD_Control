@@ -35,6 +35,7 @@
 SPI_Param_t SPI_FlashParameter               // Parameter for initialization of the SPI for the flash
 {
     &SPI_ForFlash,
+    FLASH_AUTO_DETECT,
     IO_CS_FLASH,
 };
 #else
