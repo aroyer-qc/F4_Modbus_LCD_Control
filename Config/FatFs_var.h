@@ -62,7 +62,4 @@ class FatFS_USB_Key;
     X_DRIVE( DISK_SPI_FLASH,   	FatFS_SPI_Memory,     SPI_FlashDisk,        (void*)&SPI_FlashParameter)	 \
     X_DRIVE( DISK_USB_KEY,      FatFS_USB_Key,        USB_KeyDisk,          nullptr )		             \
 
-
-
-
 //-------------------------------------------------------------------------------------------------
