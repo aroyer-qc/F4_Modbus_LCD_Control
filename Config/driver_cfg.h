@@ -61,6 +61,7 @@
 
 #define USE_DWT_PERIPHERAL          DEF_ENABLED
 
+// Driver and/or peripheral to use with this project
 
 // LCD Display
 #define GRAFX_DRIVER_INCLUDE                "./Digini/Grafx/inc/driver/STM32/lib_STM32_fmc_lcd_320x240 - UMSH_8252MD_T - SSD2119.h"

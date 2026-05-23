@@ -62,13 +62,13 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 {
   #if (UART_DRIVER_SUPPORT_UART1_CFG == DEF_ENABLED)
     {
-        USART1,                     // USARTx
-        USART1_IRQn,                // IRQn_Channel
-        7,                          // PreempPrio
+        USART1,                                             // USARTx
+        USART1_IRQn,                                        // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_OVER_8 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-        64,                         // RX fifo size
+        64,                                                 // RX fifo size
 
         // DMA_RX
         {
@@ -97,13 +97,13 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
   #if (UART_DRIVER_SUPPORT_UART2_CFG == DEF_ENABLED)
     {
-        USART2,                     // USARTx
-        ISR_NONE_IRQn,              // IRQn_Channel
-        7,                          // PreempPrio
+        USART2,                                             // USARTx
+        ISR_NONE_IRQn,                                      // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_OVER_8 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-        64,                         // RX fifo size
+        64,                                                 // RX fifo size
 
         // DMA_RX
         {
@@ -125,14 +125,13 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
   #if (UART_DRIVER_SUPPORT_UART3_CFG == DEF_ENABLED)
     {
-        USART3,                     // USARTx
-        USART3_IRQn,                // IRQn_Channel
-        7,                          // PreempPrio
+        USART3,                                             // USARTx
+        USART3_IRQn,                                        // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_OVER_8 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_38400,
         UART_WAIT_ON_BUSY,
-        2 * 254,                    // RX fifo size
-
+        2 * 254,                                            // RX fifo size
 
         // DMA_RX
         {
@@ -160,13 +159,13 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
   #if (UART_DRIVER_SUPPORT_UART4_CFG == DEF_ENABLED)
     {
-        UART4,                      // USARTx
-        UART4_IRQn,                 // IRQn_Channel
-        7,                          // PreempPrio
+        UART4,                                              // USARTx
+        UART4_IRQn,                                         // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_OVER_8 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-        64,                         // RX fifo size
+        64,                                                 // RX fifo size
 
         // DMA_RX
         {
@@ -188,13 +187,13 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
   #if (UART_DRIVER_SUPPORT_UART5_CFG == DEF_ENABLED)
     {
-        UART5,                      // USARTx
-        UART5_IRQn,                 // IRQn_Channel
-        7,                          // PreempPrio
+        UART5,                                              // USARTx
+        UART5_IRQn,                                         // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-        64,                         // RX fifo size
+        64,                                                 // RX fifo size
 
         // DMA_RX
         {
@@ -216,13 +215,14 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
   #if (UART_DRIVER_SUPPORT_UART6_CFG == DEF_ENABLED)
     {
-        USART6,                     // USARTx
-        USART6_IRQn,                // IRQn_Channel
-        7,                          // PreempPrio
+        USART6,                                             // USARTx
+        USART6_IRQn,                                        // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-        64,                         // RX fifo size
+        64,                                                 // RX fifo size
+        
         // DMA_RX
         {
             UART_STANDARD_CONFIGURATION_RX | DMA_CHANNEL_5, // Configuration + DMA_Channel RX
@@ -255,13 +255,13 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
   #if (UART_DRIVER_SUPPORT_UART7_CFG == DEF_ENABLED)
     {
-        UART7,                      // USARTx
-        UART7_IRQn,                 // IRQn_Channel
-        7,                          // PreempPrio
+        UART7,                                              // USARTx
+        UART7_IRQn,                                         // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-        64,                         // RX fifo size
+        64,                                                 // RX fifo size
 
         // DMA_RX
         {
@@ -283,13 +283,13 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
   #if (UART_DRIVER_SUPPORT_UART8_CFG == DEF_ENABLED)
     {
-        UART8,                      // USARTx
-        UART8_IRQn,                 // IRQn_Channel
-        7,                          // PreempPrio
+        UART8,                                              // USARTx
+        UART8_IRQn,                                         // IRQn_Channel
+        7,                                                  // PreempPrio
         UART_Config_e(UART_CFG_N_8_1),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-        64,                         // RX fifo size
+        64,                                                 // RX fifo size
 
         // DMA_RX
         {

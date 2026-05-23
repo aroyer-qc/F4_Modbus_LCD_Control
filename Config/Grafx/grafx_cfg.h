@@ -41,7 +41,6 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-
 #define GUI_TASK_STACK_SIZE                             320
 
 #define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED
@@ -117,6 +116,7 @@
 #define GRAFX_USE_CONSTRUCTION_ON_SINGLE_LAYER          DEF_ENABLED
 #define GRAFX_USE_FULL_FRAME_CONSTRUCTION_LAYER         DEF_DISABLED    // We won't use full frame RAM for construction
 #define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_DISABLED	// We don't have access to display memory and don't have multi layer capability here
+#define GRAFX_USE_FOREGROUND_LAYER           			DEF_DISABLED
 #define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_ENABLED
 #define GRAFX_DEBUG_GUI                                 DEF_DISABLED	// This option can not be set if no layer exist
 
