@@ -144,7 +144,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
         // DMA_TX
         {
-            UART_STANDARD_CONFIGURATION_TX | DMA_CHANNEL_4, // Configuration + DMA_Channel TX
+            SPI_DMA_DISABLED, //UART_STANDARD_CONFIGURATION_TX | DMA_CHANNEL_4, // Configuration + DMA_Channel TX
             DMA_LIFCR_CTCIF3,                               // TX_IT_Flag
             DMA1_Stream3,                                   // TX_DMA_TypeDef
             DMA1_Stream3_IRQn,                              // TX_IRQn
