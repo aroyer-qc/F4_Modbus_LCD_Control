@@ -124,39 +124,27 @@ void TaskMain::Run(void)
 bool CheckAndFormatDrive(uint8_t drive)
 {
     FATFS fs;
-    FATFS* pfs;
-    DWORD freeClusters;
 
     char path[4];
     snprintf(path, sizeof(path), "%u:", drive);
 
-    // Tentative de montage
+    // Try to mount the drive
     FRESULT res = f_mount(&fs, path, 1);
 
-    if (res != FR_OK)
+    // If mount failed for ANY reason except FR_NO_FILESYSTEM -> do NOT format
+    if((res != FR_OK) && (res != FR_NO_FILESYSTEM))
     {
-        // failed to mount -> Do not format
         return false;
     }
 
-    //  Check if drive is formatted
-    res = f_getfree(path, &freeClusters, &pfs);
-
-    if (res == FR_OK)
+    if(res == FR_OK)
     {
         // The drive is formatted -> OK
         f_mount(NULL, path, 1);
         return true;
     }
 
-    if (res == FR_NO_FILESYSTEM)
-    {
-        DRESULT dres = FatFS_DiskIO.IO_Ctrl((DiskMedia_e)drive, CTRL_FORMAT, nullptr);
-        f_mount(NULL, path, 1);
-        return (dres == RES_OK);
-    }
-
-    // any other error -> Do not format
+    DRESULT dres = FatFS_DiskIO.IO_Ctrl((DiskMedia_e)drive, CTRL_FORMAT, nullptr);
     f_mount(NULL, path, 1);
-    return false;
+    return (dres == RES_OK);
 }

@@ -82,14 +82,14 @@ SystemState_e TaskUSB_Host::Initialize(void)
 
     DEBUG_PrintSerialLog(SYS_DEBUG_LEVEL_APPLICATION, "Initializing TaskUSB_Host\n");
 
-    Error = nOS_ThreadCreate(&m_Handle,
+  /*  Error = nOS_ThreadCreate(&m_Handle,
                              TaskUSB_Host_Wrapper,
                              this,
                              &m_Stack[0],
                              TASK_USB_HOST_STACK_SIZE,
                              TASK_USB_HOST_PRIO,
                              "Task USB Host");
-
+*/
     TaskUSB_Host::m_Instance = this;
 	//m_CDC_Connected          = false;
 	//m_HID_Connected          = false;
@@ -143,7 +143,7 @@ void TaskUSB_Host::Run(void)
         MSC_Process();
 		//CDC_Process();
         //HID_Process();
-        nOS_Sleep(TASK_USB_HOST_SLEEP);
+        nOS_Sleep(100/*TASK_USB_HOST_SLEEP*/);
     }
 }
 
