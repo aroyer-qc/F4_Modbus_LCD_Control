@@ -32,30 +32,30 @@
 
 //-------------------------------------------------------------------------------------------------
 
-//                  IMAGE_ID        Struct Info Image
+//                  IMAGE_ID                Struct Info Image
 #define STATIC_IMAGE_DEF(X_STATIC_IMAGE)  \
-    X_STATIC_IMAGE( BACKGROUND,         	&SII_DiamondPlate        )\
-    X_STATIC_IMAGE( LED_BLUE_OFF,       	&SII_LedBlueOff_16x16    )\
-    X_STATIC_IMAGE( LED_BLUE_ON,        	&SII_LedBlueOn_16x16     )\
-    X_STATIC_IMAGE( LED_GRAY_OFF,       	&SII_LedGrayOff_16x16    )\
-    X_STATIC_IMAGE( LED_GREEN_OFF,      	&SII_LedGreenOff_16x16   )\
-    X_STATIC_IMAGE( LED_GREEN_ON,       	&SII_LedGreenOn_16x16    )\
-    X_STATIC_IMAGE( LED_RED_OFF,        	&SII_LedRedOff_16x16     )\
-    X_STATIC_IMAGE( LED_RED_ON,         	&SII_LedRedOn_16x16      )\
-    X_STATIC_IMAGE( LED_YELLOW_OFF,     	&SII_LedYellowOff_16x16  )\
-    X_STATIC_IMAGE( LED_YELLOW_ON,      	&SII_LedYellowOn_16x16   )\
-    X_STATIC_IMAGE( BUTTON_MENU_GRAY,   	&SII_BtMenuGray          )\
-    X_STATIC_IMAGE( BUTTON_MENU_NORMAL, 	&SII_BtMenuNormal        )\
-    X_STATIC_IMAGE( BUTTON_MENU_PRESSED, 	&SII_BtMenuPressed       )\
-    X_STATIC_IMAGE( BUTTON_SPHERE_NORMAL, 	&SII_Sphere              )\
-    X_STATIC_IMAGE( BUTTON_SPHERE_PRESSED, 	&SII_SpherePressed       )\
-    X_STATIC_IMAGE( GLYPH_DIAGNOSTIC, 	    &SII_Diagnostic          )\
-    X_STATIC_IMAGE( GLYPH_INFO,         	&SII_Info                )\
-    X_STATIC_IMAGE( GLYPH_MEASURE, 	        &SII_Measure             )\
-    X_STATIC_IMAGE( GLYPH_RANGE,         	&SII_Range               )\
-    X_STATIC_IMAGE( GLYPH_REFERENCE,        &SII_Reference           )\
-    X_STATIC_IMAGE( GLYPH_WARNING,      	&SII_Warning             )\
-    X_STATIC_IMAGE( GLYPH_OK,           	&SII_Ok                  )\
+    X_STATIC_IMAGE( BACKGROUND,         	SII_DiamondPlate        )\
+    X_STATIC_IMAGE( LED_BLUE_OFF,       	SII_LedBlueOff_16x16    )\
+    X_STATIC_IMAGE( LED_BLUE_ON,        	SII_LedBlueOn_16x16     )\
+    X_STATIC_IMAGE( LED_GRAY_OFF,       	SII_LedGrayOff_16x16    )\
+    X_STATIC_IMAGE( LED_GREEN_OFF,      	SII_LedGreenOff_16x16   )\
+    X_STATIC_IMAGE( LED_GREEN_ON,       	SII_LedGreenOn_16x16    )\
+    X_STATIC_IMAGE( LED_RED_OFF,        	SII_LedRedOff_16x16     )\
+    X_STATIC_IMAGE( LED_RED_ON,         	SII_LedRedOn_16x16      )\
+    X_STATIC_IMAGE( LED_YELLOW_OFF,     	SII_LedYellowOff_16x16  )\
+    X_STATIC_IMAGE( LED_YELLOW_ON,      	SII_LedYellowOn_16x16   )\
+    X_STATIC_IMAGE( BUTTON_MENU_GRAY,   	SII_BtMenuGray          )\
+    X_STATIC_IMAGE( BUTTON_MENU_NORMAL, 	SII_BtMenuNormal        )\
+    X_STATIC_IMAGE( BUTTON_MENU_PRESSED, 	SII_BtMenuPressed       )\
+    X_STATIC_IMAGE( BUTTON_SPHERE_NORMAL, 	SII_Sphere              )\
+    X_STATIC_IMAGE( BUTTON_SPHERE_PRESSED, 	SII_SpherePressed       )\
+    X_STATIC_IMAGE( GLYPH_DIAGNOSTIC, 	    SII_Diagnostic          )\
+    X_STATIC_IMAGE( GLYPH_INFO,         	SII_Info                )\
+    X_STATIC_IMAGE( GLYPH_MEASURE, 	        SII_Measure             )\
+    X_STATIC_IMAGE( GLYPH_RANGE,         	SII_Range               )\
+    X_STATIC_IMAGE( GLYPH_REFERENCE,        SII_Reference           )\
+    X_STATIC_IMAGE( GLYPH_WARNING,      	SII_Warning             )\
+    X_STATIC_IMAGE( GLYPH_OK,           	SII_Ok                  )\
 
 //-------------------------------------------------------------------------------------------------
 
