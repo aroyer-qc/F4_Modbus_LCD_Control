@@ -100,10 +100,11 @@ SystemState_e TaskMain::Initialize(void)
 void TaskMain::Run(void)
 {
     TickCount_t Tick = GetTick();
-
+  #if (DIGINI_USE_FATFS == DEF_ENABLED)
 	// Check if the drive has a file system, then if no error but it has no file system it will be formatted.
 	CheckAndFormatDrive(DISK_SPI_FLASH);
 	CheckAndFormatDrive(DISK_USB_KEY);
+  #endif
 
     for(;;)
     {
@@ -121,6 +122,7 @@ void TaskMain::Run(void)
 
 //-------------------------------------------------------------------------------------------------
 // support function... must be move into service call for FatFs
+#if (DIGINI_USE_FATFS == DEF_ENABLED)
 bool CheckAndFormatDrive(uint8_t drive)
 {
     FATFS fs;
@@ -148,3 +150,4 @@ bool CheckAndFormatDrive(uint8_t drive)
     f_mount(NULL, path, 1);
     return (dres == RES_OK);
 }
+#endif

@@ -84,7 +84,7 @@
 //-------------------------------------------------------------------------------------------------
 // FAT FS Peripheral support
 //
-#define DIGINI_USE_FATFS                                DEF_ENABLED
+#define DIGINI_USE_FATFS                                DEF_DISABLED
 
 #define DIGINI_FATFS_USE_SPI_MEMORY                     DEF_ENABLED
 #define DIGINI_FATFS_USE_QSPI                           DEF_DISABLED 	 // to be added to peripheral list

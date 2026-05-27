@@ -225,7 +225,7 @@ SPI_Info_t SPI_Info[NB_OF_SPI_DRIVER] =
 
         // DMA_RX
         {
-            SPI_DMA_DISABLED,                             // Configuration + DMA_Channel RX or SPI_DMA_DISABLED
+            DMA_DISABLED,                                  // Configuration + DMA_Channel RX or DMA_DISABLED
             DMA_HIFCR_CTCIF6,                              // RX_IT_Flag
             DMA2_Stream6,                                  // RX_DMA_TypeDef
             DMA2_Stream6_IRQn,                             // RX_IRQn
@@ -258,7 +258,7 @@ SPI_Info_t SPI_Info[NB_OF_SPI_DRIVER] =
 
         // DMA_RX
         {
-            SPI_DMA_DISABLED,                             // Configuration + DMA_Channel RX or SPI_DMA_DISABLED
+            DMA_DISABLED,                                  // Configuration + DMA_Channel RX or DMA_DISABLED
             DMA_HIFCR_CTCIF6,                              // RX_IT_Flag
             DMA2_Stream6,                                  // RX_DMA_TypeDef
             DMA2_Stream6_IRQn,                             // RX_IRQn
