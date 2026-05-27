@@ -128,9 +128,9 @@ void ReadHoldingRegs(const MODBUS_Command_t& Command, MODBUS_SlaveResponse_t& Re
 
     for(uint16_t i = 0; i < Command.Quantity; i++)
     {
-        uint16_t value = pBase[Offset + i];
-        pOut[i*2 + 0] = value >> 8;
-        pOut[i*2 + 1] = value & 0xFF;
+        uint16_t Value    = pBase[Offset + i];
+        pOut[(i * 2)]     = uint8_t(Value >> 8);
+        pOut[(i * 2) + 1] = uint8_t(Value);
     }
 
     Response.PayloadLength = 1 + (Command.Quantity * 2);

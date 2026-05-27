@@ -65,8 +65,7 @@ void TaskIdle(void)
     while(1)
     {
         LIB_Delay_uSec(200);
-
         PDI_pDriver->Process();
-
+        nOS_Yield();
     }
 }
