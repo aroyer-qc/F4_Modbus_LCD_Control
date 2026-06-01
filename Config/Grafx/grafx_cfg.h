@@ -44,6 +44,7 @@
 #define GUI_TASK_STACK_SIZE                             320
 
 #define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED
+#define GRAFX_USE_STATIC_IMAGE_ONLY                     DEF_ENABLED
 #define GRAFX_USE_POINTING_DEVICE                       DEF_ENABLED
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_DISABLED    // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device IRQ (touch)
