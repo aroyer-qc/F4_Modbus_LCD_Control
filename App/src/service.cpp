@@ -80,6 +80,87 @@ uint16_t GetIO_State(IO_ID_e LimitID)
 
 //-------------------------------------------------------------------------------------------------
 //
+//  Name:           SERV_DIAL
+//
+//  Parameter(s):   ServiceEvent_e*  pServiceState
+//                  uint16_t         SubService
+//  Return:         ServiceReturn_t
+//
+//  Description:    This function return data to properly feed dial widget with relevant info
+//
+//-------------------------------------------------------------------------------------------------
+// TODO
+static ServiceReturn_t* SERV_DIAL(ServiceEvent_e* pServiceState, uint16_t SubService)
+{
+    static TickCount_t LedTimeOut[4]         = {350, 250, 300, 400};
+    static bool        StateLed[4]           = {true, true, false, true};
+    ServiceReturn_t*   pService              = nullptr;
+    static TickCount_t Start[4]              = {0, 0, 0, 0};
+
+    if((pService = GetServiceStruct(SERVICE_RETURN)) != nullptr)
+    {
+        switch(SubService)
+        {
+            case 0:
+            {
+                if(TickHasTimeOut(Start[0], LedTimeOut[0]) == true)
+                {
+                    Start[0] = GetTick();
+                    LedTimeOut[0] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[0] = (StateLed[0] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[0] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+
+            case 1:
+            {
+                if(TickHasTimeOut(Start[1], LedTimeOut[1]) == true)
+                {
+                    Start[1] = GetTick();
+                    LedTimeOut[1] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[1] = (StateLed[1] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[1] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+
+            case 2:
+            {
+                if(TickHasTimeOut(Start[2], LedTimeOut[2]) == true)
+                {
+                    Start[2] = GetTick();
+                    LedTimeOut[2] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[2] = (StateLed[2] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[2] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+
+            case 3:
+            {
+                if(TickHasTimeOut(Start[3], LedTimeOut[3]) == true)
+                {
+                    Start[3] = GetTick();
+                    LedTimeOut[3] = RNG_GetRandomFromRange(200, 800);
+                    StateLed[3] = (StateLed[0] == false) ? true : false;
+                }
+                pService->IndexState = (StateLed[3] == false) ? 0 : 1;
+                *pServiceState = SERVICE_REFRESH;
+            }
+            break;
+        }
+
+    }
+
+    return pService;
+}
+
+//-------------------------------------------------------------------------------------------------
+//
 //  Name:           SERV_INFO
 //
 //  Parameter(s):   ServiceEvent_e*  pServiceState
@@ -274,41 +355,13 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
 
     switch(U32MACRO_A(ServiceRange))        // To speed up process
     {
-        case 'A':
+        case 'D':
         {
             switch(pService->ID)
             {
-                //case SERV_ID_AXIS:  pServiceReturn = SERV_AXIS(pServiceState, pService->SubID);  break;
+                case SERV_ID_DIAL:  pServiceReturn = SERV_DIAL(pServiceState, pService->SubID);  break;
             }
             break;
-        }
-
-        case 'C':
-        {
-            switch(pService->ID)
-            {
-                //case SERV_ID_COOR:  pServiceReturn = SERV_COOR(pServiceState, pService->SubID);  break;
-            }
-            break;
-        }
-
-        case 'E':
-        {
-            switch(pService->ID)
-            {
-                //case SERV_ID_ENBL:  pServiceReturn = SERV_ENBL(pServiceState, pService->SubID);  break;
-            }
-            break;
-        }
-
-        case 'G':
-        {
-            switch(pService->ID)
-            {
-                //case SERV_ID_GCOD:  pServiceReturn = SERV_GCOD(pServiceState, pService->SubID);  break;
-            }
-            break;
-
         }
 
         case 'I':
@@ -329,16 +382,6 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
             }
             break;
 
-        }
-
-        case 'M':
-        {
-            switch(pService->ID)
-            {
-                //case SERV_ID_MHUB:  pServiceReturn = SERV_MHUB(pServiceState);                   break;
-                //case SERV_ID_MACH:  pServiceReturn = SERV_MACH(pServiceState, pService->SubID);  break;
-            }
-            break;
         }
 
         case 'T':

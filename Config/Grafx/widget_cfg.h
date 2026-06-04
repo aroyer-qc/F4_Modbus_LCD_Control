@@ -56,7 +56,9 @@
 //  CPR     -> Cursor Pixel Range      ex. 0% to 100% = 384 Pixel
 //  ResX    -> Resolution Widget X     Not necessarily in pixel ( Ex. SPECTRUM -> 16 line x 12 dot)
 //  ResY    -> Resolution Widget Y
-//
+//  SA		-> Start Angle
+//  EA		-> End Angle
+//  STPA	-> Step Angle
 //
 //-------------------------------------------------------------------------------------------------
 //
@@ -124,12 +126,8 @@ X_LBL( LABEL_GUI_ID,             SERV_ID_INFO, 7,   160,  40,   159,  16,   GRAY
 X_LBL( LABEL_IP_ADDRESS,         SERV_ID_INFO, 8,   160,  68,   159,  16,   GRAY_28, 0,       0,        FONT_ARIAL_10_B, 	   ALPHA_BLEND,  LBL_STRING,            INVALID_LABEL,          _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
 X_LBL( LABEL_MAC_ADDRESS,        SERV_ID_INFO, 9,   160,  96,   159,  16,   GRAY_28, 0,       0,        FONT_ARIAL_10_B, 	   ALPHA_BLEND,  LBL_STRING,            INVALID_LABEL,          _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
 
+//     Enum ID,                  Service,      Sub, Px,   Py,   Sx,   Sy,   Radius,  SA,   EA,  STPA   RANGE, MIN, TC,      Font ID,         Option
+#define ROTARY_DIAL_DEF(X_DIAL) \
+X_DIAL( DIAL_TEST,               SERV_ID_DIAL, 0,   160,  200,  300,  150,  75,      -180,  180,  4,     9,     0,   GREEN,    FONT_ARIAL_16_B,  GRAFX_OPTION_NONE) \
+
 //-------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-

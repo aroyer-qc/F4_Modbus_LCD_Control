@@ -491,6 +491,9 @@
 		<Unit filename="..\Module\Digini\Grafx\src\widget\lib_widget_label_list.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\widget\lib_widget_rotary_dial.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Grafx\src\widget\lib_widget_variable.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -594,6 +597,7 @@
 		<Unit filename="..\Module\Digini\Utility\inc\lib_class_crc.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_delay.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_fifo.h" />
+		<Unit filename="..\Module\Digini\Utility\inc\lib_rotation.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_stacktistic.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_utility.h" />
 		<Unit filename="..\Module\Digini\Utility\src\lib_1aschex.cpp">
@@ -630,6 +634,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_fifo.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_rotation.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_stacktistic.cpp">
