@@ -130,3 +130,4 @@
 #define GRAFX_TOUCH_SIZE_X                              GRAFX_DRIVER_SIZE_X / 10
 #define GRAFX_TOUCH_SIZE_Y                              GRAFX_DRIVER_SIZE_Y / 10
 
+#define USE_ROTATION_TABLE_6                            DEF_ENABLED
