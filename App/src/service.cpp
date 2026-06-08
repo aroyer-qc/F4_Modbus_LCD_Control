@@ -92,67 +92,26 @@ uint16_t GetIO_State(IO_ID_e LimitID)
 // TODO
 static ServiceReturn_t* SERV_DIAL(ServiceEvent_e* pServiceState, uint16_t SubService)
 {
-    static TickCount_t LedTimeOut[4]         = {350, 250, 300, 400};
-    static bool        StateLed[4]           = {true, true, false, true};
-    ServiceReturn_t*   pService              = nullptr;
-    static TickCount_t Start[4]              = {0, 0, 0, 0};
+    ServiceReturn_t* pService              = nullptr;
+    static TickCount_t TimeOut             = 250;
+    static TickCount_t Start               = 0;
+    static uint16_t Count                  = 0;
 
-    if((pService = GetServiceStruct(SERVICE_RETURN)) != nullptr)
+    if(TickHasTimeOut(Start, TimeOut) == true)
     {
-        switch(SubService)
+        Start = GetTick();
+        Count +=  10;
+
+        if(Count >= 360)
         {
-            case 0:
-            {
-                if(TickHasTimeOut(Start[0], LedTimeOut[0]) == true)
-                {
-                    Start[0] = GetTick();
-                    LedTimeOut[0] = RNG_GetRandomFromRange(200, 800);
-                    StateLed[0] = (StateLed[0] == false) ? true : false;
-                }
-                pService->IndexState = (StateLed[0] == false) ? 0 : 1;
-                *pServiceState = SERVICE_REFRESH;
-            }
-            break;
-
-            case 1:
-            {
-                if(TickHasTimeOut(Start[1], LedTimeOut[1]) == true)
-                {
-                    Start[1] = GetTick();
-                    LedTimeOut[1] = RNG_GetRandomFromRange(200, 800);
-                    StateLed[1] = (StateLed[1] == false) ? true : false;
-                }
-                pService->IndexState = (StateLed[1] == false) ? 0 : 1;
-                *pServiceState = SERVICE_REFRESH;
-            }
-            break;
-
-            case 2:
-            {
-                if(TickHasTimeOut(Start[2], LedTimeOut[2]) == true)
-                {
-                    Start[2] = GetTick();
-                    LedTimeOut[2] = RNG_GetRandomFromRange(200, 800);
-                    StateLed[2] = (StateLed[2] == false) ? true : false;
-                }
-                pService->IndexState = (StateLed[2] == false) ? 0 : 1;
-                *pServiceState = SERVICE_REFRESH;
-            }
-            break;
-
-            case 3:
-            {
-                if(TickHasTimeOut(Start[3], LedTimeOut[3]) == true)
-                {
-                    Start[3] = GetTick();
-                    LedTimeOut[3] = RNG_GetRandomFromRange(200, 800);
-                    StateLed[3] = (StateLed[0] == false) ? true : false;
-                }
-                pService->IndexState = (StateLed[3] == false) ? 0 : 1;
-                *pServiceState = SERVICE_REFRESH;
-            }
-            break;
+            Count = 0;
         }
+    }
+
+    if((pService = GetServiceStruct(SERVICE_RETURN_TYPE1)) != nullptr)
+    {
+        ((ServiceType1_t*)pService)->Data = Count;
+        *pServiceState = SERVICE_REFRESH;
 
     }
 

@@ -36,7 +36,7 @@ const PageWidget_t PageBootScreen       [] =  { {   BACK_SCREEN,             INV
                                                 {   BTN_DIAG,                LINK_PAGE_TODO      },
                                                 {   BTN_INFO,                LINK_PAGE_INFO      },
                                                 {   BTN_TEST5,               INVALID_LINK        },
-                                                {   BTN_TEST6,               INVALID_LINK        },
+                                                {   BTN_DIAL_TEST,           LINK_PAGE_DIAL      },
                                                 {   ICON_LED_GREEN,          INVALID_LINK        },
                                                 {   ICON_LED_RED,            INVALID_LINK        },
                                                 {   ICON_LED_YELLOW,         INVALID_LINK        },
@@ -74,6 +74,13 @@ const PageWidget_t PageModuleInfo       [] =  { {   BACK_SCREEN,             INV
                                                 {   LABEL_GUI_ID,            INVALID_LINK        },
                                                 {   LABEL_IP_ADDRESS,        INVALID_LINK        },
                                                 {   LABEL_MAC_ADDRESS,       INVALID_LINK        },
+                                                {   INVALID_WIDGET,          INVALID_LINK        }
+                                              };
+
+const PageWidget_t PageDial             [] =  { {   BACK_SCREEN,             INVALID_LINK        },
+                                                {   LABEL_TEST_DIAL,         INVALID_LINK        },
+                                                {   DIAL_TEST,               INVALID_LINK        },
+                                                {   BTN_RETURN,              PREVIOUS_LINK       },
                                                 {   INVALID_WIDGET,          INVALID_LINK        }
                                               };
 

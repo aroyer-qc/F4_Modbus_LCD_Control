@@ -63,5 +63,7 @@
     X_LBL_CFG( LBL_GUI_ID_INFO,			  "GUI ID",																									   nullptr									  ) \
     X_LBL_CFG( LBL_IP_ADDRESS_INFO,       "IP Address",																								   "Addresse IP" 							  ) \
     X_LBL_CFG( LBL_MAC_ADDRESS_INFO,	  "MAC Address",                                                                                               "Addresse MAC"							  ) \
+\
+    X_LBL_CFG( LBL_TEST_DIAL,	          "Widget Dial",                                                                                               nullptr		        					  ) \
 
 //-------------------------------------------------------------------------------------------------

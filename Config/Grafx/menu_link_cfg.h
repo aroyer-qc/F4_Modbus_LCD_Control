@@ -36,6 +36,7 @@
     X_LINK( LINK_DIAGNOSTICS,     PageDiagnostic       ) \
     X_LINK( LINK_PAGE_INFO,       PageInfo             ) \
     X_LINK( LINK_PAGE_MODL,       PageModuleInfo       ) \
+    X_LINK( LINK_PAGE_DIAL,       PageDial             ) \
     X_LINK( LINK_PAGE_TODO,       PageTodo             ) \
     X_LINK( LINK_MAIN_HUB,        PageMainHub          ) \
     X_LINK( LINK_MAIN_MENU,       PageMenu             ) \
