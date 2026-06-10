@@ -100,9 +100,9 @@ static ServiceReturn_t* SERV_DIAL(ServiceEvent_e* pServiceState, uint16_t SubSer
     if(TickHasTimeOut(Start, TimeOut) == true)
     {
         Start = GetTick();
-        Count +=  10;
+        Count++;
 
-        if(Count >= 360)
+        if(Count >= 60)		// ROTATION_TABLE_6   6° step (360° / 6°) 60 positions
         {
             Count = 0;
         }
@@ -112,7 +112,6 @@ static ServiceReturn_t* SERV_DIAL(ServiceEvent_e* pServiceState, uint16_t SubSer
     {
         ((ServiceType1_t*)pService)->Data = Count;
         *pServiceState = SERVICE_REFRESH;
-
     }
 
     return pService;
@@ -320,8 +319,8 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
             {
                 case SERV_ID_DIAL:  pServiceReturn = SERV_DIAL(pServiceState, pService->SubID);  break;
             }
-            break;
         }
+        break;
 
         case 'I':
         {
@@ -329,9 +328,8 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
             {
                 case SERV_ID_INFO:  pServiceReturn = SERV_INFO(pServiceState, pService->SubID);  break;
             }
-            break;
-
         }
+        break;
 
         case 'L':
         {
@@ -339,9 +337,8 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
             {
                 case SERV_ID_LEDS:  pServiceReturn = SERV_LEDS(pServiceState, pService->SubID);  break;
             }
-            break;
-
         }
+        break;
 
         case 'T':
         {
@@ -349,8 +346,8 @@ ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceSta
             {
                 case SERV_ID_TEST:  pServiceReturn = SERV_TEST(pServiceState, pService->SubID);  break;
             }
-            break;
         }
+        break;
     }
 
     return pServiceReturn;
